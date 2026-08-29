@@ -1,6 +1,22 @@
 /* Brand tokens used by shared child-theme components. */
 :root {
 	--hrd-brass: #9A7B4F;
+	--hrd-font-ui: 'Be Vietnam Pro', 'Segoe UI', sans-serif;
+}
+
+/* Brand typography: one readable UI family across every language and template. */
+body,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body button,
+body input,
+body select,
+body textarea {
+	font-family: var(--hrd-font-ui);
 }
 
 /* Be Vietnam Pro has a complete Vietnamese glyph set and cleaner diacritic spacing. */
@@ -15,7 +31,7 @@ html[lang^="vi"] body button,
 html[lang^="vi"] body input,
 html[lang^="vi"] body select,
 html[lang^="vi"] body textarea {
-	font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif;
+	font-family: var(--hrd-font-ui);
 }
 
 html[lang^="vi"] .category-danang-guide .entry-title {

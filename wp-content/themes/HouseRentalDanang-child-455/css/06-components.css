@@ -474,7 +474,7 @@
 .tax-property-city .hrd-location-hub input,
 .tax-property-city .hrd-location-hub select,
 .tax-property-city .hrd-location-hub textarea {
-	font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif;
+	font-family: var(--hrd-font-ui);
 }
 
 .tax-property-city .hrd-location-hub h1,
@@ -483,7 +483,7 @@
 .tax-property-city .hrd-location-hub h4,
 .tax-property-city .hrd-location-hub h5,
 .tax-property-city .hrd-location-hub h6 {
-	font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif;
+	font-family: var(--hrd-font-ui);
 }
 
 .tax-property-city .hrd-location-hub__intro {
@@ -623,10 +623,64 @@
 }
 
 @media (max-width: 767px) {
-	.rh_latest-properties--second .rh_prop_card--listing {
-		width: 100%;
-	}
+.rh_latest-properties--second .rh_prop_card--listing {
+	width: 100%;
 }
+}
+
+/* Contact page: replace the empty native body with a local rental desk layout. */
+.hrd-contact-page { font-family: var(--hrd-font-ui); }
+.page-template-contact .rh_section > .rh_page { display: none; }
+.page-template-contact .rh_banner { display: none; }
+.page-template-contact .rh_section { width: 100%; max-width: none; margin: 0; padding: 0; background: var(--hrd-paper, #F7F6F1); }
+.hrd-contact-page { display: grid; grid-template-columns: minmax(0, 1fr) minmax(390px, .82fr); gap: clamp(40px, 8vw, 120px); max-width: 1240px; min-height: 640px; margin: 0 auto; padding: clamp(58px, 8vw, 110px) clamp(24px, 5vw, 76px) 66px; color: var(--hrd-text, #536264); }
+.hrd-contact-page__intro { align-self: center; }
+.hrd-contact-page__eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 28px; color: var(--hrd-brass-deep, #765B35); font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.hrd-contact-page__eyebrow span { width: 24px; height: 1px; background: var(--hrd-brass, #9A7B4F); }
+.hrd-contact-page__intro > p:not(.hrd-contact-page__eyebrow) { max-width: 430px; margin: 30px 0 0; font-size: 16px; line-height: 1.75; }
+.hrd-contact-page__notes { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 38px; color: var(--hrd-brass-deep, #765B35); font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; opacity: .82; }
+.hrd-contact-page__notes span:first-child { color: var(--hrd-brass, #9A7B4F); }
+.hrd-contact-page__panel { align-self: center; padding: clamp(28px, 4vw, 44px); border-top: 3px solid var(--hrd-brass, #9A7B4F); background: var(--hrd-ink, #17343A); color: #f7f6f1; }
+.hrd-contact-page__panel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 22px; border-bottom: 1px solid rgba(220,231,229,.25); }
+.hrd-contact-page__panel-head strong { font-size: 14px; font-weight: 600; }
+.hrd-contact-page__panel-head span { color: #b8cbc6; font-size: 10px; }
+.hrd-contact-page__form { padding-top: 22px; }
+.hrd-contact-page__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.hrd-contact-page__form p { margin: 0 0 18px; }
+.hrd-contact-page__form label { display: block; margin-bottom: 7px; color: #dce7e5; font-size: 11px; font-weight: 600; }
+.hrd-contact-page__form label span { color: #90aaa5; font-weight: 400; }
+.hrd-contact-page__form input:not([type="submit"]), .hrd-contact-page__form textarea { display: block; width: 100%; border: 0; border-bottom: 1px solid rgba(220,231,229,.34); border-radius: 0; padding: 9px 0; background: transparent; color: #fff; font: inherit; font-size: 14px; }
+.hrd-contact-page__form textarea { min-height: 94px; resize: vertical; }
+.hrd-contact-page__form input::placeholder, .hrd-contact-page__form textarea::placeholder { color: #8da29e; }
+.hrd-contact-page__form input:focus, .hrd-contact-page__form textarea:focus { outline: 0; border-color: #d8b77f; box-shadow: 0 2px 0 #d8b77f; }
+.hrd-contact-page__submit { padding-top: 5px; }
+.hrd-contact-page__submit input[type="submit"] { width: 100%; padding: 15px 18px; border: 1px solid var(--hrd-brass, #9A7B4F); background: var(--hrd-brass, #9A7B4F); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.hrd-contact-page__submit input[type="submit"]:hover { background: #b39463; }
+.hrd-contact-page__submit input[type="submit"]:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.hrd-contact-page__links { display: flex; flex-wrap: wrap; gap: 12px 20px; margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(220,231,229,.22); }
+.hrd-contact-page__links a { color: #d9e6e2; font-size: 12px; text-decoration: none; }
+.hrd-contact-page__links a:hover { color: #e1c18a; }
+@media (max-width: 800px) { .hrd-contact-page { grid-template-columns: 1fr; min-height: 0; gap: 52px; padding-top: 54px; } }
+@media (max-width: 480px) { .hrd-contact-page__grid { grid-template-columns: 1fr; gap: 0; } .hrd-contact-page h1 { font-size: clamp(48px, 14vw, 70px); } .hrd-contact-page__panel-head { display: block; } .hrd-contact-page__panel-head span { display: block; margin-top: 8px; } }
+
+/* Contact should sit quietly inside the existing RealHomes page language. */
+.page-template-contact .rh_banner { display: none; }
+.hrd-contact-page { grid-template-columns: minmax(0, 1fr) minmax(360px, .78fr); max-width: 1180px; min-height: 0; gap: 64px; padding-top: 54px; padding-bottom: 64px; }
+.hrd-contact-page h1 { max-width: 520px; color: var(--hrd-heading, #183036); font-family: var(--hrd-font-ui); font-size: clamp(34px, 4.5vw, 56px); font-weight: 600; letter-spacing: -.045em; line-height: 1.08; }
+.hrd-contact-page h1 em { color: inherit; font-style: normal; }
+.hrd-contact-page__eyebrow { margin-bottom: 18px; color: var(--hrd-text, #536264); letter-spacing: .1em; }
+.hrd-contact-page__eyebrow span { background: var(--hrd-brass, #9A7B4F); }
+.hrd-contact-page__intro > p:not(.hrd-contact-page__eyebrow) { max-width: 510px; margin-top: 22px; font-size: 15px; line-height: 1.7; }
+.hrd-contact-page__notes { display: none; }
+.hrd-contact-page__panel { padding: 30px 32px 28px; border: 1px solid #d5dfdc; border-top: 3px solid var(--hrd-brass, #9A7B4F); background: #fff; color: var(--hrd-text, #536264); box-shadow: none; }
+.hrd-contact-page__panel-head { border-bottom-color: #d5dfdc; }
+.hrd-contact-page__panel-head strong, .hrd-contact-page__form label { color: var(--hrd-heading, #183036); }
+.hrd-contact-page__panel-head span, .hrd-contact-page__form label span { color: var(--hrd-text, #536264); }
+.hrd-contact-page__form input:not([type="submit"]), .hrd-contact-page__form textarea { border-bottom-color: #c9d6d2; color: var(--hrd-heading, #183036); }
+.hrd-contact-page__form input::placeholder, .hrd-contact-page__form textarea::placeholder { color: #7a8988; }
+.hrd-contact-page__links { border-top-color: #d5dfdc; }
+.hrd-contact-page__links a { color: var(--hrd-ink-soft, #315C63); }
+@media (max-width: 800px) { .hrd-contact-page { gap: 34px; padding-top: 34px; } }
 
 /* Detail sidebar: make the recent-posts widget read like a quiet editorial module. */
 .rh_sidebar .widget_recent_entries {

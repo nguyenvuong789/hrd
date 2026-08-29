@@ -91,48 +91,74 @@ function hrd_localize_navigation_title( $title, $menu_item, $args ) {
 	$language = hrd_get_current_language();
 	static $labels = array(
 		'vi' => array(
+			'Home'              => 'Trang chủ',
+			'About'             => 'Giới thiệu',
+			'Guide'             => 'Cẩm nang',
+			'Areas'             => 'Khu vực',
 			'Homepage'          => 'Trang chủ',
 			'Houses'            => 'Nhà',
 			'Apartments'        => 'Căn hộ',
 			'Villas'            => 'Biệt thự',
-			'FAQs'              => 'FAQs',
+			'FAQs'              => 'Câu hỏi thường gặp',
+			'Contact Us'        => 'Liên hệ',
 			'About Us'          => 'Giới thiệu',
 			'Contact'           => 'Liên hệ',
 			'Danang Guide'      => 'Cẩm nang',
 			'Other Useful Info' => 'Thông tin hữu ích khác',
 		),
 		'ko' => array(
+			'Home'              => '홈',
+			'About'             => '회사 소개',
+			'Guide'             => '다낭 가이드',
+			'Areas'             => '지역',
 			'Homepage'          => '홈',
 			'Houses'            => '주택',
 			'Apartments'        => '아파트',
 			'Villas'            => '빌라',
-			'FAQs'              => 'FAQs',
+			'FAQs'              => '자주 묻는 질문',
+			'Contact Us'        => '문의하기',
 			'About Us'          => '회사 소개',
 			'Contact'           => '문의',
 			'Danang Guide'      => '다낭 가이드',
 			'Other Useful Info' => '기타 유용한 정보',
 		),
 		'ja' => array(
+			'Home' => 'ホーム', 'About' => '会社概要', 'Guide' => 'ダナンガイド', 'Areas' => 'エリア',
 			'Homepage' => 'ホーム', 'Houses' => '一戸建て', 'Apartments' => 'アパート',
-			'Villas' => 'ヴィラ', 'FAQs' => 'よくある質問', 'About Us' => '会社概要',
+			'Villas' => 'ヴィラ', 'FAQs' => 'よくある質問', 'Contact Us' => 'お問い合わせ', 'About Us' => '会社概要',
 			'Contact' => 'お問い合わせ', 'Danang Guide' => 'ダナンガイド',
 			'Other Useful Info' => 'その他のお役立ち情報',
 		),
 		'ru' => array(
+			'Home' => 'Главная', 'About' => 'О нас', 'Guide' => 'Гид по Данангу', 'Areas' => 'Районы',
 			'Homepage' => 'Главная', 'Houses' => 'Дома', 'Apartments' => 'Квартиры',
-			'Villas' => 'Виллы', 'FAQs' => 'Вопросы и ответы', 'About Us' => 'О нас',
+			'Villas' => 'Виллы', 'FAQs' => 'Вопросы и ответы', 'Contact Us' => 'Контакты', 'About Us' => 'О нас',
 			'Contact' => 'Контакты', 'Danang Guide' => 'Гид по Данангу',
 			'Other Useful Info' => 'Другая полезная информация',
 		),
 		'zh' => array(
+			'Home' => '首页', 'About' => '关于我们', 'Guide' => '岘港指南', 'Areas' => '区域',
 			'Homepage' => '首页', 'Houses' => '独栋住宅', 'Apartments' => '公寓',
-			'Villas' => '别墅', 'FAQs' => '常见问题', 'About Us' => '关于我们',
+			'Villas' => '别墅', 'FAQs' => '常见问题', 'Contact Us' => '联系我们', 'About Us' => '关于我们',
 			'Contact' => '联系我们', 'Danang Guide' => '岘港指南',
 			'Other Useful Info' => '其他实用信息',
 		),
 	);
 
-	return $labels[ $language ][ $title ] ?? $title;
+	$aliases = array(
+		'Apartment' => 'Apartments',
+		'Villa'      => 'Villas',
+		'House'      => 'Houses',
+		'FAQ'        => 'FAQs',
+		'Contact Us' => 'Contact',
+	);
+	$lookup_title = $aliases[ $title ] ?? $title;
+
+	if ( empty( $labels[ $language ] ) ) {
+		return $title;
+	}
+
+	return $labels[ $language ][ $lookup_title ] ?? $labels[ $language ][ $title ] ?? $title;
 }
 add_filter( 'nav_menu_item_title', 'hrd_localize_navigation_title', 20, 3 );
 

@@ -18,6 +18,7 @@ $hrd_modules = array(
     'property-cards.php',
     'location-hub.php',
     'rental-form.php',
+    'contact.php',
 );
 foreach ( $hrd_modules as $hrd_module ) {
     require_once __DIR__ . '/inc/' . $hrd_module;
