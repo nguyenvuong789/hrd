@@ -341,7 +341,7 @@
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 0;
-		width: calc(100vw - 100px);
+		width: 100%;
 		max-width: 100%;
 		height: auto;
 		margin: 0 0 18px;
@@ -388,7 +388,7 @@
 		order: 1;
 		margin: 0 0 3px;
 		color: var(--hrd-property-muted);
-		font-size: 9px;
+		font-size: 10px;
 		font-weight: 600;
 		letter-spacing: 0.02em;
 		line-height: 1.25;
@@ -418,7 +418,7 @@
 	.single-property .rh_property__meta .figure,
 	.single-property .rh_property__meta .label {
 		color: var(--hrd-property-ink);
-		font-size: 13px;
+		font-size: 15px;
 		font-weight: 700;
 		line-height: 1;
 		white-space: nowrap;
@@ -458,9 +458,14 @@
 	}
 
 	.single-property .rh_property__heading {
+		margin: 0 0 12px;
 		color: #1f292d;
 		font-weight: 700;
 		letter-spacing: -0.025em;
+	}
+
+	.single-property .rh_property__main .rh_content p:first-child {
+		margin-top: 0;
 	}
 
 	.single-property .rh_property__common_note {
@@ -596,6 +601,5 @@
 		content: ' · ';
 	}
 }
-
 
 

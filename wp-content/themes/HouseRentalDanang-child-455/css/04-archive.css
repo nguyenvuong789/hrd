@@ -231,9 +231,22 @@
 	color: var(--hrd-brass-deep, #765B35);
 }
 
+/* Keep the facts row and rent block close enough to read as one card section. */
+.rh_prop_card .rh_prop_card__details .rh_prop_card__meta_wrap {
+	margin-bottom: 0;
+}
+
+.rh_prop_card .rh_prop_card__details .hrd-card-meta .rh_prop_card__meta {
+	padding-bottom: 0;
+}
+
+.rh_prop_card .rh_prop_card__details .rh_prop_card__priceLabel {
+	margin-top: 24px !important;
+}
+
 /* Reserve two title lines so cards in the same row keep a clean shared rhythm. */
 .rh_prop_card .rh_prop_card__details h3 {
-	min-height: 60px;
+	min-height: 2.45em;
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2;
@@ -241,8 +254,9 @@
 }
 
 .rh_prop_card .rh_prop_card__details h3 a {
-	font-size: 19.5px;
+	font-size: clamp(22px, 1.05vw + 15px, 27px);
 	font-weight: 650;
+	line-height: 1.22;
 }
 
 .hrd-card-meta__value svg {
@@ -485,17 +499,18 @@
 
 	/* Keep the compact mobile card visually anchored instead of letting flex spacing spread it out. */
 	.rh_prop_card .rh_prop_card__details h3 {
-		min-height: 58px;
+		min-height: 2.45em;
 		margin-bottom: 10px;
 	}
 
 	.rh_prop_card .rh_prop_card__details h3 a {
-		font-size: 19.5px;
+		font-size: 22px;
 		font-weight: 650;
+		line-height: 1.22;
 	}
 
 	.rh_prop_card .rh_prop_card__details .rh_prop_card__priceLabel {
-		margin-top: 0 !important;
+		margin-top: 22px !important;
 	}
 
 	.rh_prop_card .rh_prop_card__details .rh_prop_card__priceLabel .rh_prop_card__price {

@@ -83,6 +83,7 @@ function hrd_property_meta_icon( $meta_key ) {
 	$icons = array(
 		'REAL_HOMES_property_bedrooms'  => 'icon-bed.svg',
 		'REAL_HOMES_property_bathrooms' => 'icon-shower.svg',
+		'REAL_HOMES_property_garage'    => 'icon-garage.svg',
 		'REAL_HOMES_property_size'      => 'icon-area.svg',
 	);
 
