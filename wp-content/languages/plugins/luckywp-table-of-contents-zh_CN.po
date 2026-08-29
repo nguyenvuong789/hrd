@@ -1,0 +1,677 @@
+# Translation of Plugins - LuckyWP Table of Contents - Stable (latest release) in Chinese (China)
+# This file is distributed under the same license as the Plugins - LuckyWP Table of Contents - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-08-20 12:01:45+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: zh_CN\n"
+"Project-Id-Version: Plugins - LuckyWP Table of Contents - Stable (latest release)\n"
+
+#: config/settings.php:492 admin/Admin.php:237
+#: admin/widgets/customizeModal/views/modal.php:636
+msgid "Additional CSS Class(es)"
+msgstr "其他CSS类"
+
+#: config/settings.php:494 admin/widgets/customizeModal/views/modal.php:645
+msgid "Separate multiple classes with spaces."
+msgstr "用空格分隔多个类。"
+
+#: plugin/WpWidget.php:24
+msgid "Creates a table of contents for your posts and pages."
+msgstr "为您的文章和页面创建目录。"
+
+#: config/settings.php:502
+msgid "LuckyWP Plugins"
+msgstr "LuckyWP插件"
+
+#: admin/SiteHealth.php:38
+msgid "ICU Version"
+msgstr "ICU版本"
+
+#: admin/SiteHealth.php:34
+msgid "intl Version"
+msgstr "intl版本"
+
+#. translators: 1: LuckyWP Table of Contents 2: DOM (Document Object Model)
+#: luckywp-table-of-contents.php:33
+msgid "%1$s plugin require PHP extension %2$s to work."
+msgstr "%1$s插件需要PHP扩展%2$s才能工作。"
+
+#: admin/SiteHealth.php:26
+msgid "DOM/XML Version"
+msgstr "DOM或XML版本"
+
+#: admin/SiteHealth.php:27 admin/SiteHealth.php:31 admin/SiteHealth.php:35
+#: admin/SiteHealth.php:39
+msgid "not loaded"
+msgstr "未加载"
+
+#: admin/SiteHealth.php:30
+msgid "libXML Version"
+msgstr "libXML版本"
+
+#: admin/SiteHealth.php:43
+msgid "encoded data to copy"
+msgstr "要复制的编码数据"
+
+#. translators: User select DIV or UL/LI
+#: config/settings.php:484
+msgid "List Markup Tags"
+msgstr "列出标记标签"
+
+#: config/settings.php:472
+msgid "Other Settings"
+msgstr "其他设置"
+
+#: plugin/Plugin.php:271
+msgid "Inherit from theme"
+msgstr "从主题继承"
+
+#: admin/views/rate/notice.php:34
+msgid "Don't show again"
+msgstr "不再显示"
+
+#. translators: %s: rel="nofollow"
+#: config/settings.php:462 admin/Admin.php:224
+#: admin/widgets/customizeModal/views/modal.php:611
+msgid "Use %s for links"
+msgstr "将%s用于链接"
+
+#: config/settings.php:437
+msgid "SEO"
+msgstr "搜索引擎优化"
+
+#. translators: %s: <!--noindex-->
+#: config/settings.php:447 admin/Admin.php:214
+#: admin/widgets/customizeModal/views/modal.php:584
+msgid "Wrap table of contents with %s tag"
+msgstr "用%s标记换行目录"
+
+#. translators: %s: LuckyWP Table of Contents
+#: admin/views/rate/notice.php:14
+msgid "We are very pleased that you by now have been using the %s plugin a few days."
+msgstr "我们很高兴您已经使用了%s插件几天了。"
+
+#. translators: 1: _ 2: -
+#: config/settings.php:426
+msgid "Replace underscores %1$s with dashes %2$s"
+msgstr "将下划线%1$s替换为破折号%2$s"
+
+#: config/settings.php:413
+msgid "Convert to lowercase"
+msgstr "转换为小写"
+
+#. translators: Here, hash is a unique tracking string that is added to the URL
+#. after a # character
+#: config/settings.php:395
+msgid "Hash"
+msgstr "哈希值"
+
+#. translators: 1: Attribute name 2: True 3: False
+#: core/validators/BooleanValidator.php:29
+msgid "%1$s must be either \"%2$s\" or \"%3$s\"."
+msgstr "%1$s必须是“%2$s”或“%3$s”。"
+
+#. translators: %s: Attribute name
+#: core/validators/RangeValidator.php:29
+msgid "%s is invalid."
+msgstr "%s不合法"
+
+#. translators: %s: Attribute name
+#: core/validators/RequiredValidator.php:18
+msgid "%s cannot be blank."
+msgstr "%s不能为空。"
+
+#. translators: %s: (#lwptoc1, #lwptoc2, …)
+#: plugin/Plugin.php:285
+msgid "Counter %s"
+msgstr "计数器%s"
+
+#: plugin/Plugin.php:282
+msgid "As heading without transliterate (#Example_Heading_Text)"
+msgstr "不带音译的标题（#示例#标题_文本）"
+
+#. translators: %s: 1.3)
+#: config/settings.php:78
+msgid "The symbol will be added after numeration. For example, %s"
+msgstr "符号将在编号后添加。例如%s"
+
+#: config/settings.php:67 admin/Admin.php:157 admin/forms/CustomizeForm.php:248
+#: admin/widgets/customizeModal/views/modal.php:167
+msgid "Numeration Suffix"
+msgstr "计数后缀"
+
+#. translators: %s: ★★★★★
+#: admin/views/settings/index.php:10
+msgid "Leave a %s plugin review on WordPress.org"
+msgstr "在WordPress.org上对%s插件评论"
+
+#: admin/views/rate/notice.php:42
+msgid "Thank you very much!"
+msgstr "非常感谢您！"
+
+#: admin/views/rate/notice.php:28
+msgid "Remind later"
+msgstr "稍后提醒"
+
+#: admin/views/rate/notice.php:21
+msgid "Rate the plugin"
+msgstr "为插件评分"
+
+#: admin/views/rate/notice.php:18
+msgid "Please rate plugin. It will help us a lot."
+msgstr "请给插件评分，您的评分对我们有很大帮助。"
+
+#: admin/views/rate/notice.php:10
+msgid "Hello!"
+msgstr "您好！"
+
+#: admin/widgets/metabox/views/box.php:75
+msgid "Enable TOC"
+msgstr "启用目录"
+
+#: admin/widgets/metabox/views/box.php:64
+msgid "Enable Processing"
+msgstr "启用处理"
+
+#: admin/widgets/metabox/views/box.php:61
+msgid "Click \"Enable Processing\" for headings processing in this post."
+msgstr "点击“启用处理”来处理这篇文章中的标题。"
+
+#: admin/widgets/metabox/views/box.php:49
+msgid "Disable Processing"
+msgstr "禁用处理"
+
+#: admin/widgets/metabox/views/box.php:44
+msgid "Disable TOC"
+msgstr "禁用目录"
+
+#: admin/widgets/metabox/views/box.php:18
+msgid "The headings will be processing in this post for use in table of contents in widget or custom shortcode."
+msgstr "标题将在本文中处理，以在小工具或自定义简码的目录中使用。"
+
+#: config/settings.php:475
+msgid "Show Panel \"Table of Contents\" in Post Types"
+msgstr "在文章类型中显示面板“目录”"
+
+#: config/settings.php:340
+msgid "Always for Post Types"
+msgstr "始终用于文章类型"
+
+#: config/settings.php:335
+msgid "Processing Headings"
+msgstr "处理标题"
+
+#: admin/widgets/customizeModal/views/modal.php:541
+msgid "Skip heading by text"
+msgstr "按文本跳过标题"
+
+#: admin/widgets/customizeModal/views/modal.php:518
+msgid "Skip heading by level"
+msgstr "按层级跳过标题"
+
+#: admin/Admin.php:231 admin/Admin.php:234
+msgid "Skip headings"
+msgstr "跳过标题"
+
+#. translators: %s: Asterisk symbol (*)
+#: config/settings.php:382 admin/widgets/customizeModal/views/modal.php:559
+msgid "Use an asterisk %s as a wildcard to match any text."
+msgstr "使用星号%s作为通配符匹配任何文本。"
+
+#: config/settings.php:378 admin/widgets/customizeModal/views/modal.php:555
+msgid "Specify headings (one per line) to be excluded from the table of contents."
+msgstr "指定要从目录中排除的标题（每行一个）。"
+
+#: config/settings.php:370
+msgid "By Text"
+msgstr "按文本"
+
+#: config/settings.php:360
+msgid "By Level"
+msgstr "按层级"
+
+#: config/settings.php:357
+msgid "Skip Headings"
+msgstr "跳过标题"
+
+#: plugin/Plugin.php:281
+msgid "As heading (#Example_Heading_Text)"
+msgstr "作为标题（#示例_标题_文本）"
+
+#: plugin/Plugin.php:257
+msgid "Center"
+msgstr "中间"
+
+#: plugin/Plugin.php:256
+msgid "Right without flow"
+msgstr "右浮动"
+
+#. translators: Here, hash is a unique tracking string that is added to the URL
+#. after a # character
+#: config/settings.php:400
+msgid "Hash Format"
+msgstr "哈希格式"
+
+#: config/settings.php:354 admin/widgets/customizeModal/views/modal.php:46
+msgid "Misc."
+msgstr "其他"
+
+#: plugin/Plugin.php:299
+msgid "Full Width"
+msgstr "全宽"
+
+#: plugin/Plugin.php:298
+msgid "Auto"
+msgstr "自动"
+
+#: plugin/Plugin.php:268
+msgid "Dark Colors"
+msgstr "深色"
+
+#: plugin/Plugin.php:267
+msgid "Light Colors"
+msgstr "浅色"
+
+#: plugin/Plugin.php:300 admin/widgets/fontSizeField/views/widget.php:17
+msgid "Custom Value"
+msgstr "自定义值"
+
+#: plugin/Plugin.php:335 admin/widgets/fontSizeField/views/widget.php:16
+msgid "Default"
+msgstr "默认"
+
+#. Description of the plugin
+#: plugin/Plugin.php:486
+msgid "Creates a table of contents for your posts/pages. Works automatically or manually (via shortcode, Gutenberg block or widget)."
+msgstr "为您的文章或页面创建目录。自动或手动工作（通过简码、古腾堡区块或小工具）。"
+
+#: plugin/Plugin.php:270
+msgid "Transparent"
+msgstr "透明"
+
+#: plugin/Plugin.php:269
+msgid "White"
+msgstr "白色"
+
+#: plugin/Plugin.php:255
+msgid "Right"
+msgstr "右侧"
+
+#: plugin/Plugin.php:254
+msgid "Left"
+msgstr "左侧"
+
+#: plugin/Plugin.php:166 plugin/Plugin.php:253 plugin/Plugin.php:398
+msgid "None"
+msgstr "无"
+
+#: plugin/Plugin.php:224
+msgid "Heavy"
+msgstr "极粗"
+
+#: plugin/Plugin.php:223
+msgid "Extra Bold"
+msgstr "特粗"
+
+#: plugin/Plugin.php:222
+msgid "Bold"
+msgstr "粗"
+
+#: plugin/Plugin.php:221
+msgid "Semi Bold"
+msgstr "中粗"
+
+#: plugin/Plugin.php:220
+msgid "Medium"
+msgstr "中等"
+
+#: plugin/Plugin.php:219
+msgid "Normal"
+msgstr "常规"
+
+#: plugin/Plugin.php:218
+msgid "Light"
+msgstr "细"
+
+#: plugin/Plugin.php:217
+msgid "Extra Light"
+msgstr "特细"
+
+#: plugin/Plugin.php:216
+msgid "Thin"
+msgstr "极细"
+
+#: plugin/Plugin.php:182
+msgid "Bottom"
+msgstr "底部"
+
+#: plugin/Plugin.php:181
+msgid "Top"
+msgstr "顶部"
+
+#: plugin/Plugin.php:180
+msgid "After first block (paragraph or heading)"
+msgstr "在第一个区块之后（段落或标题）"
+
+#: plugin/Plugin.php:179
+msgid "After first heading"
+msgstr "在第一个标题之后"
+
+#: plugin/Plugin.php:178
+msgid "Before first heading"
+msgstr "在第一个标题之前"
+
+#: plugin/Plugin.php:156
+msgid "Roman numbers"
+msgstr "罗马数字"
+
+#: plugin/Plugin.php:155
+msgid "Roman numbers (nested)"
+msgstr "罗马数字（嵌套）"
+
+#: plugin/Plugin.php:154
+msgid "Decimal numbers"
+msgstr "十进制数"
+
+#: plugin/Plugin.php:153
+msgid "Decimal numbers (nested)"
+msgstr "十进制数（嵌套）"
+
+#: plugin/Plugin.php:152
+msgid "Without numeration"
+msgstr "不计算"
+
+#: core/admin/AdminController.php:46
+msgid "Sorry, you are not allowed to access this page."
+msgstr "对不起，您不能访问此页面。"
+
+#: config/settings.php:317
+msgid "Post Types"
+msgstr "文章类型"
+
+#: config/settings.php:293
+msgid "Auto Insert Table of Contents"
+msgstr "自动插入目录"
+
+#: config/settings.php:287
+msgid "Auto Insert"
+msgstr "自动插入"
+
+#: config/settings.php:278
+msgid "Visited Link Color"
+msgstr "访问链接颜色"
+
+#: config/settings.php:273
+msgid "Hover Link Color"
+msgstr "悬停链接颜色"
+
+#: config/settings.php:268
+msgid "Link Color"
+msgstr "链接颜色"
+
+#: config/settings.php:263
+msgid "Title Color"
+msgstr "标题颜色"
+
+#: config/settings.php:258
+msgid "Border Color"
+msgstr "边框颜色"
+
+#: config/settings.php:253
+msgid "Background Color"
+msgstr "背景颜色"
+
+#: config/settings.php:248
+msgid "Override Color Scheme Colors"
+msgstr "替代配色方案颜色"
+
+#: config/settings.php:158
+msgid "Scroll Offset Top"
+msgstr "滚动偏移顶部"
+
+#: config/settings.php:142
+msgid "Behavior"
+msgstr "行为"
+
+#: config/settings.php:125 plugin/Settings.php:124
+msgid "hide"
+msgstr "隐藏"
+
+#: config/settings.php:114 plugin/Settings.php:116
+msgid "show"
+msgstr "显示"
+
+#: config/settings.php:91 plugin/Settings.php:100
+msgid "Contents"
+msgstr "内容"
+
+#: config/settings.php:85
+msgid "Header"
+msgstr "标题"
+
+#: admin/widgets/metabox/views/box.php:72
+msgid "Click \"Enable TOC\" for automatic add table of contents to this post."
+msgstr "点击“启用目录”自动将目录添加到此文章。"
+
+#: admin/widgets/widget/views/form.php:19
+#: admin/widgets/metabox/views/box.php:39
+msgid "Customize"
+msgstr "自定义"
+
+#: admin/widgets/widget/views/_override.php:12
+#: admin/widgets/metabox/views/box.php:27
+msgid "Overridden settings:"
+msgstr "覆盖设置："
+
+#: admin/widgets/metabox/views/box.php:14
+msgid "The table of contents will be automatic added to this post."
+msgstr "目录将自动添加到此文章中。"
+
+#: admin/widgets/customizeSuccess/views/widget.php:9
+msgid "Saved!"
+msgstr "已保存！"
+
+#: admin/widgets/customizeModal/views/modal.php:671
+msgid "Save"
+msgstr "保存"
+
+#: config/settings.php:133 admin/widgets/customizeModal/views/modal.php:278
+msgid "By default, items of contents will be hidden"
+msgstr "默认情况下，将隐藏内容项"
+
+#: admin/widgets/customizeModal/views/modal.php:204
+msgid "Without title"
+msgstr "无标题"
+
+#: config/settings.php:48 config/settings.php:99 config/settings.php:150
+#: config/settings.php:297 admin/widgets/customizeModal/views/modal.php:131
+#: admin/widgets/customizeModal/views/modal.php:224
+#: admin/widgets/customizeModal/views/modal.php:287
+#: admin/widgets/customizeModal/views/modal.php:310
+#: admin/widgets/customizeModal/views/modal.php:595
+#: admin/widgets/customizeModal/views/modal.php:622
+msgid "Enable"
+msgstr "启用"
+
+#: config/settings.php:31 admin/widgets/customizeModal/views/modal.php:90
+msgid "If the count of headings in the post is less, then table of contents is not displayed."
+msgstr "如果文章中的标题数较少，则不显示目录。"
+
+#: admin/widgets/customizeModal/views/modal.php:19
+msgid "Click to override default value"
+msgstr "单击以覆盖默认值"
+
+#: admin/widgets/customizeModal/views/modal.php:20
+msgid "default"
+msgstr "默认"
+
+#: config/settings.php:176 admin/widgets/customizeModal/views/modal.php:45
+msgid "Appearance"
+msgstr "外观"
+
+#: config/settings.php:17 admin/widgets/customizeModal/views/modal.php:44
+msgid "General"
+msgstr "常规"
+
+#: admin/widgets/customizeModal/views/modal.php:30
+msgid "Customize Table of Contents"
+msgstr "自定义目录"
+
+#: admin/widgets/customizeModal/views/modal.php:29
+#: admin/widgets/customizeModal/views/modal.php:667
+msgid "Cancel"
+msgstr "取消"
+
+#: admin/widgets/OverrideColorBadge.php:21
+msgid "from scheme"
+msgstr "从方案"
+
+#: admin/views/settings/index.php:13
+msgid "Table of Contents Settings"
+msgstr "目录设置"
+
+#: admin/widgets/customizeModal/views/modal.php:571
+#: admin/widgets/customizeModal/views/modal.php:654
+#: admin/widgets/widget/views/_override.php:18
+#: admin/widgets/metabox/views/box.php:33
+#: admin/controllers/ShortcodeController.php:66
+#: admin/controllers/EditorBlockController.php:71
+msgid "empty"
+msgstr "空"
+
+#: config/settings.php:238 admin/Admin.php:196
+#: admin/forms/CustomizeForm.php:254
+#: admin/widgets/customizeModal/views/modal.php:463
+msgid "Color Scheme"
+msgstr "颜色方案"
+
+#: config/settings.php:225 admin/Admin.php:193
+#: admin/widgets/customizeModal/views/modal.php:439
+msgid "Items Font Size"
+msgstr "项目字型大小"
+
+#: config/settings.php:216 admin/Admin.php:190
+#: admin/forms/CustomizeForm.php:253
+#: admin/widgets/customizeModal/views/modal.php:417
+msgid "Title Font Weight"
+msgstr "标题字型粗细"
+
+#: config/settings.php:203 admin/Admin.php:187
+#: admin/widgets/customizeModal/views/modal.php:393
+msgid "Title Font Size"
+msgstr "标题字型大小"
+
+#: config/settings.php:194 admin/Admin.php:184
+#: admin/forms/CustomizeForm.php:252
+#: admin/widgets/customizeModal/views/modal.php:371
+msgid "Float"
+msgstr "浮动"
+
+#: config/settings.php:182 admin/Admin.php:181
+#: admin/widgets/customizeModal/views/modal.php:348
+msgid "Width"
+msgstr "宽度"
+
+#: admin/Admin.php:178 admin/widgets/customizeModal/views/modal.php:324
+msgid "Smooth Scroll Offset Top"
+msgstr "平滑滚动到顶部"
+
+#: config/settings.php:146 admin/Admin.php:175
+#: admin/widgets/customizeModal/views/modal.php:301
+msgid "Smooth Scroll"
+msgstr "平滑滚动"
+
+#: admin/Admin.php:172
+msgid "Hide Items"
+msgstr "隐藏项目"
+
+#: config/settings.php:118 admin/Admin.php:169
+#: admin/forms/CustomizeForm.php:250
+#: admin/widgets/customizeModal/views/modal.php:258
+msgid "Label Hide"
+msgstr "隐藏标签"
+
+#: config/settings.php:107 admin/Admin.php:166
+#: admin/forms/CustomizeForm.php:249
+#: admin/widgets/customizeModal/views/modal.php:238
+msgid "Label Show"
+msgstr "显示标签"
+
+#: config/settings.php:95 admin/Admin.php:163
+#: admin/widgets/customizeModal/views/modal.php:215
+msgid "Toggle Show/Hide"
+msgstr "切换显示或隐藏"
+
+#: config/settings.php:89 admin/Admin.php:160
+#: admin/widgets/customizeModal/views/modal.php:189
+msgid "Title"
+msgstr "标题"
+
+#: config/settings.php:55 admin/Admin.php:154 admin/forms/CustomizeForm.php:247
+#: admin/widgets/customizeModal/views/modal.php:145
+msgid "Numeration"
+msgstr "计数"
+
+#: admin/Admin.php:151 admin/Admin.php:163 admin/Admin.php:172
+#: admin/Admin.php:175 admin/Admin.php:217 admin/Admin.php:227
+#: admin/widgets/customizeModal/views/modal.php:138
+#: admin/widgets/customizeModal/views/modal.php:231
+#: admin/widgets/customizeModal/views/modal.php:294
+#: admin/widgets/customizeModal/views/modal.php:317
+#: admin/widgets/customizeModal/views/modal.php:602
+#: admin/widgets/customizeModal/views/modal.php:629
+msgid "Disabled"
+msgstr "禁用"
+
+#: admin/Admin.php:151 admin/Admin.php:163 admin/Admin.php:172
+#: admin/Admin.php:175 admin/Admin.php:217 admin/Admin.php:227
+#: admin/widgets/customizeModal/views/modal.php:138
+#: admin/widgets/customizeModal/views/modal.php:231
+#: admin/widgets/customizeModal/views/modal.php:294
+#: admin/widgets/customizeModal/views/modal.php:317
+#: admin/widgets/customizeModal/views/modal.php:602
+#: admin/widgets/customizeModal/views/modal.php:629
+msgid "Enabled"
+msgstr "启用"
+
+#: config/settings.php:44 admin/Admin.php:151
+#: admin/widgets/customizeModal/views/modal.php:122
+msgid "Hierarchical View"
+msgstr "层级展示"
+
+#: config/settings.php:35 admin/Admin.php:148 admin/forms/CustomizeForm.php:246
+#: admin/widgets/customizeModal/views/modal.php:100
+msgid "Depth"
+msgstr "深度"
+
+#: config/settings.php:23 admin/Admin.php:145
+#: admin/widgets/customizeModal/views/modal.php:77
+msgid "Minimal Count of Headings"
+msgstr "最少的标题数"
+
+#: config/settings.php:305 admin/Admin.php:142
+#: admin/forms/CustomizeForm.php:251
+#: admin/widgets/customizeModal/views/modal.php:54
+msgid "Position"
+msgstr "位置"
+
+#. translators: verb
+#: admin/Admin.php:115
+msgid "Edit"
+msgstr "编辑"
+
+#: plugin/WpWidget.php:22 plugin/Plugin.php:481 admin/Admin.php:54
+#: admin/Admin.php:55 admin/Admin.php:75 admin/Admin.php:113
+#: admin/controllers/ShortcodeController.php:60
+#: admin/controllers/EditorBlockController.php:65
+msgid "Table of Contents"
+msgstr "目录"
+
+#: admin/Admin.php:34 admin/SiteHealth.php:42
+msgid "Settings"
+msgstr "设置"

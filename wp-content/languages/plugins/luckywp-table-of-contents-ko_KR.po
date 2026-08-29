@@ -1,0 +1,691 @@
+# Translation of Plugins - LuckyWP Table of Contents - Stable (latest release) in Korean
+# This file is distributed under the same license as the Plugins - LuckyWP Table of Contents - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-04-01 13:50:11+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: ko_KR\n"
+"Project-Id-Version: Plugins - LuckyWP Table of Contents - Stable (latest release)\n"
+
+#: plugin/WpWidget.php:24
+msgid "Creates a table of contents for your posts and pages."
+msgstr "글과 페이지에  목차를 만들어요."
+
+#: admin/widgets/customizeModal/views/modal.php:649 config/settings.php:498
+msgid "Separate multiple classes with spaces."
+msgstr "공백으로 여러 클래스를 구분해요."
+
+#: admin/Admin.php:241 admin/widgets/customizeModal/views/modal.php:640
+#: config/settings.php:496
+msgid "Additional CSS Class(es)"
+msgstr "추가 CSS 클래스"
+
+#: config/settings.php:506
+msgid "LuckyWP Plugins"
+msgstr "럭키WP 플러그인"
+
+#: admin/SiteHealth.php:38
+msgid "ICU Version"
+msgstr "유니코드 다국어 요소판"
+
+#: admin/SiteHealth.php:34
+msgid "intl Version"
+msgstr "다국어 판"
+
+#: admin/SiteHealth.php:43
+msgid "encoded data to copy"
+msgstr "데이터가 사본으로 인코딩됨"
+
+#: admin/SiteHealth.php:30
+msgid "libXML Version"
+msgstr "libXML 판"
+
+#: admin/SiteHealth.php:27 admin/SiteHealth.php:31 admin/SiteHealth.php:35
+#: admin/SiteHealth.php:39
+msgid "not loaded"
+msgstr "불려오지 않음"
+
+#: admin/SiteHealth.php:26
+msgid "DOM/XML Version"
+msgstr "DOM/XML 판"
+
+#. translators: 1: LuckyWP Table of Contents 2: DOM (Document Object Model)
+#: luckywp-table-of-contents.php:35
+msgid "%1$s plugin require PHP extension %2$s to work."
+msgstr "%1$s 플러그인이 작동하기 위해 %2$s PHP 확장이 요구되요."
+
+#: plugin/Plugin.php:271
+msgid "Inherit from theme"
+msgstr "테마 설정 따르기"
+
+#. translators: User select DIV or UL/LI
+#: config/settings.php:488
+msgid "List Markup Tags"
+msgstr "목록 마크업 태그"
+
+#: config/settings.php:476
+msgid "Other Settings"
+msgstr "다른 설정"
+
+#: admin/views/rate/notice.php:34
+msgid "Don't show again"
+msgstr "다시 보이지 않기"
+
+#. translators: %s: rel="nofollow"
+#: admin/Admin.php:228 admin/widgets/customizeModal/views/modal.php:615
+#: config/settings.php:466
+msgid "Use %s for links"
+msgstr "%s(을)를 링크에 사용하기"
+
+#: config/settings.php:441
+msgid "SEO"
+msgstr "SEO"
+
+#. translators: 1: _ 2: -
+#: config/settings.php:430
+msgid "Replace underscores %1$s with dashes %2$s"
+msgstr "대시 %1$s로 밑줄 %2$s 바꾸기"
+
+#: config/settings.php:417
+msgid "Convert to lowercase"
+msgstr "소문자로 변환"
+
+#. translators: Here, hash is a unique tracking string that is added to the URL
+#. after a # character
+#: config/settings.php:399
+msgid "Hash"
+msgstr "해시"
+
+#. translators: 1: Attribute name 2: True 3: False
+#: core/validators/BooleanValidator.php:29
+msgid "%1$s must be either \"%2$s\" or \"%3$s\"."
+msgstr "%1$s(은)는 “%2$s” 또는 “%3$s”(이)가 되어야 해요."
+
+#. translators: %s: Attribute name
+#: core/validators/RangeValidator.php:29
+msgid "%s is invalid."
+msgstr "%s(이)가 잘못되었어요."
+
+#. translators: %s: Attribute name
+#: core/validators/RequiredValidator.php:18
+msgid "%s cannot be blank."
+msgstr "%s(을)를 비워둘 수 없어요."
+
+#. translators: %s: (#lwptoc1, #lwptoc2, …)
+#: plugin/Plugin.php:285
+msgid "Counter %s"
+msgstr "숫자 붙이기 %s"
+
+#. translators: %s: LuckyWP Table of Contents
+#: admin/views/rate/notice.php:14
+msgid "We are very pleased that you by now have been using the %s plugin a few days."
+msgstr "%s 플러그인을 며칠 동안 사용해 주셔서 매우 기쁩니다."
+
+#. translators: %s: <!--noindex-->
+#: admin/Admin.php:218 admin/widgets/customizeModal/views/modal.php:588
+#: config/settings.php:451
+msgid "Wrap table of contents with %s tag"
+msgstr "%s 태그로 목차 씌우기"
+
+#: plugin/Plugin.php:282
+msgid "As heading without transliterate (#Example_Heading_Text)"
+msgstr "음역 없는 제목으로 (#예제_제목_글자)"
+
+#. translators: %s: 1.3)
+#: config/settings.php:78
+msgid "The symbol will be added after numeration. For example, %s"
+msgstr "기호가 숫자 다음에 추가될 거에요. 예를 들어, %s"
+
+#: admin/Admin.php:157 admin/forms/CustomizeForm.php:248
+#: admin/widgets/customizeModal/views/modal.php:167 config/settings.php:67
+msgid "Numeration Suffix"
+msgstr "번호 매기기 뒤"
+
+#. translators: %s: ★★★★★
+#: admin/views/settings/index.php:10
+msgid "Leave a %s plugin review on WordPress.org"
+msgstr "WordPress.org에 플러그인에 대한 평가를 %s로 남기기"
+
+#: admin/views/rate/notice.php:42
+msgid "Thank you very much!"
+msgstr "정말 감사드려요!"
+
+#: admin/views/rate/notice.php:28
+msgid "Remind later"
+msgstr "나중에 알리기"
+
+#: admin/views/rate/notice.php:21
+msgid "Rate the plugin"
+msgstr "이 플러그인 평가하기"
+
+#: admin/views/rate/notice.php:18
+msgid "Please rate plugin. It will help us a lot."
+msgstr "플러그인을 평가해주시기 바래요. 우리에게 정말 많은 도움이 될거에요."
+
+#: admin/views/rate/notice.php:10
+msgid "Hello!"
+msgstr "안녕하세요!"
+
+#: admin/widgets/metabox/views/box.php:75
+msgid "Enable TOC"
+msgstr "목차 사용"
+
+#: admin/widgets/metabox/views/box.php:64
+msgid "Enable Processing"
+msgstr "처리 활성화"
+
+#: admin/widgets/metabox/views/box.php:61
+msgid "Click \"Enable Processing\" for headings processing in this post."
+msgstr "이 글에 제목 처리하려면 “처리 활성화”를 클릭하세요."
+
+#: admin/widgets/metabox/views/box.php:49
+msgid "Disable Processing"
+msgstr "처리 비활성화"
+
+#: admin/widgets/metabox/views/box.php:44
+msgid "Disable TOC"
+msgstr "목차 비활성화"
+
+#: admin/widgets/metabox/views/box.php:18
+msgid "The headings will be processing in this post for use in table of contents in widget or custom shortcode."
+msgstr "제목은 이 글에 위젯이나 이용자 정의 단축코드에서 목차로 처리될 거에요."
+
+#: config/settings.php:479
+msgid "Show Panel \"Table of Contents\" in Post Types"
+msgstr "글 유형에 “목차”패널 보이기"
+
+#: config/settings.php:340
+msgid "Always for Post Types"
+msgstr "글 유형에 항상"
+
+#: config/settings.php:335
+msgid "Processing Headings"
+msgstr "제목 처리"
+
+#: admin/widgets/customizeModal/views/modal.php:541
+msgid "Skip heading by text"
+msgstr "글자에 의해 제목 건너뛰기"
+
+#: admin/widgets/customizeModal/views/modal.php:518
+msgid "Skip heading by level"
+msgstr "수준에 의해 제목 건너뛰기"
+
+#: admin/Admin.php:235 admin/Admin.php:238
+msgid "Skip headings"
+msgstr "제목 건너뛰기"
+
+#. translators: %s: Asterisk symbol (*)
+#: admin/widgets/customizeModal/views/modal.php:563 config/settings.php:386
+msgid "Use an asterisk %s as a wildcard to match any text."
+msgstr "별표 %s 를 어떤 문자든 일치시키는 와일드카드로 사용하기."
+
+#: admin/widgets/customizeModal/views/modal.php:559 config/settings.php:382
+msgid "Specify headings (one per line) to be excluded from the table of contents."
+msgstr "목차에서 제외 할 제목(줄당 하나)을 지정하세요."
+
+#: config/settings.php:370
+msgid "By Text"
+msgstr "글자에 의해"
+
+#: config/settings.php:360
+msgid "By Level"
+msgstr "수준에 의해"
+
+#: config/settings.php:357
+msgid "Skip Headings"
+msgstr "제목 건너뛰기"
+
+#: plugin/Plugin.php:281
+msgid "As heading (#Example_Heading_Text)"
+msgstr "제목으로 (#예제_제목_글자)"
+
+#: plugin/Plugin.php:257
+msgid "Center"
+msgstr "가운데"
+
+#: plugin/Plugin.php:256
+msgid "Right without flow"
+msgstr "흐름 없이 바로"
+
+#. translators: Here, hash is a unique tracking string that is added to the URL
+#. after a # character
+#: config/settings.php:404
+msgid "Hash Format"
+msgstr "해시 형식"
+
+#: admin/widgets/customizeModal/views/modal.php:46 config/settings.php:354
+msgid "Misc."
+msgstr "기타."
+
+#: plugin/Plugin.php:299
+msgid "Full Width"
+msgstr "전체 너비"
+
+#: plugin/Plugin.php:298
+msgid "Auto"
+msgstr "자동"
+
+#: plugin/Plugin.php:268
+msgid "Dark Colors"
+msgstr "어두운 색상"
+
+#: plugin/Plugin.php:267
+msgid "Light Colors"
+msgstr "밝은 색상"
+
+#: admin/widgets/fontSizeField/views/widget.php:17 plugin/Plugin.php:300
+msgid "Custom Value"
+msgstr "이용자 정의 값"
+
+#: admin/widgets/fontSizeField/views/widget.php:16 plugin/Plugin.php:335
+msgid "Default"
+msgstr "기본"
+
+#. Author URI of the plugin
+#: luckywp-table-of-contents.php
+msgid "https://theluckywp.com/"
+msgstr "https://theluckywp.com/"
+
+#. Author of the plugin
+#: luckywp-table-of-contents.php
+msgid "LuckyWP"
+msgstr "럭키WP"
+
+#. Description of the plugin
+#: luckywp-table-of-contents.php plugin/Plugin.php:486
+msgid "Creates a table of contents for your posts/pages. Works automatically or manually (via shortcode, Gutenberg block or widget)."
+msgstr "글/페이지에 목차 만들기. 자동 또는 수동 작동 (단축 코드, 구텐베르그 블록 또는 위젯)."
+
+#. Plugin URI of the plugin
+#: luckywp-table-of-contents.php
+msgid "https://theluckywp.com/product/table-of-contents/"
+msgstr "https://theluckywp.com/product/table-of-contents/"
+
+#. Plugin Name of the plugin
+#: luckywp-table-of-contents.php
+msgid "LuckyWP Table of Contents"
+msgstr "럭키WP 목차"
+
+#: plugin/Plugin.php:270
+msgid "Transparent"
+msgstr "투명"
+
+#: plugin/Plugin.php:269
+msgid "White"
+msgstr "흰색"
+
+#: plugin/Plugin.php:255
+msgid "Right"
+msgstr "오른쪽"
+
+#: plugin/Plugin.php:254
+msgid "Left"
+msgstr "왼쪽"
+
+#: plugin/Plugin.php:166 plugin/Plugin.php:253 plugin/Plugin.php:398
+msgid "None"
+msgstr "없음"
+
+#: plugin/Plugin.php:224
+msgid "Heavy"
+msgstr "엄청 굵게"
+
+#: plugin/Plugin.php:223
+msgid "Extra Bold"
+msgstr "좀 더 굵게"
+
+#: plugin/Plugin.php:222
+msgid "Bold"
+msgstr "굵게"
+
+#: plugin/Plugin.php:221
+msgid "Semi Bold"
+msgstr "좀 덜 굵게"
+
+#: plugin/Plugin.php:220
+msgid "Medium"
+msgstr "중간"
+
+#: plugin/Plugin.php:219
+msgid "Normal"
+msgstr "보통"
+
+#: plugin/Plugin.php:218
+msgid "Light"
+msgstr "얇게"
+
+#: plugin/Plugin.php:217
+msgid "Extra Light"
+msgstr "좀 더 얇게"
+
+#: plugin/Plugin.php:216
+msgid "Thin"
+msgstr "가늘게"
+
+#: plugin/Plugin.php:182
+msgid "Bottom"
+msgstr "하단"
+
+#: plugin/Plugin.php:181
+msgid "Top"
+msgstr "상단"
+
+#: plugin/Plugin.php:180
+msgid "After first block (paragraph or heading)"
+msgstr "첫 블록 이후에 (단락 또는 제목)"
+
+#: plugin/Plugin.php:179
+msgid "After first heading"
+msgstr "첫 제목 다음에"
+
+#: plugin/Plugin.php:178
+msgid "Before first heading"
+msgstr "첫 번째 제목 전에"
+
+#: plugin/Plugin.php:156
+msgid "Roman numbers"
+msgstr "로마 숫자"
+
+#: plugin/Plugin.php:155
+msgid "Roman numbers (nested)"
+msgstr "로마 숫자(중첨됨)"
+
+#: plugin/Plugin.php:154
+msgid "Decimal numbers"
+msgstr "십진수"
+
+#: plugin/Plugin.php:153
+msgid "Decimal numbers (nested)"
+msgstr "십진 수(중첩)"
+
+#: plugin/Plugin.php:152
+msgid "Without numeration"
+msgstr "번호 없이"
+
+#: core/admin/AdminController.php:46
+msgid "Sorry, you are not allowed to access this page."
+msgstr "죄송하지만, 이 페이지에 접근 허가되지 않았어요."
+
+#: config/settings.php:317
+msgid "Post Types"
+msgstr "글 종류"
+
+#: config/settings.php:293
+msgid "Auto Insert Table of Contents"
+msgstr "목차 자동 삽입"
+
+#: config/settings.php:287
+msgid "Auto Insert"
+msgstr "자동 삽입"
+
+#: config/settings.php:278
+msgid "Visited Link Color"
+msgstr "방문한 링크 색상"
+
+#: config/settings.php:273
+msgid "Hover Link Color"
+msgstr "올릴때 링크 색상"
+
+#: config/settings.php:268
+msgid "Link Color"
+msgstr "링크 색상"
+
+#: config/settings.php:263
+msgid "Title Color"
+msgstr "제목 색상"
+
+#: config/settings.php:258
+msgid "Border Color"
+msgstr "테두리 색상"
+
+#: config/settings.php:253
+msgid "Background Color"
+msgstr "배경색"
+
+#: config/settings.php:248
+msgid "Override Color Scheme Colors"
+msgstr "색 구성표 색상 재정의"
+
+#: config/settings.php:158
+msgid "Scroll Offset Top"
+msgstr "스크롤 오프셋 상단"
+
+#: config/settings.php:142
+msgid "Behavior"
+msgstr "동작"
+
+#: config/settings.php:125 plugin/Settings.php:124
+msgid "hide"
+msgstr "숨기기"
+
+#: config/settings.php:114 plugin/Settings.php:116
+msgid "show"
+msgstr "보이기"
+
+#: config/settings.php:91 plugin/Settings.php:100
+msgid "Contents"
+msgstr "숫자 붙이기"
+
+#: config/settings.php:85
+msgid "Header"
+msgstr "머리말"
+
+#: admin/widgets/metabox/views/box.php:72
+msgid "Click \"Enable TOC\" for automatic add table of contents to this post."
+msgstr "이 글에 목차를 자동으로 추가하려면 “목차 활성화”를 클릭하세요."
+
+#: admin/widgets/metabox/views/box.php:39
+#: admin/widgets/widget/views/form.php:19
+msgid "Customize"
+msgstr "이용자 정의"
+
+#: admin/widgets/metabox/views/box.php:27
+#: admin/widgets/widget/views/_override.php:12
+msgid "Overridden settings:"
+msgstr "설정 재정의:"
+
+#: admin/widgets/metabox/views/box.php:14
+msgid "The table of contents will be automatic added to this post."
+msgstr "목차가 이 글에 자동으로 추가될 거에요."
+
+#: admin/widgets/customizeSuccess/views/widget.php:9
+msgid "Saved!"
+msgstr "저장되었어요!"
+
+#: admin/widgets/customizeModal/views/modal.php:675
+msgid "Save"
+msgstr "저장하기"
+
+#: admin/widgets/customizeModal/views/modal.php:278 config/settings.php:133
+msgid "By default, items of contents will be hidden"
+msgstr "기본값으로, 목차는 숨겨지게 될 거에요"
+
+#: admin/widgets/customizeModal/views/modal.php:204
+msgid "Without title"
+msgstr "제목 없이"
+
+#: admin/widgets/customizeModal/views/modal.php:131
+#: admin/widgets/customizeModal/views/modal.php:224
+#: admin/widgets/customizeModal/views/modal.php:287
+#: admin/widgets/customizeModal/views/modal.php:310
+#: admin/widgets/customizeModal/views/modal.php:599
+#: admin/widgets/customizeModal/views/modal.php:626 config/settings.php:48
+#: config/settings.php:99 config/settings.php:150 config/settings.php:297
+msgid "Enable"
+msgstr "활성화"
+
+#: admin/widgets/customizeModal/views/modal.php:90 config/settings.php:31
+msgid "If the count of headings in the post is less, then table of contents is not displayed."
+msgstr "글의 제목 개수가 적다면, 목차가 보이지 않아요."
+
+#: admin/widgets/customizeModal/views/modal.php:19
+msgid "Click to override default value"
+msgstr "기본 값 재정의하려면 클릭"
+
+#: admin/widgets/customizeModal/views/modal.php:20
+msgid "default"
+msgstr "기본"
+
+#: admin/widgets/customizeModal/views/modal.php:45 config/settings.php:176
+msgid "Appearance"
+msgstr "표시"
+
+#: admin/widgets/customizeModal/views/modal.php:44 config/settings.php:17
+msgid "General"
+msgstr "일반 설정"
+
+#: admin/widgets/customizeModal/views/modal.php:30
+msgid "Customize Table of Contents"
+msgstr "이용자 정의 목차"
+
+#: admin/widgets/customizeModal/views/modal.php:29
+#: admin/widgets/customizeModal/views/modal.php:671
+msgid "Cancel"
+msgstr "취소"
+
+#: admin/widgets/OverrideColorBadge.php:21
+msgid "from scheme"
+msgstr "구성표에서"
+
+#: admin/views/settings/index.php:13
+msgid "Table of Contents Settings"
+msgstr "목차 설정"
+
+#: admin/controllers/EditorBlockController.php:76
+#: admin/controllers/ShortcodeController.php:66
+#: admin/widgets/customizeModal/views/modal.php:575
+#: admin/widgets/customizeModal/views/modal.php:658
+#: admin/widgets/metabox/views/box.php:33
+#: admin/widgets/widget/views/_override.php:18
+msgid "empty"
+msgstr "비우기"
+
+#: admin/Admin.php:196 admin/forms/CustomizeForm.php:254
+#: admin/widgets/customizeModal/views/modal.php:463 config/settings.php:238
+msgid "Color Scheme"
+msgstr "색상 구성표"
+
+#: admin/Admin.php:193 admin/widgets/customizeModal/views/modal.php:439
+#: config/settings.php:225
+msgid "Items Font Size"
+msgstr "항목 글자 크기"
+
+#: admin/Admin.php:190 admin/forms/CustomizeForm.php:253
+#: admin/widgets/customizeModal/views/modal.php:417 config/settings.php:216
+msgid "Title Font Weight"
+msgstr "제목 글자 굵기"
+
+#: admin/Admin.php:187 admin/widgets/customizeModal/views/modal.php:393
+#: config/settings.php:203
+msgid "Title Font Size"
+msgstr "제목 글자 크기"
+
+#: admin/Admin.php:184 admin/forms/CustomizeForm.php:252
+#: admin/widgets/customizeModal/views/modal.php:371 config/settings.php:194
+msgid "Float"
+msgstr "띄우기"
+
+#: admin/Admin.php:181 admin/widgets/customizeModal/views/modal.php:348
+#: config/settings.php:182
+msgid "Width"
+msgstr "너비"
+
+#: admin/Admin.php:178 admin/widgets/customizeModal/views/modal.php:324
+msgid "Smooth Scroll Offset Top"
+msgstr "부드러운 스크롤 오프셋 상단"
+
+#: admin/Admin.php:175 admin/widgets/customizeModal/views/modal.php:301
+#: config/settings.php:146
+msgid "Smooth Scroll"
+msgstr "부드러운 스크롤"
+
+#: admin/Admin.php:172
+msgid "Hide Items"
+msgstr "항목 숨기기"
+
+#: admin/Admin.php:169 admin/forms/CustomizeForm.php:250
+#: admin/widgets/customizeModal/views/modal.php:258 config/settings.php:118
+msgid "Label Hide"
+msgstr "이름표 숨기기"
+
+#: admin/Admin.php:166 admin/forms/CustomizeForm.php:249
+#: admin/widgets/customizeModal/views/modal.php:238 config/settings.php:107
+msgid "Label Show"
+msgstr "이름표 보이기"
+
+#: admin/Admin.php:163 admin/widgets/customizeModal/views/modal.php:215
+#: config/settings.php:95
+msgid "Toggle Show/Hide"
+msgstr "보이기/숨기기 전환"
+
+#: admin/Admin.php:160 admin/widgets/customizeModal/views/modal.php:189
+#: config/settings.php:89
+msgid "Title"
+msgstr "제목"
+
+#: admin/Admin.php:154 admin/forms/CustomizeForm.php:247
+#: admin/widgets/customizeModal/views/modal.php:145 config/settings.php:55
+msgid "Numeration"
+msgstr "번호 매기기"
+
+#: admin/Admin.php:151 admin/Admin.php:163 admin/Admin.php:172
+#: admin/Admin.php:175 admin/Admin.php:221 admin/Admin.php:231
+#: admin/widgets/customizeModal/views/modal.php:138
+#: admin/widgets/customizeModal/views/modal.php:231
+#: admin/widgets/customizeModal/views/modal.php:294
+#: admin/widgets/customizeModal/views/modal.php:317
+#: admin/widgets/customizeModal/views/modal.php:606
+#: admin/widgets/customizeModal/views/modal.php:633
+msgid "Disabled"
+msgstr "비활성"
+
+#: admin/Admin.php:151 admin/Admin.php:163 admin/Admin.php:172
+#: admin/Admin.php:175 admin/Admin.php:221 admin/Admin.php:231
+#: admin/widgets/customizeModal/views/modal.php:138
+#: admin/widgets/customizeModal/views/modal.php:231
+#: admin/widgets/customizeModal/views/modal.php:294
+#: admin/widgets/customizeModal/views/modal.php:317
+#: admin/widgets/customizeModal/views/modal.php:606
+#: admin/widgets/customizeModal/views/modal.php:633
+msgid "Enabled"
+msgstr "활성화됨"
+
+#: admin/Admin.php:151 admin/widgets/customizeModal/views/modal.php:122
+#: config/settings.php:44
+msgid "Hierarchical View"
+msgstr "계층으로 보기"
+
+#: admin/Admin.php:148 admin/forms/CustomizeForm.php:246
+#: admin/widgets/customizeModal/views/modal.php:100 config/settings.php:35
+msgid "Depth"
+msgstr "깊이"
+
+#: admin/Admin.php:145 admin/widgets/customizeModal/views/modal.php:77
+#: config/settings.php:23
+msgid "Minimal Count of Headings"
+msgstr "제목의 최소 수"
+
+#: admin/Admin.php:142 admin/forms/CustomizeForm.php:251
+#: admin/widgets/customizeModal/views/modal.php:54 config/settings.php:305
+msgid "Position"
+msgstr "위치"
+
+#. translators: verb
+#: admin/Admin.php:115
+msgid "Edit"
+msgstr "편집"
+
+#: admin/Admin.php:54 admin/Admin.php:55 admin/Admin.php:75 admin/Admin.php:113
+#: admin/controllers/EditorBlockController.php:70
+#: admin/controllers/ShortcodeController.php:60 plugin/Plugin.php:481
+#: plugin/WpWidget.php:22
+msgid "Table of Contents"
+msgstr "목차"
+
+#: admin/Admin.php:34 admin/SiteHealth.php:42
+msgid "Settings"
+msgstr "설정"

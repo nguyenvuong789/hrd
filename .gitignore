@@ -1,0 +1,23 @@
+.DS_Store
+.playwright-cli/
+.seo-cache/
+
+# Keep local and production secrets/configuration out of Git.
+wp-config.php
+.htaccess
+local-xdebuginfo.php
+
+# Runtime data and backups are managed outside the code repository.
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/upgrade-temp-backup/
+wp-content/updraft/
+error_log
+*.log
+
+# WordPress core and installed third-party packages stay managed by the host.
+/wp-admin/
+/wp-includes/
+/wp-content/plugins/
+/wp-content/themes/realhomes/

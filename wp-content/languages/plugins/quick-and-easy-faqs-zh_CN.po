@@ -1,0 +1,297 @@
+# Translation of Plugins - Quick and Easy FAQs - Stable (latest release) in Chinese (China)
+# This file is distributed under the same license as the Plugins - Quick and Easy FAQs - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-06-01 23:46:23+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: zh_CN\n"
+"Project-Id-Version: Plugins - Quick and Easy FAQs - Stable (latest release)\n"
+
+#: includes/class-settings-api.php:350
+msgid "Choose File"
+msgstr "选择文件"
+
+#: admin/class-settings.php:109
+msgid "Hide"
+msgstr "隐藏"
+
+#: admin/class-settings.php:108
+msgid "Back to Index Link"
+msgstr "返回索引链接"
+
+#: admin/class-settings.php:103
+msgid "Disable"
+msgstr "禁用"
+
+#: admin/class-settings.php:102
+msgid "FAQs Plugin Based Font Awesome Stylesheet"
+msgstr "FAQs插件基于Font Awesome的样式表"
+
+#: admin/class-settings.php:84
+msgid "Typography"
+msgstr "排版"
+
+#: admin/class-settings.php:80
+msgid "Basic"
+msgstr "基本"
+
+#: frontend/class-shortcode.php:182
+msgid "FAQs Order By"
+msgstr "FAQs 排序"
+
+#: frontend/class-shortcode.php:171
+msgid "FAQs Order"
+msgstr "FAQs 排序"
+
+#: frontend/class-shortcode.php:160
+msgid "FAQs Filters"
+msgstr "FAQs 筛选"
+
+#: admin/class-register-post-and-taxonomy.php:97
+msgid "faq_groups"
+msgstr "faq_groups"
+
+#: admin/class-register-post-and-taxonomy.php:53
+msgid "faqs"
+msgstr "faqs"
+
+#: admin/class-register-post-and-taxonomy.php:20
+msgid "FAQ"
+msgstr "FAQ"
+
+#. Author URI of the plugin
+#: quick-and-easy-faqs.php
+msgid "https://inspirythemes.com/"
+msgstr "https://inspirythemes.com/"
+
+#: admin/class-settings.php:62
+msgid "Quick & Easy Settings"
+msgstr "快捷设置"
+
+#: admin/class-register-post-and-taxonomy.php:68
+msgid "Groups"
+msgstr "组"
+
+#. Description of the plugin
+#: quick-and-easy-faqs.php
+msgid "A quick and easy way to add FAQs to your site."
+msgstr "一个快速和简单的方法来添加常见问题到您的网站。"
+
+#: frontend/class-shortcode.php:146
+msgid "Display Style"
+msgstr "显示样式"
+
+#: frontend/class-shortcode.php:142
+msgid "Content"
+msgstr "正文"
+
+#: frontend/class-shortcode.php:140
+msgid "Quick and Easy FAQs Plugin"
+msgstr "Quick and Easy FAQs 插件"
+
+#: includes/class-faqs-query.php:234
+msgid "All"
+msgstr "全部"
+
+#: includes/class-faqs-query.php:299
+msgid "Back to Index"
+msgstr "返回索引"
+
+#: admin/class-settings.php:63 includes/class-faqs.php:221
+msgid "Settings"
+msgstr "设置"
+
+#: admin/class-settings.php:85
+msgid "These settings only applies to FAQs with toggle style. As FAQs with list style use colors inherited from currently active theme."
+msgstr "这些设置仅适用于具有切换样式的FAQ。 作为具有列表样式的FAQ，请使用从当前活动主题继承的颜色。"
+
+#: admin/class-settings.php:170
+msgid "Custom CSS"
+msgstr "自定义CSS"
+
+#: admin/class-settings.php:164
+msgid "Toggle Border color"
+msgstr "切换边框颜色"
+
+#: admin/class-settings.php:158
+msgid "Answer background color"
+msgstr "答案的背景色"
+
+#: admin/class-settings.php:152
+msgid "Answer text color"
+msgstr "答案的文字颜色"
+
+#: admin/class-settings.php:146
+msgid "Question background color on mouse over"
+msgstr "在鼠标悬停时问题背景色"
+
+#: admin/class-settings.php:140
+msgid "Question background color"
+msgstr "问题背景色"
+
+#: admin/class-settings.php:134
+msgid "Question text color on mouse over"
+msgstr "鼠标悬停时问题文字的颜色"
+
+#: admin/class-settings.php:128
+msgid "Question text color"
+msgstr "问题文字的颜色"
+
+#: admin/class-settings.php:123
+msgid "Custom Colors"
+msgstr "自定义颜色"
+
+#: admin/class-settings.php:122
+msgid "Default Colors"
+msgstr "默认颜色"
+
+#: admin/class-settings.php:119
+msgid "Choose custom colors to apply colors provided in options below."
+msgstr "选择自定义颜色作用于以下选项中提供的颜色。"
+
+#: admin/class-settings.php:117
+msgid "FAQs toggle colors"
+msgstr "FAQs 切换颜色"
+
+#. Plugin Name of the plugin
+#: quick-and-easy-faqs.php admin/class-gutenberg-editor.php:17
+#: frontend/class-shortcode.php:139
+msgid "Quick and Easy FAQs"
+msgstr "Quick and Easy FAQs"
+
+#: admin/class-settings.php:184
+msgid "Quick and Easy FAQs Settings"
+msgstr "Quick and Easy FAQs 设置"
+
+#: admin/class-register-post-and-taxonomy.php:82
+msgid "Not Found"
+msgstr "未找到"
+
+#: admin/class-register-post-and-taxonomy.php:81
+msgid "Search FAQ Groups"
+msgstr "搜索 FAQ 组"
+
+#: admin/class-register-post-and-taxonomy.php:80
+msgid "Popular FAQ Groups"
+msgstr "热门 FAQ 组"
+
+#: admin/class-register-post-and-taxonomy.php:79
+msgid "Choose from the most used"
+msgstr "从最常用的中选择"
+
+#: admin/class-register-post-and-taxonomy.php:78
+msgid "Add or remove FAQ Groups"
+msgstr "添加 or 移除 FAQ 组"
+
+#: admin/class-register-post-and-taxonomy.php:77
+msgid "Separate FAQ Groups with commas"
+msgstr "用英文逗号分隔FAQ组"
+
+#: admin/class-register-post-and-taxonomy.php:76
+msgid "View FAQ Group"
+msgstr "查看FAQ组"
+
+#: admin/class-register-post-and-taxonomy.php:75
+msgid "Update FAQ Group"
+msgstr "更新 FAQ 组"
+
+#: admin/class-register-post-and-taxonomy.php:74
+msgid "Edit FAQ Group"
+msgstr "编辑 FAQ 组"
+
+#: admin/class-register-post-and-taxonomy.php:73
+msgid "Add New FAQ Group"
+msgstr "新增 FAQ 组"
+
+#: admin/class-register-post-and-taxonomy.php:72
+msgid "New FAQ Group Name"
+msgstr "新 FAQ 组名称"
+
+#: admin/class-register-post-and-taxonomy.php:71
+msgid "Parent FAQ Group:"
+msgstr "上级 FAQ 组:"
+
+#: admin/class-register-post-and-taxonomy.php:70
+msgid "Parent FAQ Group"
+msgstr "上级 FAQ 组"
+
+#: admin/class-register-post-and-taxonomy.php:69
+msgid "All FAQ Groups"
+msgstr "全部 FAQ 组"
+
+#: admin/class-register-post-and-taxonomy.php:67
+msgctxt "Taxonomy Singular Name"
+msgid "FAQ Group"
+msgstr "FAQ 组"
+
+#: admin/class-register-post-and-taxonomy.php:66
+msgctxt "Taxonomy General Name"
+msgid "FAQ Groups"
+msgstr "FAQ 组"
+
+#: admin/class-register-post-and-taxonomy.php:36
+msgid "Frequently Asked Questions"
+msgstr "常见问题"
+
+#: admin/class-register-post-and-taxonomy.php:35
+msgid "faq"
+msgstr "faq"
+
+#: admin/class-register-post-and-taxonomy.php:31
+msgid "Not found in Trash"
+msgstr "回收站里未找到"
+
+#: admin/class-register-post-and-taxonomy.php:30
+msgid "Not found"
+msgstr "没找到"
+
+#: admin/class-register-post-and-taxonomy.php:29
+msgid "Search FAQ"
+msgstr "搜索 FAQ"
+
+#: admin/class-register-post-and-taxonomy.php:28
+msgid "View FAQ"
+msgstr "查看FAQ"
+
+#: admin/class-register-post-and-taxonomy.php:27
+msgid "Update FAQ"
+msgstr "更新 FAQ"
+
+#: admin/class-register-post-and-taxonomy.php:26
+msgid "Edit FAQ"
+msgstr "编辑 FAQ"
+
+#: admin/class-register-post-and-taxonomy.php:25
+msgid "New FAQ"
+msgstr "新 FAQ"
+
+#: admin/class-register-post-and-taxonomy.php:24
+msgid "Add New"
+msgstr "新增"
+
+#: admin/class-register-post-and-taxonomy.php:23
+msgid "Add New FAQ"
+msgstr "新增 FAQ"
+
+#: admin/class-register-post-and-taxonomy.php:21
+msgid "Parent FAQ:"
+msgstr "上级 FAQ:"
+
+#: admin/class-register-post-and-taxonomy.php:19
+#: admin/class-register-post-and-taxonomy.php:22
+msgid "FAQs"
+msgstr "FAQs"
+
+#: admin/class-register-post-and-taxonomy.php:18
+msgctxt "Post Type Singular Name"
+msgid "FAQ"
+msgstr "FAQ"
+
+#: admin/class-register-post-and-taxonomy.php:17
+msgctxt "Post Type General Name"
+msgid "FAQs"
+msgstr "FAQs"

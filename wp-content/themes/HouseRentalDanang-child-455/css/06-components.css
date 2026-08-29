@@ -1,0 +1,923 @@
+/* Google reviews: direct provenance without turning social proof into a badge wall. */
+.rh_section__features .rh_feature {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	text-align: left;
+}
+
+.rh_section__features .rh_feature::before {
+	width: 34px;
+	height: 3px;
+	margin-bottom: 18px;
+	background: #58ad37;
+	content: "";
+}
+
+.rh_section__features .rh_feature .rh_feature__desc strong {
+	display: block;
+	margin: 14px 0 8px;
+	color: #60747c;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	line-height: 1.4;
+	text-transform: uppercase;
+}
+
+.rh_section__features .rh_feature .rh_feature__desc strong a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.rh_section__features .rh_feature .rh_feature__desc strong a:hover,
+.rh_section__features .rh_feature .rh_feature__desc strong a:focus-visible {
+	color: #0b455e;
+}
+
+.rh_section__features .rh_feature .rh_feature__desc strong a:focus-visible {
+	outline: 2px solid #58ad37;
+	outline-offset: 4px;
+}
+
+.rh_section__features .rh_feature .rh_feature__title {
+	margin: 0 0 14px;
+}
+
+.rh_section__features .rh_feature .rh_feature__desc {
+	margin-bottom: 18px;
+}
+
+.rh_section__features .rh_feature .rh_feature__desc p {
+	margin: 0;
+	color: #102d39;
+	font-size: 15px;
+	line-height: 1.7;
+}
+
+.rh_section__features .rh_feature .rh_feature__desc > p > a {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	.rh_section__features .rh_feature {
+		align-items: flex-start;
+		text-align: left;
+	}
+}
+
+
+
+/* Testimonials page: source-led reviews with calm editorial hierarchy. */
+.hrd-testimonials-page {
+	--hrd-review-ink: #102d39;
+	--hrd-review-muted: #60747c;
+	--hrd-review-line: #cfdcda;
+	--hrd-review-surface: #f4f8f6;
+	--hrd-review-accent: #0b455e;
+	--hrd-review-action: #58ad37;
+	color: var(--hrd-review-ink);
+}
+
+.hrd-testimonials-page__intro {
+	max-width: 760px;
+	margin-bottom: 36px;
+}
+
+.hrd-testimonials-page__intro h2 {
+	margin: 0 0 14px;
+	color: var(--hrd-review-ink);
+	font-size: clamp(28px, 4vw, 42px);
+	line-height: 1.12;
+}
+
+.hrd-testimonials-page__intro p {
+	margin: 0;
+	color: var(--hrd-review-muted);
+	font-size: 16px;
+	line-height: 1.7;
+}
+
+.hrd-review-sources {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	margin: 0 0 44px;
+	border-top: 1px solid var(--hrd-review-line);
+	border-bottom: 1px solid var(--hrd-review-line);
+}
+
+.hrd-review-source {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	min-height: 92px;
+	padding: 18px 22px;
+	color: var(--hrd-review-ink);
+	text-decoration: none;
+}
+
+.hrd-review-source + .hrd-review-source {
+	border-left: 1px solid var(--hrd-review-line);
+}
+
+.hrd-review-source span,
+.hrd-review-source strong {
+	display: block;
+}
+
+.hrd-review-source span {
+	margin-bottom: 3px;
+	color: var(--hrd-review-muted);
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.hrd-review-source strong {
+	font-size: 17px;
+	line-height: 1.35;
+}
+
+.hrd-review-source::after {
+	color: var(--hrd-review-action);
+	content: "+";
+	font-size: 22px;
+	font-weight: 400;
+}
+
+.hrd-review-source:hover,
+.hrd-review-source:focus-visible {
+	background: var(--hrd-review-surface);
+}
+
+.hrd-review-source:focus-visible,
+.hrd-review-card__source:focus-visible {
+	outline: 2px solid var(--hrd-review-action);
+	outline-offset: 3px;
+}
+
+.hrd-review-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	column-gap: clamp(30px, 6vw, 76px);
+}
+
+.hrd-review-card {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	padding: 28px 0 30px;
+	border-top: 1px solid var(--hrd-review-line);
+}
+
+.hrd-review-card__meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 7px 12px;
+	margin-bottom: 18px;
+}
+
+.hrd-review-card__platform,
+.hrd-review-card__context,
+.hrd-review-card__date {
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.055em;
+	line-height: 1.45;
+	text-transform: uppercase;
+}
+
+.hrd-review-card__platform {
+	color: var(--hrd-review-accent);
+}
+
+.hrd-review-card__context,
+.hrd-review-card__date {
+	color: var(--hrd-review-muted);
+}
+
+.hrd-review-card blockquote {
+	margin: 0 0 22px;
+	padding: 0;
+	border: 0;
+	color: var(--hrd-review-ink);
+	font-size: 16px;
+	font-style: normal;
+	line-height: 1.72;
+}
+
+.hrd-review-card footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 18px;
+	margin-top: auto;
+}
+
+.hrd-review-card cite {
+	color: var(--hrd-review-ink);
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 700;
+}
+
+.hrd-review-card__source {
+	border-bottom: 1px solid var(--hrd-review-line);
+	color: var(--hrd-review-accent);
+	font-size: 13px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.hrd-review-card__source:hover {
+	border-color: var(--hrd-review-action);
+}
+
+.hrd-testimonials-page__note {
+	margin: 18px 0 0;
+	padding: 18px 20px;
+	border-left: 3px solid var(--hrd-review-accent);
+	background: var(--hrd-review-surface);
+	color: var(--hrd-review-muted);
+	font-size: 13px;
+	line-height: 1.65;
+}
+
+@media (max-width: 767px) {
+	.hrd-review-sources,
+	.hrd-review-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.hrd-review-source + .hrd-review-source {
+		border-top: 1px solid var(--hrd-review-line);
+		border-left: 0;
+	}
+
+	.hrd-review-card footer {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+}
+
+/* The optimized parent stylesheet points at a non-existent fonts directory. */
+@font-face {
+	font-family: 'slick';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../realhomes/common/css/fonts/slick.eot');
+	src: url('../realhomes/common/css/fonts/slick.eot?#iefix') format('embedded-opentype'),
+		url('../realhomes/common/css/fonts/slick.woff') format('woff'),
+		url('../realhomes/common/css/fonts/slick.ttf') format('truetype'),
+		url('../realhomes/common/css/fonts/slick.svg#slick') format('svg');
+}
+
+/* HRD featured renter stories: faces, rental context, and direct public sources. */
+.rh_section__features .rh_feature .rh_feature__icon {
+	order: -2;
+	display: block;
+	width: 82px;
+	height: 82px;
+	margin: 0 0 18px;
+	border: 1px solid #cfdcda;
+	border-radius: 999px;
+	overflow: hidden;
+	background: #f4f8f6;
+}
+
+.rh_section__features .rh_feature .rh_feature__icon img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.rh_section__features .rh_feature::before {
+	display: none;
+}
+
+.rh_section__features .rh_feature .hrd-review-context {
+	display: block;
+	margin: 0 0 10px;
+	color: #60747c;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.045em;
+	line-height: 1.4;
+	text-transform: uppercase;
+}
+
+.hrd-featured-reviews {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	column-gap: clamp(30px, 6vw, 76px);
+}
+
+.hrd-featured-reviews .hrd-review-card--lead {
+	grid-column: 1 / -1;
+	display: grid;
+	grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.6fr);
+	column-gap: clamp(30px, 6vw, 76px);
+	align-items: start;
+	padding-top: 34px;
+}
+
+.hrd-featured-reviews .hrd-review-card--lead blockquote {
+	margin: 0;
+	font-size: clamp(18px, 2.2vw, 23px);
+	line-height: 1.6;
+}
+
+.hrd-featured-reviews .hrd-review-card--lead footer {
+	grid-column: 2;
+	margin-top: 20px;
+}
+
+.hrd-review-card__person {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-bottom: 22px;
+}
+
+.hrd-review-card__person img {
+	flex: 0 0 auto;
+	width: 82px;
+	height: 82px;
+	border: 1px solid var(--hrd-review-line);
+	border-radius: 999px;
+	object-fit: cover;
+	background: var(--hrd-review-surface);
+}
+
+.hrd-review-card__person cite,
+.hrd-review-card__person span {
+	display: block;
+}
+
+.hrd-review-card__person cite {
+	margin-bottom: 4px;
+	font-size: 17px;
+}
+
+.hrd-review-card__person .hrd-review-card__context {
+	color: var(--hrd-review-muted);
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.045em;
+	line-height: 1.4;
+	text-transform: uppercase;
+}
+
+.hrd-featured-reviews .hrd-review-card footer {
+	padding-top: 18px;
+	border-top: 1px solid var(--hrd-review-line);
+}
+
+@media (max-width: 767px) {
+	.rh_section__features .rh_feature .rh_feature__icon {
+		width: 72px;
+		height: 72px;
+	}
+
+	.hrd-featured-reviews {
+		grid-template-columns: 1fr;
+	}
+
+	.hrd-featured-reviews .hrd-review-card--lead {
+		grid-column: auto;
+		display: flex;
+		padding-top: 28px;
+	}
+
+	.hrd-featured-reviews .hrd-review-card--lead footer {
+		margin-top: auto;
+	}
+
+	.hrd-review-card__person img {
+		width: 72px;
+		height: 72px;
+	}
+}
+
+/* Homepage review context survives the theme KSES allowlist. */
+.rh_section__features .rh_feature .rh_feature__desc p > strong:first-child {
+	display: block;
+	margin: 0 0 10px;
+	color: #60747c;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.045em;
+	line-height: 1.4;
+	text-transform: uppercase;
+}
+
+/* Location archive typography: separate section headings from property cards. */
+.tax-property-city .hrd-location-hub__grid .rh_prop_card--listing {
+	width: 33.3333%;
+}
+
+.tax-property-city .hrd-location-hub__grid .rh_prop_card__thumbnail {
+	height: 240px;
+	overflow: hidden;
+}
+
+.tax-property-city .hrd-location-hub__grid .rh_prop_card__thumbnail img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.tax-property-city .hrd-location-hub__actions {
+	text-align: center;
+}
+
+.tax-property-city .hrd-location-hub__load-more {
+	display: inline-block;
+	border: 0;
+	cursor: pointer;
+}
+
+.tax-property-city .hrd-location-hub__load-more.is-loading {
+	opacity: .65;
+	cursor: wait;
+}
+
+@media (max-width: 1023px) {
+	.tax-property-city .hrd-location-hub__grid .rh_prop_card--listing {
+		width: 50%;
+	}
+}
+
+@media (max-width: 767px) {
+	.tax-property-city .hrd-location-hub__grid .rh_prop_card--listing {
+		width: 100%;
+	}
+}
+
+.tax-property-city .hrd-location-hub__section-head > h2 {
+	margin-bottom: 28px;
+}
+
+@media (max-width: 767px) {
+	.tax-property-city .hrd-location-hub__section-head > h2 {
+		margin-bottom: 24px;
+	}
+}
+/* Location archive typography: readable measure, fluid hierarchy, one brand family. */
+.tax-property-city .hrd-location-hub,
+.tax-property-city .hrd-location-hub button,
+.tax-property-city .hrd-location-hub input,
+.tax-property-city .hrd-location-hub select,
+.tax-property-city .hrd-location-hub textarea {
+	font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif;
+}
+
+.tax-property-city .hrd-location-hub h1,
+.tax-property-city .hrd-location-hub h2,
+.tax-property-city .hrd-location-hub h3,
+.tax-property-city .hrd-location-hub h4,
+.tax-property-city .hrd-location-hub h5,
+.tax-property-city .hrd-location-hub h6 {
+	font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif;
+}
+
+.tax-property-city .hrd-location-hub__intro {
+	width: 100%;
+	max-width: 811px;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: clamp(16px, 15px + 0.25vw, 17px);
+	line-height: 1.72;
+}
+
+.tax-property-city .hrd-location-hub__intro p,
+.tax-property-city .hrd-location-hub__intro li {
+	font-size: clamp(16px, 0.98rem + 0.15vw, 17px);
+	line-height: 1.7;
+}
+
+.tax-property-city .hrd-location-hub__intro p {
+	max-width: 68ch;
+}
+
+.tax-property-city .hrd-location-hub__intro ul,
+.tax-property-city .hrd-location-hub__intro ol {
+	max-width: 72ch;
+}
+
+.tax-property-city .hrd-location-hub__intro h2,
+.tax-property-city .hrd-location-hub__section-head > h2 {
+	font-size: clamp(27px, 2.5vw, 35px);
+	line-height: 1.18;
+	letter-spacing: -0.025em;
+	text-wrap: balance;
+}
+
+.tax-property-city .hrd-location-hub__intro h3 {
+	font-size: clamp(20px, 1.7vw, 24px);
+	line-height: 1.25;
+	letter-spacing: -0.015em;
+	text-wrap: balance;
+}
+
+.tax-property-city .hrd-location-hub__intro table {
+	font-size: 16px;
+	line-height: 1.55;
+}
+
+/* A restrained mosaic that keeps native gallery links and captions intact. */
+.hrd-property-gallery {
+	display: grid;
+	grid-template-columns: 4fr 1fr 1fr;
+	grid-auto-rows: 205px;
+	gap: 8px;
+	margin-bottom: 28px;
+}
+.hrd-property-gallery__item {
+	position: relative;
+	display: block;
+	min-width: 0;
+	overflow: hidden;
+	background: #eef1ef;
+}
+.hrd-property-gallery__item:first-child { grid-row: span 2; }
+.hrd-property-gallery__item--hidden { display: none; }
+.hrd-property-gallery__item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .25s ease; }
+.hrd-property-gallery__item:hover img { transform: scale(1.025); }
+.hrd-property-gallery__count { position: absolute; right: 12px; bottom: 12px; padding: 7px 10px; color: #fff; background: rgba(20, 32, 30, .82); font-size: 12px; line-height: 1.2; }
+.hrd-property-gallery__count small { display: block; margin-top: 4px; color: rgba(255, 255, 255, .78); font-size: 10px; }
+.hrd-property-gallery--1 { display: block; }
+.hrd-property-gallery--1 .hrd-property-gallery__item { max-height: 520px; }
+.hrd-property-gallery--2 { grid-template-columns: 2fr 1fr; grid-auto-rows: 340px; }
+.hrd-property-gallery--2 .hrd-property-gallery__item:first-child { grid-row: auto; }
+.hrd-property-gallery--3 { grid-template-columns: 2fr 1fr; grid-auto-rows: 220px; }
+.hrd-property-gallery--3 .hrd-property-gallery__item:first-child { grid-row: span 2; }
+.hrd-property-gallery--4 { grid-template-columns: 2fr 1fr; grid-auto-rows: 145px; }
+.hrd-property-gallery--4 .hrd-property-gallery__item:first-child { grid-row: span 3; }
+@media (max-width: 767px) {
+	.hrd-property-gallery,
+	.hrd-property-gallery--2,
+	.hrd-property-gallery--3 { grid-template-columns: 1fr 1fr; grid-auto-rows: 120px; gap: 5px; }
+	.hrd-property-gallery__item:first-child { grid-column: span 2; grid-row: span 2; }
+	.hrd-property-gallery--1 .hrd-property-gallery__item { max-height: 300px; }
+}
+@media (prefers-reduced-motion: reduce) { .hrd-property-gallery__item img { transition: none; } }
+
+/* Keep detail-page recommendations visually consistent with homepage cards. */
+.rh_property__similar_properties .rh_prop_card--listing {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 24px;
+}
+.rh_property__similar_properties .rh_prop_card__thumbnail {
+	aspect-ratio: 1.85 / 1;
+	overflow: hidden;
+}
+.rh_property__similar_properties .rh_prop_card__thumbnail img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.rh_property__similar_properties .rh_prop_card__details {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+.rh_property__similar_properties .rh_prop_card__priceLabel {
+	margin-top: auto;
+}
+@media (max-width: 767px) {
+	.rh_property__similar_properties .rh_prop_card--listing {
+		width: 100%;
+	}
+}
+
+@media (max-width: 767px) {
+	.tax-property-city .hrd-location-hub__intro p,
+	.tax-property-city .hrd-location-hub__intro li {
+		font-size: 17px;
+		line-height: 1.65;
+	}
+
+	.tax-property-city .hrd-location-hub__intro p,
+	.tax-property-city .hrd-location-hub__intro ul,
+ 	.tax-property-city .hrd-location-hub__intro ol {
+		max-width: 100%;
+	}
+}
+
+/* Keep the second configurable homepage feed on the same native card grid. */
+.rh_latest-properties--second .rh_prop_card--listing {
+	width: 33.3333%;
+}
+
+@media (max-width: 1023px) {
+	.rh_latest-properties--second .rh_prop_card--listing {
+		width: 50%;
+	}
+}
+
+@media (max-width: 767px) {
+	.rh_latest-properties--second .rh_prop_card--listing {
+		width: 100%;
+	}
+}
+
+/* Detail sidebar: make the recent-posts widget read like a quiet editorial module. */
+.rh_sidebar .widget_recent_entries {
+	margin: 0 0 28px;
+	padding: 24px 22px 20px;
+	border: 1px solid #d9e1de;
+	background: #f7f6f1;
+	font-family: 'Manrope', sans-serif;
+}
+.rh_sidebar .widget_recent_entries .title {
+	margin: 0 0 14px;
+	padding: 0 0 13px;
+	border-bottom: 1px solid #d9e1de;
+	color: #183036;
+	font-family: 'Source Serif 4', Georgia, serif;
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 1.15;
+}
+.rh_sidebar .widget_recent_entries ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.rh_sidebar .widget_recent_entries li {
+	position: relative;
+	margin: 0;
+	padding: 11px 0 11px 17px;
+	border-bottom: 1px solid rgba(217, 225, 222, .75);
+	font-size: 14px;
+	line-height: 1.45;
+}
+.rh_sidebar .widget_recent_entries li:last-child {
+	border-bottom: 0;
+}
+.rh_sidebar .widget_recent_entries li::before {
+	position: absolute;
+	top: 18px;
+	left: 0;
+	width: 5px;
+	height: 5px;
+	border: 0;
+	border-radius: 50%;
+	background: #9a7b4f;
+	content: '';
+}
+.rh_sidebar .widget_recent_entries li a {
+	color: #315c63;
+	font-family: 'Manrope', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.45;
+	text-decoration: none;
+}
+.rh_sidebar .widget_recent_entries li a:hover,
+.rh_sidebar .widget_recent_entries li a:focus-visible {
+	color: #9a7b4f;
+}
+@media (max-width: 767px) {
+	.rh_sidebar .widget_recent_entries {
+		padding: 20px 18px 16px;
+	}
+	.rh_sidebar .widget_recent_entries .title {
+		font-size: 22px;
+	}
+}
+
+/* Blog reading scale: a restrained editorial hierarchy that stays legible on mobile. */
+.single-post .rh_blog__single .entry-content {
+	font-size: 17px;
+	line-height: 1.72;
+}
+.single-post .rh_blog__single .entry-content p {
+	margin: 0 0 1.2em;
+}
+.single-post .rh_blog__single .entry-content h1 {
+	margin: 1.6em 0 .55em;
+	color: #183036;
+	font-family: 'Source Serif 4', Georgia, serif;
+	font-size: clamp(30px, 2.2vw, 38px);
+	font-weight: 600;
+	line-height: 1.18;
+}
+.single-post .rh_blog__single .entry-content h2 {
+	font-size: clamp(27px, 1.1vw + 18px, 33px);
+	line-height: 1.22;
+}
+.single-post .rh_blog__single .entry-content h3 {
+	font-size: clamp(21px, .45vw + 18px, 25px);
+	line-height: 1.3;
+}
+.single-post .rh_blog__single .entry-content h4 {
+	font-size: clamp(18px, .25vw + 16px, 20px);
+	line-height: 1.35;
+}
+.single-post .rh_blog__single .entry-content h5,
+.single-post .rh_blog__single .entry-content h6 {
+	margin: 1.2em 0 .4em;
+	color: #315c63;
+	font-family: 'Manrope', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+	.single-post .rh_blog__single .entry-content {
+		font-size: 16px;
+		line-height: 1.68;
+	}
+	.single-post .rh_blog__single .entry-content h1 {
+		font-size: clamp(27px, 7vw, 32px);
+	}
+}
+
+/* Deliberate AdSense placements: generous separation without imitating site UI. */
+.hrd-adsense-unit {
+	clear: both;
+	width: 100%;
+	margin: clamp(24px, 4vw, 48px) auto;
+	overflow: hidden;
+	text-align: center;
+}
+
+/* Google marks empty responsive units after the request; remove their reserved space. */
+.hrd-adsense-unit:has(ins.adsbygoogle[data-ad-status="unfilled"]) {
+	display: none;
+}
+
+.hrd-adsense-unit--home-below-search {
+	max-width: 1180px;
+	padding-inline: 24px;
+}
+
+.hrd-adsense-unit--listing-after-filters {
+	margin-top: 12px;
+	margin-bottom: 32px;
+}
+
+.hrd-adsense-unit--property-description {
+	margin-top: 18px;
+	margin-bottom: 28px;
+}
+
+.hrd-adsense-unit--guide-in-article {
+	margin-block: 36px;
+}
+
+@media (max-width: 767px) {
+	.hrd-adsense-unit {
+		margin-block: 24px;
+	}
+
+	.hrd-adsense-unit--home-below-search {
+		padding-inline: 16px;
+	}
+}
+
+/* Property facts: a quiet editorial stat rail instead of the stock icon strip. */
+@media (min-width: 768px) {
+	.single-property .rh_property__row.rh_property__meta_wrap {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+		gap: 0;
+		width: 100%;
+		max-width: 900px;
+		margin: 34px 0 38px;
+		padding: 0;
+		border: 1px solid #d9e1de;
+		border-radius: 2px;
+		background: #f7f6f1;
+		box-shadow: 0 8px 24px rgba(23, 52, 58, 0.05);
+	}
+
+	.single-property .rh_property__meta_wrap .rh_property__meta {
+		display: grid;
+		grid-template-columns: 28px 1fr;
+		grid-template-rows: auto auto;
+		align-items: center;
+		column-gap: 12px;
+		min-width: 0;
+		margin: 0;
+		padding: 16px 14px 15px;
+		border: 0;
+		border-right: 1px solid #d9e1de;
+		text-align: left;
+	}
+
+	.single-property .rh_property__meta_wrap .rh_property__meta:last-child {
+		border-right: 0;
+	}
+
+	.single-property .rh_property__meta_wrap .rh_property__meta .rh_meta_titles {
+		grid-column: 2;
+		grid-row: 1;
+		margin: 0 0 4px;
+		color: #718084;
+		font-size: 10px;
+		font-weight: 700;
+		letter-spacing: .11em;
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+
+	.single-property .rh_property__meta_wrap .rh_property__meta > div {
+		display: contents;
+	}
+
+	.single-property .rh_property__meta_wrap .rh_property__meta svg {
+		display: block;
+		grid-column: 1;
+		grid-row: 1 / span 2;
+		width: 23px;
+		height: 23px;
+		fill: none;
+		color: #9a7b4f;
+		stroke: currentColor;
+		opacity: .92;
+	}
+
+	.single-property .rh_property__meta_wrap .rh_property__meta .figure,
+	.single-property .rh_property__meta_wrap .rh_property__meta .label {
+		color: #183036;
+		font-size: 22px;
+		font-weight: 600;
+		letter-spacing: -.035em;
+		line-height: 1;
+		white-space: nowrap;
+	}
+
+	.single-property .rh_property__meta_wrap .rh_property__meta .figure {
+		grid-column: 2;
+		grid-row: 2;
+		margin: 0;
+	}
+
+	.single-property .rh_property__meta_wrap .rh_property__meta .label {
+		grid-column: 2;
+		grid-row: 2;
+		margin: 0 0 0 5px;
+		color: #765b35;
+		font-size: 11px;
+		font-weight: 700;
+		letter-spacing: .08em;
+		text-transform: uppercase;
+		transform: translateX(34px);
+	}
+
+	.single-property .rh_property__meta_wrap .rh_property__meta:hover {
+		background: #eee5d6;
+	}
+}
+
+@media (max-width: 767px) {
+	.single-property .rh_property__meta_wrap .rh_property__meta svg {
+		display: block;
+		width: 18px;
+		height: 18px;
+		margin-bottom: 5px;
+		fill: none;
+		color: #9a7b4f;
+		stroke: currentColor;
+	}
+
+	.single-property .rh_property__meta_wrap .rh_property__meta .rh_meta_titles {
+		letter-spacing: .08em;
+		text-transform: uppercase;
+	}
+}
+
+/* Use the same filled local rental icons as property cards on detail pages. */
+.single-property .rh_property__meta_wrap .rh_property__meta svg.hrd-rental-icon {
+	width: 38px;
+	height: 38px;
+	fill: currentColor !important;
+	stroke: none !important;
+}
+
+/* Keep the secondary CTA label visible on its white button background. */
+.rh_cta--contact .rh_cta__btns .rh_btn--whiteBG {
+	color: #17343A !important;
+}
+
+.rh_cta--contact .rh_cta__btns .rh_btn--whiteBG:hover,
+.rh_cta--contact .rh_cta__btns .rh_btn--whiteBG:focus-visible {
+	color: #0E252A !important;
+}
+
+@media (max-width: 767px) {
+	.single-property .rh_property__meta_wrap .rh_property__meta svg.hrd-rental-icon {
+		width: 30px;
+		height: 30px;
+	}
+}

@@ -1,0 +1,507 @@
+/* Brand tokens used by shared child-theme components. */
+:root {
+	--hrd-brass: #9A7B4F;
+}
+
+/* Be Vietnam Pro has a complete Vietnamese glyph set and cleaner diacritic spacing. */
+html[lang^="vi"] body,
+html[lang^="vi"] body h1,
+html[lang^="vi"] body h2,
+html[lang^="vi"] body h3,
+html[lang^="vi"] body h4,
+html[lang^="vi"] body h5,
+html[lang^="vi"] body h6,
+html[lang^="vi"] body button,
+html[lang^="vi"] body input,
+html[lang^="vi"] body select,
+html[lang^="vi"] body textarea {
+	font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif;
+}
+
+html[lang^="vi"] .category-danang-guide .entry-title {
+	letter-spacing: -.025em;
+	line-height: 1.34;
+}
+
+.hrd-freshness-notice {
+	color: #536264;
+	font-size: 14px;
+	line-height: 1.65;
+}
+
+.hrd-freshness-notice--property {
+	display: grid;
+	grid-template-columns: 24px 1fr;
+	column-gap: 14px;
+	margin: 30px 0 0;
+	padding: 17px 20px 18px;
+	border: 1px solid #d9e1de;
+	border-left: 4px solid #9a7b4f;
+	border-radius: 3px;
+	background: #f7f6f1;
+	position: relative;
+}
+
+.hrd-freshness-notice--property::before {
+	display: grid;
+	place-items: center;
+	position: relative;
+	top: 2px;
+	left: auto;
+	width: 22px;
+	height: 22px;
+	border: 0;
+	border-radius: 50%;
+	background: #9a7b4f;
+	color: #fff;
+	content: 'i';
+	font-family: 'Source Serif 4', Georgia, serif;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.hrd-freshness-notice__title {
+	grid-column: 2;
+	min-height: 20px;
+	margin: 0 0 3px;
+	color: #183036;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: .045em;
+	line-height: 1.35;
+	text-transform: uppercase;
+}
+
+.hrd-freshness-notice__text {
+	grid-column: 2;
+	color: #536264;
+	font-size: 14px;
+	line-height: 1.65;
+}
+
+.hrd-freshness-notice--property a {
+	color: #765b35;
+	font-weight: 700;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.hrd-freshness-notice--global {
+	display: block;
+	max-width: 760px;
+	margin-bottom: 8px;
+	color: rgba(255, 255, 255, 0.68);
+	font-size: 11px;
+}
+
+@media (max-width: 767px) {
+	.hrd-freshness-notice--property {
+		margin-top: 24px;
+		padding: 15px 15px 16px;
+		column-gap: 11px;
+	}
+
+	.hrd-freshness-notice--global {
+		margin-bottom: 10px;
+		font-size: 10px;
+		line-height: 1.45;
+	}
+}
+
+.hrd-editorial-note {
+	margin: clamp(38px, 6vw, 64px) 0 10px;
+	padding: clamp(22px, 4vw, 34px);
+	border: 1px solid #cfdcda;
+	border-top: 4px solid #0b455e;
+	background: #f4f8f6;
+	color: #102d39;
+}
+
+.hrd-editorial-note__eyebrow {
+	display: block;
+	margin-bottom: 7px;
+	color: #60747c;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: .09em;
+	text-transform: uppercase;
+}
+
+.single-post .hrd-editorial-note__title {
+	margin: 0 0 9px;
+	color: #102d39;
+	font-size: clamp(22px, 3vw, 29px);
+	line-height: 1.2;
+}
+
+.hrd-editorial-note__meta,
+.hrd-editorial-note__body,
+.hrd-editorial-note__links {
+	margin: 0;
+}
+
+.hrd-editorial-note__meta {
+	color: #60747c;
+	font-size: 12px;
+	line-height: 1.6;
+}
+
+.hrd-editorial-note__body {
+	max-width: 820px;
+	margin-top: 14px;
+	font-size: 14px;
+	line-height: 1.75;
+}
+
+.hrd-editorial-note__links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px 22px;
+	margin-top: 16px;
+}
+
+.single-post .hrd-editorial-note__links a {
+	color: #0b455e;
+	font-size: 13px;
+	font-weight: 700;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+	.hrd-editorial-note {
+		margin-top: 34px;
+		padding: 20px;
+	}
+
+	.hrd-editorial-note__meta span {
+		display: block;
+		height: 0;
+		overflow: hidden;
+	}
+}
+
+/* Footer: a compact coastal basecamp rather than a stack of legacy widgets. */
+.rh_footer {
+	--hrd-footer-ink: #f4faf7;
+	--hrd-footer-muted: #bdcec8;
+	--hrd-footer-line: #386875;
+	--hrd-footer-accent: #78c844;
+	position: relative;
+	overflow: hidden;
+	padding-top: clamp(72px, 8vw, 118px);
+	padding-bottom: 32px;
+	background: #0b455e;
+	color: var(--hrd-footer-muted);
+}
+
+/* A quiet Da Nang landmark watermark keeps the solid footer locally distinctive. */
+.rh_footer::after {
+	position: absolute;
+	z-index: 0;
+	top: 42px;
+	right: 0;
+	bottom: 0;
+	width: min(68vw, 1050px);
+	background-image: linear-gradient(90deg, #0b455e 0%, rgba(11, 69, 94, 0.3) 42%, rgba(11, 69, 94, 0.08) 100%), url('/wp-content/uploads/2022/08/Cau-rong.jpg');
+	background-position: center, right center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	content: '';
+	filter: grayscale(1) contrast(1.1);
+	opacity: 0.11;
+	pointer-events: none;
+}
+
+.rh_footer.diagonal-border-footer {
+	margin-top: 0;
+	padding-top: clamp(72px, 8vw, 118px);
+}
+
+.rh_footer .rh_footer__wrap {
+	position: relative;
+	z-index: 1;
+	width: min(100% - 40px, 1180px);
+	max-width: 1180px;
+}
+
+.rh_footer .rh_footer__top_wrap {
+	position: relative;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-bottom: 28px;
+	border-bottom: 1px solid var(--hrd-footer-line);
+}
+
+.rh_footer .rh_footer__logo {
+	flex-direction: row;
+	padding: 0;
+}
+
+.rh_footer .rh_footer__logo img {
+	width: auto;
+	max-width: 190px;
+	height: 58px;
+	margin: 0;
+	object-fit: contain;
+}
+
+.rh_footer .rh_footer__logo .tag-line {
+	display: none;
+}
+
+.rh_footer .rh_footer__social {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	padding: 0;
+}
+
+.rh_footer .rh_footer__social a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 42px;
+	height: 42px;
+	margin: 0;
+	border: 1px solid #4d7782;
+	border-radius: 50%;
+	color: var(--hrd-footer-muted);
+	transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.rh_footer .rh_footer__social a:hover,
+.rh_footer .rh_footer__social a:focus-visible {
+	border-color: var(--hrd-footer-accent);
+	background: transparent;
+	color: var(--hrd-footer-accent);
+	transform: translateY(-2px);
+}
+
+.rh_footer .rh_footer__social a:focus-visible,
+.rh_footer a:focus-visible {
+	outline: 2px solid #fff;
+	outline-offset: 3px;
+}
+
+.rh_footer .rh_footer__widgets_wrap {
+	display: grid;
+	grid-template-columns: minmax(0, 1.55fr) minmax(180px, 0.7fr) minmax(220px, 0.85fr);
+	gap: clamp(36px, 6vw, 88px);
+	padding: clamp(42px, 6vw, 72px) 0 44px;
+}
+
+.rh_footer .rh_footer__widgets {
+	width: auto;
+	padding: 0;
+}
+
+.rh_footer .rh_widgets,
+.rh_footer .widget,
+.rh_footer .widget p,
+.rh_footer .widget li {
+	color: var(--hrd-footer-muted);
+	font-size: 15px;
+	line-height: 1.65;
+}
+
+.rh_footer .widget {
+	margin: 0;
+}
+
+.rh_footer .widget .title,
+.rh_footer .hrd-footer-listings .title,
+.rh_footer .hrd-footer-guides .title {
+	margin: 0 0 18px;
+	color: var(--hrd-footer-ink);
+	font-size: 17px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	line-height: 1.3;
+	text-wrap: balance;
+}
+
+.hrd-footer-intro__lead {
+	max-width: 18ch;
+	margin: 0 0 16px !important;
+	color: var(--hrd-footer-ink) !important;
+	font-size: clamp(27px, 2vw + 16px, 39px) !important;
+	font-weight: 600;
+	letter-spacing: -0.035em;
+	line-height: 1.14 !important;
+	text-wrap: balance;
+}
+
+.hrd-footer-intro > p:not(.hrd-footer-intro__lead) {
+	max-width: 48ch;
+	margin-bottom: 24px;
+}
+
+.hrd-footer-email {
+	display: inline-flex;
+	flex-direction: column;
+	gap: 3px;
+	padding: 0 0 9px;
+	border: 0;
+	border-bottom: 2px solid var(--hrd-footer-accent);
+	border-radius: 0;
+	background: transparent;
+	color: var(--hrd-footer-ink) !important;
+	text-decoration: none;
+	transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.hrd-footer-email span {
+	color: var(--hrd-footer-muted);
+	font-size: 12px;
+}
+
+.hrd-footer-email strong {
+	font-size: clamp(14px, 0.3vw + 13px, 16px);
+	font-weight: 600;
+	overflow-wrap: anywhere;
+}
+
+.hrd-footer-email:hover {
+	border-color: #fff;
+	background: transparent;
+	transform: translateY(-2px);
+}
+
+.rh_footer .hrd-footer-listings ul,
+.rh_footer .hrd-footer-guides ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.rh_footer .hrd-footer-listings li,
+.rh_footer .hrd-footer-guides li {
+	margin: 0;
+	border-bottom: 1px solid var(--hrd-footer-line);
+}
+
+.rh_footer .hrd-footer-listings a,
+.rh_footer .hrd-footer-guides a {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 43px;
+	color: var(--hrd-footer-muted);
+	font-size: 14px;
+	line-height: 1.35;
+	text-decoration: none;
+}
+
+.rh_footer .hrd-footer-listings a::after,
+.rh_footer .hrd-footer-guides a::after {
+	color: var(--hrd-footer-accent);
+	content: '↗';
+	font-size: 13px;
+	opacity: 0;
+	transform: translate(-4px, 4px);
+	transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.rh_footer .hrd-footer-listings a:hover,
+.rh_footer .hrd-footer-guides a:hover {
+	color: #fff;
+}
+
+.rh_footer .hrd-footer-listings a:hover::after,
+.rh_footer .hrd-footer-guides a:hover::after,
+.rh_footer .hrd-footer-listings a:focus-visible::after,
+.rh_footer .hrd-footer-guides a:focus-visible::after {
+	opacity: 1;
+	transform: translate(0, 0);
+}
+
+.rh_footer .rh_footer__bottom_wrap {
+	align-items: flex-end;
+	padding-top: 24px;
+	border-top: 1px solid var(--hrd-footer-line);
+}
+
+.rh_footer .rh_footer__wrap .copyrights,
+.rh_footer .rh_footer__wrap .designed-by {
+	padding: 0;
+	color: rgba(244, 250, 247, 0.55);
+	font-size: 12px;
+	line-height: 1.55;
+}
+
+.rh_footer .hrd-freshness-notice--global {
+	max-width: 70ch;
+	margin-bottom: 5px;
+	color: rgba(244, 250, 247, 0.55);
+	font-size: 12px;
+}
+
+@media (max-width: 767px) {
+	.rh_footer::after {
+		top: 54px;
+		width: 100%;
+		background-position: center, 62% center;
+		opacity: 0.07;
+	}
+
+	.rh_footer,
+	.rh_footer.diagonal-border-footer {
+		padding-top: 70px;
+		padding-bottom: 28px;
+	}
+
+	.rh_footer .rh_footer__wrap {
+		width: min(100% - 36px, 1180px);
+	}
+
+	.rh_footer .rh_footer__top_wrap {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 24px;
+	}
+
+	.rh_footer .rh_footer__logo img {
+		max-width: 155px;
+		height: 48px;
+	}
+
+	.rh_footer .rh_footer__social {
+		width: 100%;
+		justify-content: flex-start;
+	}
+
+	.rh_footer .rh_footer__social a {
+		width: 44px;
+		height: 44px;
+	}
+
+	.rh_footer .rh_footer__widgets_wrap {
+		grid-template-columns: 1fr;
+		gap: 38px;
+		padding: 38px 0;
+	}
+
+	.rh_footer .rh_footer__bottom_wrap {
+		align-items: flex-start;
+		gap: 14px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.rh_footer .rh_footer__widgets_wrap {
+		grid-template-columns: 1.2fr 0.8fr;
+	}
+
+	.rh_footer .rh_footer__widgets:last-child {
+		grid-column: 1 / -1;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.rh_footer a {
+		transition: none !important;
+	}
+}
