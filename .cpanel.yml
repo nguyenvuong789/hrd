@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home2/vinnguye/houserentaldanang.com/
+    - /bin/cp -R wp-content/themes/HouseRentalDanang-child-455 $DEPLOYPATH/wp-content/themes/
