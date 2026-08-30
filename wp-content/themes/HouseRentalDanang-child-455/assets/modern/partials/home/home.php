@@ -89,13 +89,14 @@ if ( ! empty( $home_sections ) && is_array( $home_sections ) ) {
 		<?php foreach ( $home_sections as $home_section ) :
 			if ( isset( $sections[ $home_section ] ) && 'true' === $sections[ $home_section ] ) {
 				get_template_part( 'assets/modern/partials/home/section/' . $home_section );
-				if ( 'partners' === $home_section && function_exists( 'hrd_home_faq_markup' ) ) {
-					echo hrd_home_faq_markup(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				}
 			}
 		endforeach; ?>
 	</div>
 	<?php
+}
+
+if ( function_exists( 'hrd_home_faq_markup' ) ) {
+	echo hrd_home_faq_markup(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 get_footer();
