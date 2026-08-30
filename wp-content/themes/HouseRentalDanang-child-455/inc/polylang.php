@@ -337,6 +337,11 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_cta_contact_btn_two_title'   => 'Browse listings',
 			'inspiry_home_properties_title_2'      => 'Explore Apartments for Rent in Da Nang',
 			'inspiry_home_properties_desc_2'       => 'Compare apartments across Da Nang. Please confirm the exact unit, current rent and lease terms before arranging a viewing or making a payment.',
+			'inspiry_home_properties_title'        => 'Explore Houses for Rent in Da Nang',
+			'inspiry_home_properties_desc'         => 'Browse by location, size, and lifestyle. Confirm current availability with our local team.',
+			'inspiry_home_news_sub_title'          => 'Live Like a Local',
+			'inspiry_home_news_title'              => 'Da Nang Guides',
+			'inspiry_home_news_desc'               => 'Practical guides to neighborhoods, food, travel, and everyday life in Da Nang.',
 		),
 		'vi' => array(
 			'inspiry_SFOI_title'                 => 'Tìm chỗ ở tại Đà Nẵng với sự hỗ trợ của người địa phương',
@@ -359,6 +364,7 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_home_news_title'             => 'Cẩm nang Đà Nẵng',
 			'inspiry_home_news_desc'              => 'Thông tin thực tế về khu vực, ẩm thực, du lịch và cuộc sống hằng ngày tại Đà Nẵng.',
 			'inspiry_home_properties_desc_2'       => 'So sánh các căn hộ trên toàn Đà Nẵng. Vui lòng xác nhận đúng căn, giá thuê hiện tại và điều khoản trước khi xem nhà hoặc thanh toán.',
+			'inspiry_home_properties_desc'         => 'Xem nhà theo khu vực, diện tích và phong cách sống. Hãy xác nhận tình trạng còn trống với đội ngũ địa phương.',
 		),
 		'ko' => array(
 			'inspiry_SFOI_title'                 => '다낭 현지인의 도움으로 나에게 맞는 집을 찾아보세요',
@@ -379,6 +385,7 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_home_news_title'             => '다낭 생활 가이드',
 			'inspiry_home_news_desc'              => '다낭의 지역, 음식, 여행과 일상생활에 관한 실용적인 정보를 확인하세요.',
 			'inspiry_home_properties_desc_2'       => '다낭 전역의 아파트를 비교해 보세요. 방문이나 결제 전에 정확한 호수, 현재 임대료와 계약 조건을 확인하세요.',
+			'inspiry_home_properties_desc'         => '지역, 크기와 생활 방식에 맞춰 주택을 찾아보세요. 현재 공실 여부는 현지 팀에 확인하세요.',
 		),
 		'ja' => array(
 			'inspiry_SFOI_title' => '現地チームとダナンであなたに合う住まいを見つけましょう',
@@ -393,6 +400,11 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_cta_contact_btn_two_title' => '物件を見る',
 			'inspiry_home_properties_title_2' => 'ダナンの賃貸アパートを探す',
 			'inspiry_home_properties_desc_2' => 'ダナン各地のアパートを比較できます。内見や支払いの前に、正確な部屋、現在の家賃、契約条件をご確認ください。',
+			'inspiry_home_properties_title' => 'ダナンの賃貸住宅を探す',
+			'inspiry_home_properties_desc' => 'エリア、広さ、暮らし方から住宅を探せます。空室状況は現地チームにご確認ください。',
+			'inspiry_home_news_sub_title' => '現地のように暮らす',
+			'inspiry_home_news_title' => 'ダナンガイド',
+			'inspiry_home_news_desc' => 'エリア、食、旅行、日々の暮らしに役立つダナン情報をご紹介します。',
 		),
 		'ru' => array(
 			'inspiry_SFOI_title' => 'Найдите подходящее жильё в Дананге с помощью местной команды',
@@ -407,6 +419,11 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_cta_contact_btn_two_title' => 'Смотреть объекты',
 			'inspiry_home_properties_title_2' => 'Квартиры в аренду в Дананге',
 			'inspiry_home_properties_desc_2' => 'Сравните квартиры по всему Данангу. Перед просмотром или оплатой уточните точный объект, актуальную цену и условия аренды.',
+			'inspiry_home_properties_title' => 'Дома в аренду в Дананге',
+			'inspiry_home_properties_desc' => 'Выбирайте по району, площади и образу жизни. Актуальное наличие уточняйте у нашей местной команды.',
+			'inspiry_home_news_sub_title' => 'Живите как местные',
+			'inspiry_home_news_title' => 'Гид по Данангу',
+			'inspiry_home_news_desc' => 'Практические материалы о районах, еде, путешествиях и повседневной жизни в Дананге.',
 		),
 		'zh' => array(
 			'inspiry_SFOI_title' => '在本地团队帮助下，找到您在岘港的理想住所',
@@ -421,6 +438,11 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_cta_contact_btn_two_title' => '浏览房源',
 			'inspiry_home_properties_title_2' => '探索岘港出租公寓',
 			'inspiry_home_properties_desc_2' => '比较岘港各地的公寓。安排看房或付款前，请确认具体房源、当前租金和租赁条款。',
+			'inspiry_home_properties_title' => '探索岘港出租房屋',
+			'inspiry_home_properties_desc' => '按区域、面积和生活方式浏览房源。请与本地团队确认当前空置情况。',
+			'inspiry_home_news_sub_title' => '像本地人一样生活',
+			'inspiry_home_news_title' => '岘港指南',
+			'inspiry_home_news_desc' => '提供有关区域、美食、旅行和岘港日常生活的实用指南。',
 		),
 	);
 	$language = pll_current_language();
