@@ -111,6 +111,58 @@ function hrd_keep_translated_archive_canonical( $canonical ) {
 }
 add_filter( 'rank_math/frontend/canonical', 'hrd_keep_translated_archive_canonical', 20 );
 
+/** Give the property archive an explicit search role and self-canonical. */
+function hrd_property_archive_title( $title ) {
+	if ( is_admin() || ! is_post_type_archive( 'property' ) ) {
+		return $title;
+	}
+
+	return 'Properties for Rent in Da Nang | Houses, Apartments & Villas';
+}
+add_filter( 'rank_math/frontend/title', 'hrd_property_archive_title', 40 );
+
+function hrd_property_archive_description( $description ) {
+	if ( is_admin() || ! is_post_type_archive( 'property' ) || trim( (string) $description ) ) {
+		return $description;
+	}
+
+	return 'Browse current houses, apartments and villas for rent in Da Nang. Filter by property type, area, bedrooms and budget, then contact our local team to confirm availability.';
+}
+add_filter( 'rank_math/frontend/description', 'hrd_property_archive_description', 40 );
+
+function hrd_property_archive_canonical( $canonical ) {
+	if ( is_admin() || ! is_post_type_archive( 'property' ) ) {
+		return $canonical;
+	}
+
+	return trailingslashit( get_post_type_archive_link( 'property' ) );
+}
+add_filter( 'rank_math/frontend/canonical', 'hrd_property_archive_canonical', 40 );
+
+/** Support the site's lightweight SEO plugin as well as Rank Math. */
+function hrd_property_archive_document_title( $parts ) {
+	if ( is_admin() || ! is_post_type_archive( 'property' ) ) {
+		return $parts;
+	}
+
+	$parts['title'] = 'Properties for Rent in Da Nang | Houses, Apartments & Villas';
+	unset( $parts['site'], $parts['tagline'] );
+	return $parts;
+}
+add_filter( 'document_title_parts', 'hrd_property_archive_document_title', 40 );
+
+function hrd_property_archive_head_tags() {
+	if ( is_admin() || ! is_post_type_archive( 'property' ) ) {
+		return;
+	}
+
+	$canonical = trailingslashit( get_post_type_archive_link( 'property' ) );
+	echo '<meta name="description" content="' . esc_attr( hrd_property_archive_description( '' ) ) . '">' . "\n";
+	echo '<meta name="robots" content="index, follow, max-image-preview:large">' . "\n";
+	echo '<link rel="canonical" href="' . esc_url( $canonical ) . '">' . "\n";
+}
+add_action( 'wp_head', 'hrd_property_archive_head_tags', 6 );
+
 /** Identify the six public language-root homepages without relying on DB flags. */
 function hrd_is_language_home_request() {
 	$path = wp_parse_url( wp_unslash( $_SERVER['REQUEST_URI'] ?? '/' ), PHP_URL_PATH );
