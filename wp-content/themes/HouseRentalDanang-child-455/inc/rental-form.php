@@ -1,7 +1,7 @@
 <?php
 /** Native RealHomes rental form enhancements for the requirements page. */
 function hrd_is_rental_form_page() {
-	return is_page( array( 8743, 24276, 24277, 25182, 25183, 25184 ) );
+	return is_page( array( 8743, 24276, 24277 ) );
 }
 
 function hrd_rental_form_template( $template ) {
