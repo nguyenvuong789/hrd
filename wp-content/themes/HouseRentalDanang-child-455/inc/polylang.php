@@ -368,6 +368,7 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 		),
 		'ko' => array(
 			'inspiry_SFOI_title'                 => '다낭 현지인의 도움으로 나에게 맞는 집을 찾아보세요',
+			'inspiry_SFOI_description'           => '다낭의 주택, 아파트와 빌라를 둘러보세요. 지역, 예산과 입주일을 보내주시면 현지 팀이 공실과 임대 조건을 확인해 드립니다.',
 			'inspiry_home_properties_title'      => '다낭 임대 주택 둘러보기',
 			'inspiry_home_properties_title_2'    => '다낭 임대 아파트 둘러보기',
 			'inspiry_featured_prop_sub_title'     => '추천',
@@ -376,6 +377,7 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_home_features_title'         => '현지의 도움을 받으면 집 찾기가 더 쉬워집니다',
 			'inspiry_home_features_sub_title'     => '실제 임차인 후기',
 			'inspiry_home_partners_desc'          => '다낭 생활에 빠르게 적응할 수 있도록 돕는 신뢰할 수 있는 현지 네트워크입니다.',
+			'inspiry_home_partners_sub_title'    => '현지 파트너',
 			'inspiry_home_partners_title'         => '저희가 신뢰하는 파트너',
 			'inspiry_home_cta_contact_title'      => '원하는 집의 조건을 알려주세요',
 			'inspiry_home_cta_contact_desc'       => '희망 지역, 예산, 입주일과 필수 조건을 보내주세요. 선택지를 좁히고 현재 정보를 확인해 드립니다.',
@@ -389,6 +391,7 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 		),
 		'ja' => array(
 			'inspiry_SFOI_title' => '現地チームとダナンであなたに合う住まいを見つけましょう',
+			'inspiry_SFOI_description' => 'ダナン各地の住宅、アパート、ヴィラをご覧ください。エリア、予算、入居日をお知らせいただければ、現地チームが空室と契約条件を確認します。',
 			'inspiry_home_features_title' => '現地チームと住まいを探した入居者の声',
 			'inspiry_home_features_sub_title' => '入居者の体験',
 			'inspiry_home_partners_sub_title' => 'ローカルネットワーク',
@@ -408,6 +411,7 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 		),
 		'ru' => array(
 			'inspiry_SFOI_title' => 'Найдите подходящее жильё в Дананге с помощью местной команды',
+			'inspiry_SFOI_description' => 'Смотрите дома, квартиры и виллы в Дананге. Укажите район, бюджет и дату въезда, чтобы местная команда проверила наличие и условия аренды.',
 			'inspiry_home_features_title' => 'Что говорят арендаторы о нашей местной команде',
 			'inspiry_home_features_sub_title' => 'Опыт арендаторов',
 			'inspiry_home_partners_sub_title' => 'Местная сеть',
@@ -427,6 +431,7 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 		),
 		'zh' => array(
 			'inspiry_SFOI_title' => '在本地团队帮助下，找到您在岘港的理想住所',
+			'inspiry_SFOI_description' => '浏览岘港各地的房屋、公寓和别墅。告诉我们区域、预算和入住日期，本地团队会确认房源状态和租赁条款。',
 			'inspiry_home_features_title' => '租客如何评价我们的本地团队',
 			'inspiry_home_features_sub_title' => '租客体验',
 			'inspiry_home_partners_sub_title' => '本地网络',
