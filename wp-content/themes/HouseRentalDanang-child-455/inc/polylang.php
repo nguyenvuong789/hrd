@@ -1,6 +1,18 @@
 <?php
+function hrd_is_localized_homepage() {
+	if ( is_front_page() ) {
+		return true;
+	}
+	if ( ! is_page() || ! function_exists( 'pll_get_post' ) ) {
+		return false;
+	}
+	$front_id = (int) get_option( 'page_on_front' );
+	$lang     = function_exists( 'pll_current_language' ) ? pll_current_language( 'slug' ) : '';
+	return $front_id && $lang && (int) pll_get_post( $front_id, $lang ) === (int) get_queried_object_id();
+}
+
 function hrd_is_property_ui_context() {
-	return is_front_page() || is_singular( 'property' ) || is_post_type_archive( 'property' ) || is_tax( get_object_taxonomies( 'property' ) );
+	return hrd_is_localized_homepage() || is_singular( 'property' ) || is_post_type_archive( 'property' ) || is_tax( get_object_taxonomies( 'property' ) );
 }
 
 /** Localize shared property taxonomy labels without changing stored terms. */
@@ -306,7 +318,7 @@ foreach ( $hrd_property_label_options as $hrd_property_label_option ) {
 }
 
 function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $single ) {
-	if ( is_admin() || ! is_front_page() || ! function_exists( 'pll_current_language' ) ) {
+	if ( is_admin() || ! hrd_is_localized_homepage() || ! function_exists( 'pll_current_language' ) ) {
 		return $value;
 	}
 
@@ -363,6 +375,42 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_home_news_sub_title'         => '현지인처럼 즐기기',
 			'inspiry_home_news_title'             => '다낭 생활 가이드',
 			'inspiry_home_news_desc'              => '다낭의 지역, 음식, 여행과 일상생활에 관한 실용적인 정보를 확인하세요.',
+		),
+		'ja' => array(
+			'inspiry_SFOI_title' => '現地チームとダナンであなたに合う住まいを見つけましょう',
+			'inspiry_home_features_title' => '現地チームと住まいを探した入居者の声',
+			'inspiry_home_features_sub_title' => '入居者の体験',
+			'inspiry_home_partners_sub_title' => 'ローカルネットワーク',
+			'inspiry_home_partners_title' => '信頼できるパートナーとサービス',
+			'inspiry_home_partners_desc' => 'ダナンでの暮らしに役立つ、信頼できる現地のサービスと事業者をご紹介します。利用条件と営業状況は各事業者へご確認ください。',
+			'inspiry_home_cta_contact_title' => 'ご希望をお聞かせください',
+			'inspiry_home_cta_contact_desc' => '希望エリア、予算、入居日、必須条件をお知らせください。選択肢を絞り、最新情報を確認します。',
+			'inspiry_cta_contact_btn_one_title' => '簡単フォーム',
+			'inspiry_cta_contact_btn_two_title' => '物件を見る',
+		),
+		'ru' => array(
+			'inspiry_SFOI_title' => 'Найдите подходящее жильё в Дананге с помощью местной команды',
+			'inspiry_home_features_title' => 'Что говорят арендаторы о нашей местной команде',
+			'inspiry_home_features_sub_title' => 'Опыт арендаторов',
+			'inspiry_home_partners_sub_title' => 'Местная сеть',
+			'inspiry_home_partners_title' => 'Проверенные партнёры и услуги',
+			'inspiry_home_partners_desc' => 'Полезные местные сервисы и компании, которым мы доверяем. Уточняйте актуальные условия и доступность напрямую у каждого поставщика.',
+			'inspiry_home_cta_contact_title' => 'Расскажите, что вы ищете',
+			'inspiry_home_cta_contact_desc' => 'Укажите район, бюджет, дату заезда и важные требования. Мы сузим выбор и проверим актуальные детали.',
+			'inspiry_cta_contact_btn_one_title' => 'Быстрая форма',
+			'inspiry_cta_contact_btn_two_title' => 'Смотреть объекты',
+		),
+		'zh' => array(
+			'inspiry_SFOI_title' => '在本地团队帮助下，找到您在岘港的理想住所',
+			'inspiry_home_features_title' => '租客如何评价我们的本地团队',
+			'inspiry_home_features_sub_title' => '租客体验',
+			'inspiry_home_partners_sub_title' => '本地网络',
+			'inspiry_home_partners_title' => '我们信任的商家与服务',
+			'inspiry_home_partners_desc' => '为新来者适应岘港生活提供帮助的可靠本地网络。服务时间和条款请直接向各商家确认。',
+			'inspiry_home_cta_contact_title' => '告诉我们您的需求',
+			'inspiry_home_cta_contact_desc' => '告诉我们偏好的区域、预算、入住日期和必要条件。我们会帮您缩小选择范围并确认最新信息。',
+			'inspiry_cta_contact_btn_one_title' => '快速表单',
+			'inspiry_cta_contact_btn_two_title' => '浏览房源',
 		),
 	);
 	$language = pll_current_language();

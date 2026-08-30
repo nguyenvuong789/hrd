@@ -9,6 +9,33 @@ function hrd_get_current_language() {
 	return function_exists( 'pll_current_language' ) ? pll_current_language() : 'en';
 }
 
+/** Localize shared footer widget labels that are stored outside page content. */
+function hrd_translate_footer_widget_labels( $translation, $text, $domain ) {
+	if ( is_admin() || 'Contact Us' !== $text ) {
+		return $translation;
+	}
+	$labels = array(
+		'vi' => 'Liên hệ',
+		'ko' => '문의하기',
+		'ja' => 'お問い合わせ',
+		'ru' => 'Контакты',
+		'zh' => '联系我们',
+	);
+	$language = hrd_get_current_language();
+	return $labels[ $language ] ?? $translation;
+}
+add_filter( 'gettext', 'hrd_translate_footer_widget_labels', 25, 3 );
+
+function hrd_translate_footer_widget_title( $title ) {
+	if ( 'Contact Us' !== trim( wp_strip_all_tags( $title ) ) ) {
+		return $title;
+	}
+	$labels = array( 'vi' => 'Liên hệ', 'ko' => '문의하기', 'ja' => 'お問い合わせ', 'ru' => 'Контакты', 'zh' => '联系我们' );
+	$language = hrd_get_current_language();
+	return $labels[ $language ] ?? $title;
+}
+add_filter( 'widget_title', 'hrd_translate_footer_widget_title', 25 );
+
 /** Check whether a menu filter is running for either public navigation menu. */
 function hrd_is_navigation_menu( $args ) {
 	return isset( $args->theme_location ) && in_array( $args->theme_location, array( 'main-menu', 'responsive-menu' ), true );
@@ -360,6 +387,24 @@ function hrd_footer_guide_links_shortcode() {
 				'음식과 레스토랑'   => home_url( '/best-places-to-eat-in-danang/' ),
 				'다낭에서 호이안'   => home_url( '/travel-from-da-nang-to-hoi-an/' ),
 				'코워킹 스페이스'   => home_url( '/coworking-spaces-in-da-nang/' ),
+			),
+		),
+		'ja' => array(
+			'title' => 'ダナンを楽しむ',
+			'links' => array(
+				'ダナンガイド' => home_url( '/ja/' ), 'おすすめ観光スポット' => home_url( '/best-places-to-visit-in-da-nang/' ), '料理とレストラン' => home_url( '/best-places-to-eat-in-danang/' ), 'ダナンからホイアンへ' => home_url( '/travel-from-da-nang-to-hoi-an/' ), 'コワーキングスペース' => home_url( '/coworking-spaces-in-da-nang/' ),
+			),
+		),
+		'ru' => array(
+			'title' => 'Откройте Дананг',
+			'links' => array(
+				'Гид по Данангу' => home_url( '/ru/' ), 'Лучшие места для посещения' => home_url( '/best-places-to-visit-in-da-nang/' ), 'Еда и рестораны' => home_url( '/best-places-to-eat-in-danang/' ), 'Из Дананга в Хойан' => home_url( '/travel-from-da-nang-to-hoi-an/' ), 'Коворкинги' => home_url( '/coworking-spaces-in-da-nang/' ),
+			),
+		),
+		'zh' => array(
+			'title' => '探索岘港',
+			'links' => array(
+				'岘港指南' => home_url( '/zh/' ), '值得游览的地方' => home_url( '/best-places-to-visit-in-da-nang/' ), '美食与餐厅' => home_url( '/best-places-to-eat-in-danang/' ), '从岘港到会安' => home_url( '/travel-from-da-nang-to-hoi-an/' ), '联合办公空间' => home_url( '/coworking-spaces-in-da-nang/' ),
 			),
 		),
 	);
