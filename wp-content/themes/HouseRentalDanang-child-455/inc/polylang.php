@@ -335,6 +335,8 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_home_cta_contact_desc'       => 'Share your preferred area, monthly budget, move-in date, lease length and must-haves. We will use these details to narrow the search and confirm which options are currently available.',
 			'inspiry_cta_contact_btn_one_title'   => 'Send requirements',
 			'inspiry_cta_contact_btn_two_title'   => 'Browse listings',
+			'inspiry_home_properties_title_2'      => 'Explore Apartments for Rent in Da Nang',
+			'inspiry_home_properties_desc_2'       => 'Compare apartments across Da Nang. Please confirm the exact unit, current rent and lease terms before arranging a viewing or making a payment.',
 		),
 		'vi' => array(
 			'inspiry_SFOI_title'                 => 'Tìm chỗ ở tại Đà Nẵng với sự hỗ trợ của người địa phương',
@@ -356,6 +358,7 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_home_news_sub_title'         => 'Sống như người địa phương',
 			'inspiry_home_news_title'             => 'Cẩm nang Đà Nẵng',
 			'inspiry_home_news_desc'              => 'Thông tin thực tế về khu vực, ẩm thực, du lịch và cuộc sống hằng ngày tại Đà Nẵng.',
+			'inspiry_home_properties_desc_2'       => 'So sánh các căn hộ trên toàn Đà Nẵng. Vui lòng xác nhận đúng căn, giá thuê hiện tại và điều khoản trước khi xem nhà hoặc thanh toán.',
 		),
 		'ko' => array(
 			'inspiry_SFOI_title'                 => '다낭 현지인의 도움으로 나에게 맞는 집을 찾아보세요',
@@ -375,6 +378,7 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_home_news_sub_title'         => '현지인처럼 즐기기',
 			'inspiry_home_news_title'             => '다낭 생활 가이드',
 			'inspiry_home_news_desc'              => '다낭의 지역, 음식, 여행과 일상생활에 관한 실용적인 정보를 확인하세요.',
+			'inspiry_home_properties_desc_2'       => '다낭 전역의 아파트를 비교해 보세요. 방문이나 결제 전에 정확한 호수, 현재 임대료와 계약 조건을 확인하세요.',
 		),
 		'ja' => array(
 			'inspiry_SFOI_title' => '現地チームとダナンであなたに合う住まいを見つけましょう',
@@ -387,6 +391,8 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_home_cta_contact_desc' => '希望エリア、予算、入居日、必須条件をお知らせください。選択肢を絞り、最新情報を確認します。',
 			'inspiry_cta_contact_btn_one_title' => '簡単フォーム',
 			'inspiry_cta_contact_btn_two_title' => '物件を見る',
+			'inspiry_home_properties_title_2' => 'ダナンの賃貸アパートを探す',
+			'inspiry_home_properties_desc_2' => 'ダナン各地のアパートを比較できます。内見や支払いの前に、正確な部屋、現在の家賃、契約条件をご確認ください。',
 		),
 		'ru' => array(
 			'inspiry_SFOI_title' => 'Найдите подходящее жильё в Дананге с помощью местной команды',
@@ -399,6 +405,8 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_home_cta_contact_desc' => 'Укажите район, бюджет, дату заезда и важные требования. Мы сузим выбор и проверим актуальные детали.',
 			'inspiry_cta_contact_btn_one_title' => 'Быстрая форма',
 			'inspiry_cta_contact_btn_two_title' => 'Смотреть объекты',
+			'inspiry_home_properties_title_2' => 'Квартиры в аренду в Дананге',
+			'inspiry_home_properties_desc_2' => 'Сравните квартиры по всему Данангу. Перед просмотром или оплатой уточните точный объект, актуальную цену и условия аренды.',
 		),
 		'zh' => array(
 			'inspiry_SFOI_title' => '在本地团队帮助下，找到您在岘港的理想住所',
@@ -411,6 +419,8 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_home_cta_contact_desc' => '告诉我们偏好的区域、预算、入住日期和必要条件。我们会帮您缩小选择范围并确认最新信息。',
 			'inspiry_cta_contact_btn_one_title' => '快速表单',
 			'inspiry_cta_contact_btn_two_title' => '浏览房源',
+			'inspiry_home_properties_title_2' => '探索岘港出租公寓',
+			'inspiry_home_properties_desc_2' => '比较岘港各地的公寓。安排看房或付款前，请确认具体房源、当前租金和租赁条款。',
 		),
 	);
 	$language = pll_current_language();
@@ -418,3 +428,13 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 	return $headings[ $language ][ $meta_key ] ?? $value;
 }
 add_filter( 'get_post_metadata', 'hrd_translate_home_section_metadata', 20, 4 );
+
+function hrd_translate_home_view_more( $translation, $text, $domain ) {
+	if ( is_admin() || 'View more' !== $text ) {
+		return $translation;
+	}
+	$labels = array( 'vi' => 'Xem thêm', 'ko' => '더 보기', 'ja' => 'もっと見る', 'ru' => 'Смотреть ещё', 'zh' => '查看更多' );
+	$language = hrd_get_current_language();
+	return $labels[ $language ] ?? $translation;
+}
+add_filter( 'gettext', 'hrd_translate_home_view_more', 25, 3 );
