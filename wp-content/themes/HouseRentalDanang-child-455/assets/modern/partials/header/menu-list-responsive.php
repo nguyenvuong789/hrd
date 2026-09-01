@@ -1,8 +1,8 @@
-<div class="rh_menu__hamburger hamburger hamburger--squeeze">
+<button type="button" class="rh_menu__hamburger hamburger hamburger--squeeze" aria-controls="menu-main-menu" aria-expanded="false" aria-label="Open navigation menu">
 	<div class="hamburger-box">
 		<div class="hamburger-inner"></div>
 	</div>
-</div>
+</button>
 <?php
 // Reponsive Menu.
 if ( has_nav_menu( 'responsive-menu' ) ) :

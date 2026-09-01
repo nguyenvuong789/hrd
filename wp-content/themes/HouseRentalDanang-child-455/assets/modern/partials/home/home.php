@@ -8,6 +8,9 @@
 
 get_header();
 
+echo '<a class="skip-link screen-reader-text" href="#main-content">Skip to content</a>';
+echo '<main id="main-content" class="hrd-home-main">';
+
 $theme_homepage_module = get_post_meta( get_the_ID(), 'theme_homepage_module', true );
 
 switch ( $theme_homepage_module ) {
@@ -98,5 +101,7 @@ if ( ! empty( $home_sections ) && is_array( $home_sections ) ) {
 if ( function_exists( 'hrd_home_faq_markup' ) ) {
 	echo hrd_home_faq_markup(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
+
+echo '</main>';
 
 get_footer();

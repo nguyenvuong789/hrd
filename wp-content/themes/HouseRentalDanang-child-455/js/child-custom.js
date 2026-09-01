@@ -5,27 +5,27 @@
 	var interfaceLabels = {
 		en: {
 			openMenu: 'Open navigation menu', closeMenu: 'Close navigation menu',
-			saveProperty: 'Save property', compareProperty: 'Compare property'
+				saveProperty: 'Save property', compareProperty: 'Compare property', moreOptions: 'Show more search options'
 		},
 		vi: {
 			openMenu: 'Mở menu điều hướng', closeMenu: 'Đóng menu điều hướng',
-			saveProperty: 'Lưu bất động sản', compareProperty: 'So sánh bất động sản'
+				saveProperty: 'Lưu bất động sản', compareProperty: 'So sánh bất động sản', moreOptions: 'Hiện thêm tùy chọn tìm kiếm'
 		},
 		ko: {
 			openMenu: '탐색 메뉴 열기', closeMenu: '탐색 메뉴 닫기',
-			saveProperty: '매물 저장', compareProperty: '매물 비교'
+				saveProperty: '매물 저장', compareProperty: '매물 비교', moreOptions: '검색 옵션 더 보기'
 		},
 		ja: {
 			openMenu: 'ナビゲーションメニューを開く', closeMenu: 'ナビゲーションメニューを閉じる',
-			saveProperty: '物件を保存', compareProperty: '物件を比較'
+				saveProperty: '物件を保存', compareProperty: '物件を比較', moreOptions: '検索オプションを表示'
 		},
 		ru: {
 			openMenu: 'Открыть меню навигации', closeMenu: 'Закрыть меню навигации',
-			saveProperty: 'Сохранить объект', compareProperty: 'Сравнить объект'
+				saveProperty: 'Сохранить объект', compareProperty: 'Сравнить объект', moreOptions: 'Показать дополнительные параметры поиска'
 		},
 		zh: {
 			openMenu: '打开导航菜单', closeMenu: '关闭导航菜单',
-			saveProperty: '收藏房源', compareProperty: '比较房源'
+				saveProperty: '收藏房源', compareProperty: '比较房源', moreOptions: '显示更多搜索选项'
 		}
 	};
 
@@ -47,8 +47,8 @@
 		var activeLabels = interfaceLabels[language] || interfaceLabels.en;
 		var hamburger = document.querySelector('.rh_temp_header_responsive_view .rh_menu__hamburger');
 
-		if (hamburger) {
-			var responsiveMenu = document.querySelector('.rh_temp_header_responsive_view .rh_menu__responsive');
+			if (hamburger) {
+				var responsiveMenu = document.querySelector('.rh_temp_header_responsive_view .rh_menu__responsive');
 			var languageDetails = responsiveMenu ? responsiveMenu.querySelector('.hrd-language-switcher details') : null;
 			var closeButton = null;
 
@@ -78,8 +78,10 @@
 				hamburger.setAttribute('aria-label', isOpen ? activeLabels.closeMenu : activeLabels.openMenu);
 			}
 
-			hamburger.setAttribute('role', 'button');
-			hamburger.setAttribute('tabindex', '0');
+				hamburger.setAttribute('role', 'button');
+				if (responsiveMenu && responsiveMenu.id) {
+					hamburger.setAttribute('aria-controls', responsiveMenu.id);
+				}
 			hamburger.setAttribute('aria-label', activeLabels.openMenu);
 			hamburger.setAttribute('aria-expanded', hamburger.classList.contains('is-active') ? 'true' : 'false');
 			activateWithKeyboard(hamburger);
@@ -95,6 +97,34 @@
 						hamburger.focus();
 					}
 				});
+			}
+
+			document.querySelectorAll('.rh_mod_sfoi_advanced_expander').forEach(function (expander) {
+				if (expander.tagName.toLowerCase() !== 'button') {
+					var button = document.createElement('button');
+					button.type = 'button';
+					button.className = expander.className;
+					button.innerHTML = expander.innerHTML;
+					expander.replaceWith(button);
+					expander = button;
+				}
+				expander.setAttribute('aria-label', activeLabels.moreOptions);
+				expander.setAttribute('aria-expanded', expander.classList.contains('rh_sfoi_is_open') ? 'true' : 'false');
+				activateWithKeyboard(expander);
+				expander.addEventListener('click', function () {
+					window.setTimeout(function () {
+						expander.setAttribute('aria-expanded', expander.classList.contains('rh_sfoi_is_open') ? 'true' : 'false');
+					}, 0);
+				});
+			});
+
+			var locationField = document.querySelector('.rh_mod_sfoi_wrapper select#location');
+			if (locationField && !locationField.options.length) {
+				var fallbackOption = document.createElement('option');
+				fallbackOption.value = 'any';
+				fallbackOption.textContent = 'Any';
+				fallbackOption.selected = true;
+				locationField.appendChild(fallbackOption);
 			}
 
 			if (languageDetails && responsiveMenu) {
@@ -117,14 +147,35 @@
 			syncMobileMenuState();
 		}
 
+		function normalizeActionControl(control) {
+			if (control.tagName.toLowerCase() === 'a') {
+				var button = document.createElement('button');
+				button.type = 'button';
+				button.className = control.className;
+				Array.prototype.forEach.call(control.attributes, function (attribute) {
+					if (!['class', 'href'].includes(attribute.name)) {
+						button.setAttribute(attribute.name, attribute.value);
+					}
+				});
+				button.innerHTML = control.innerHTML;
+				control.replaceWith(button);
+				return button;
+			}
+			return control;
+		}
+
 		document.querySelectorAll('.rh_prop_card .favorite').forEach(function (control) {
+			control = normalizeActionControl(control);
 			control.setAttribute('aria-label', activeLabels.saveProperty);
 			control.setAttribute('title', activeLabels.saveProperty);
+			activateWithKeyboard(control);
 		});
 
 		document.querySelectorAll('.rh_prop_card .rh_trigger_compare').forEach(function (control) {
+			control = normalizeActionControl(control);
 			control.setAttribute('aria-label', activeLabels.compareProperty);
 			control.setAttribute('title', activeLabels.compareProperty);
+			activateWithKeyboard(control);
 		});
 
 		function compactPropertyMetaLabels() {

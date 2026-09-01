@@ -1125,6 +1125,11 @@
 		color: #0b455e;
 	}
 
+	.rh_mod_sfoi_wrapper .rh_mod_sfoi_advanced_expander:focus-visible {
+		outline: 3px solid #fff;
+		outline-offset: 3px;
+	}
+
 	.rh_mod_sfoi_wrapper .bootstrap-select.open .dropdown-menu.inner .check-mark {
 		color: #58ad37;
 	}
