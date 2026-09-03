@@ -284,19 +284,28 @@ function hrd_footer_listing_links_shortcode() {
 			),
 		),
 		'ja' => array(
-			'Homepage' => 'ホーム', 'Houses' => '一戸建て', 'Apartments' => 'アパート', 'Villas' => 'ヴィラ',
-			'FAQs' => 'よくある質問', 'About Us' => '私たちについて', 'Contact' => 'お問い合わせ',
-			'Danang Guide' => 'ダナンガイド', 'Other Useful Info' => 'その他のお役立ち情報',
+			'title' => 'ダナンの賃貸物件',
+			'links' => array(
+				'一戸建て' => home_url( '/ja/houses/' ),
+				'アパート' => home_url( '/ja/apartments/' ),
+				'ヴィラ' => home_url( '/ja/villas/' ),
+			),
 		),
 		'ru' => array(
-			'Homepage' => 'Главная', 'Houses' => 'Дома', 'Apartments' => 'Квартиры', 'Villas' => 'Виллы',
-			'FAQs' => 'Вопросы', 'About Us' => 'О нас', 'Contact' => 'Контакты',
-			'Danang Guide' => 'Гид по Данангу', 'Other Useful Info' => 'Полезная информация',
+			'title' => 'Аренда в Дананге',
+			'links' => array(
+				'Дома' => home_url( '/ru/houses/' ),
+				'Квартиры' => home_url( '/ru/apartments/' ),
+				'Виллы' => home_url( '/ru/villas/' ),
+			),
 		),
 		'zh' => array(
-			'Homepage' => '首页', 'Houses' => '房屋', 'Apartments' => '公寓', 'Villas' => '别墅',
-			'FAQs' => '常见问题', 'About Us' => '关于我们', 'Contact' => '联系我们',
-			'Danang Guide' => '岘港指南', 'Other Useful Info' => '其他实用信息',
+			'title' => '岘港出租房源',
+			'links' => array(
+				'房屋' => home_url( '/zh/houses/' ),
+				'公寓' => home_url( '/zh/apartments/' ),
+				'别墅' => home_url( '/zh/villas/' ),
+			),
 		),
 	);
 

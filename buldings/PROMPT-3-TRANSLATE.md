@@ -14,12 +14,15 @@ Review record:
 Use review.md only to verify approval status. Do not translate, paraphrase or incorporate its notes, rejected wording or omitted claims. `content-en.json` is the sole source for translated content.
 
 Translation is allowed only when each of these exact lowercase lines appears once in review.md:
+- Local English loaded: yes
+- Local English desktop reviewed: yes
+- Local English mobile reviewed: yes
 - Fact-safety approved: yes
 - Renter-UX approved: yes
 - English approved: yes
 
 If a line is missing, duplicated or not exactly `yes`, stop and return exactly:
-Translation blocked: approve English fact safety and renter UX before creating locale files.
+Translation blocked: load and approve the rendered Local English page before creating locale files.
 
 If approved, translate the supplied English package into Vietnamese (vi), Korean (ko), Japanese (ja), Russian (ru) and Simplified Chinese (zh).
 

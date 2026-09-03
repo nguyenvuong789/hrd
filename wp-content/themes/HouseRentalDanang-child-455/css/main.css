@@ -1,7 +1,8 @@
 /* Ordered CSS modules. Keep this order to preserve the existing cascade. */
-@import url('01-base.css?ver=20260829-type-v1');
+@import url('01-base.css?ver=20260831-font-v2');
 @import url('02-blog.css');
 @import url('03-content.css');
 @import url('04-archive.css?ver=20260829-card-v6');
 @import url('05-property.css?ver=20260829-mobile-v2');
 @import url('06-components.css?ver=20260829-contact-v7');
+@import url('building-page.css?ver=20260902-map-v2');

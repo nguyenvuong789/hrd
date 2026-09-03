@@ -163,7 +163,6 @@ function hrd_get_location_hub( $district, $language = '' ) {
 
 		return null;
 	}
-
 	$hubs[ $cache_key ] = array(
 		'key'       => $district,
 		'term_slug' => $registry[ $district ]['term_slug'],
@@ -254,8 +253,8 @@ function hrd_get_location_hub_district_copy( $district, $language ) {
 				'intro_fit_title' => 'Which renters does Ngu Hanh Son suit?',
 				'intro_fit' => 'Ngu Hanh Son gives renters more choice between beach-side apartment living, the cafes and streets around My An and An Thuong, and larger homes farther from the coast. It can suit beach-focused renters, remote workers and families, but compare road access, parking, construction activity and the daily trip to central Da Nang before choosing a property.',
 				'section_label' => '%s for rent in Ngu Hanh Son',
-				'meta_title' => 'Property for Rent in Ngu Hanh Son, Da Nang | House Rental Danang',
-				'meta_desc' => 'Browse apartments, houses and villas for rent in Ngu Hanh Son, Da Nang, with current property details and local rental support.',
+				'meta_title' => 'Ngu Hanh Son Rentals | Apartments, Houses & Villas',
+				'meta_desc' => 'Looking near My An, An Thuong or the southern beaches? Compare Ngu Hanh Son apartments, houses and villas, then confirm current options before viewing.',
 			),
 			'vi' => array(
 				'page_title' => 'Bất động sản cho thuê tại Ngũ Hành Sơn, Đà Nẵng',
@@ -314,8 +313,8 @@ function hrd_get_location_hub_district_copy( $district, $language ) {
 				'intro_fit_title' => 'Which renters does Hai Chau suit?',
 				'intro_fit' => 'Hai Chau is the practical choice when work, schools, hospitals, markets and city services matter more than living beside the beach. Apartments can simplify central-city living, while houses may offer more space on quieter residential streets. Check traffic at your usual travel time, parking, noise and the exact river or bridge-side location before deciding.',
 				'section_label' => '%s for rent in Hai Chau',
-				'meta_title' => 'Property for Rent in Hai Chau, Da Nang | House Rental Danang',
-				'meta_desc' => 'Browse apartments, houses and villas for rent in Hai Chau, Da Nang, with current property details and local rental support.',
+				'meta_title' => 'Hai Chau Rentals | Apartments, Houses & Villas',
+				'meta_desc' => 'Need a central Da Nang home near offices, schools and the Han River? Compare Hai Chau apartments, houses and villas and request local viewing help.',
 			),
 			'vi' => array(
 				'page_title' => 'Bất động sản cho thuê tại Hải Châu, Đà Nẵng',
@@ -375,8 +374,62 @@ function hrd_get_location_hub_district_copy( $district, $language ) {
  * Listing cards remain separate so inventory can change without rewriting the guide.
  */
 function hrd_location_hub_long_content( $district, $language ) {
-	if ( 'en' !== hrd_sanitize_location_hub_language( $language ) ) {
-		return '';
+	$language = hrd_sanitize_location_hub_language( $language );
+	if ( 'en' !== $language ) {
+		$localized = array(
+			'vi' => array(
+				'son-tra' => '<div class="hrd-location-hub__editorial"><h2>Sống và thuê nhà ở Sơn Trà có gì khác?</h2><p>Sơn Trà phù hợp với người muốn gần biển Mỹ Khê, sông Hàn và các dịch vụ phía Đông Đà Nẵng. Cùng một quận nhưng căn hộ gần biển, nhà trong hẻm và khu ven sông có thể khác nhau rõ về tiếng ồn, chỗ để xe và thời gian di chuyển.</p><h2>Nên chọn căn hộ, nhà hay biệt thự?</h2><p>Căn hộ thường tiện cho người độc thân, cặp đôi hoặc người làm việc từ xa cần nội thất và ít bảo trì. Nhà phù hợp gia đình cần nhiều phòng, kho chứa hoặc lối đi riêng. Biệt thự đem lại sân vườn và không gian rộng hơn nhưng cần hỏi kỹ về hồ bơi, bảo trì, vệ sinh và phí dịch vụ.</p><h2>Checklist trước khi đặt cọc ở Sơn Trà</h2><ul><li>Xác nhận đúng căn, tầng, hướng cửa sổ, nội thất và chỗ đậu xe.</li><li>Hỏi rõ tiền điện, nước, internet, phí quản lý, vệ sinh và tiền cọc.</li><li>Kiểm tra tiếng ồn, công trình, thoát nước và đường đi vào tại giờ bạn thường di chuyển.</li><li>Ghi bằng văn bản trách nhiệm sửa chữa, thời hạn báo trước và đăng ký tạm trú.</li></ul><p>Nếu cần trung tâm hơn, hãy so sánh <a href="/vi/khuvuc/hai-chau/">nhà cho thuê Hải Châu</a>. Nếu muốn khu ven biển phía Nam, xem <a href="/vi/khuvuc/ngu-hanh-son/">nhà cho thuê Ngũ Hành Sơn</a>.</p></div>',
+				'ngu-hanh-son' => '<div class="hrd-location-hub__editorial"><h2>Ngũ Hành Sơn phù hợp với ai?</h2><p>Ngũ Hành Sơn trải dài từ Mỹ An, An Thượng đến các khu dân cư và khu nghỉ dưỡng phía Nam. Người thuê nên so sánh cả tuyến đi làm, trường học, chợ, bãi đỗ xe và khoảng cách thực tế thay vì chỉ nhìn tên phường.</p><h2>Chọn loại nhà nào cho kế hoạch dài hạn?</h2><p>Căn hộ thuận tiện cho người muốn nhà có sẵn nội thất và ít việc bảo trì. Nhà riêng cho gia đình nhiều phòng hoặc cần không gian làm việc. Biệt thự và nhà phong cách nghỉ dưỡng có thêm sân, hồ bơi hoặc tiện ích chung nhưng thường phát sinh phí quản lý, vệ sinh và di chuyển.</p><h2>Cần hỏi gì trước khi ký hợp đồng?</h2><ul><li>Giá thuê đã gồm phí quản lý, internet, vệ sinh, tiện ích và chỗ đậu xe chưa?</li><li>Ai chịu trách nhiệm sửa máy lạnh, thiết bị, thấm dột và hư hỏng?</li><li>Hợp đồng có hỗ trợ đăng ký tạm trú và ghi rõ điều kiện hoàn cọc không?</li><li>Hãy đi thử tuyến từ nhà đến nơi làm việc hoặc bãi biển vào giờ cao điểm.</li></ul><p>So sánh thêm <a href="/vi/khuvuc/son-tra/">Sơn Trà</a> nếu ưu tiên phía Đông và biển, hoặc <a href="/vi/khuvuc/hai-chau/">Hải Châu</a> nếu cần trung tâm thành phố.</p></div>',
+				'hai-chau' => '<div class="hrd-location-hub__editorial"><h2>Thuê nhà ở Hải Châu: ưu tiên kết nối trung tâm</h2><p>Hải Châu phù hợp với người đi làm, gia đình và người cần gần trường học, bệnh viện, chợ, văn phòng và sông Hàn. Căn hộ ven sông, tuyến phố kinh doanh và hẻm dân cư có trải nghiệm khác nhau về tiếng ồn, chỗ đậu xe và lối vào.</p><h2>Căn hộ hay nhà riêng ở Hải Châu?</h2><p>Căn hộ thường có thang máy, bảo vệ và tiện ích quản lý. Nhà riêng cho nhiều phòng, kho chứa và sự riêng tư hơn nhưng cần hỏi kỹ về bảo trì, an ninh, ngập nước và chỗ để xe. Hãy xem đúng căn và kiểm tra đường đi vào ở giờ bạn thường về nhà.</p><h2>5 điểm cần xác nhận trước khi cọc</h2><ul><li>Phí điện, nước, internet, quản lý, gửi xe và vệ sinh.</li><li>Nội thất, thiết bị, tình trạng bàn giao và trách nhiệm sửa chữa.</li><li>Tiếng ồn đường phố, công trình gần nhà, thoát nước và áp lực nước.</li><li>Thời hạn hợp đồng, báo trước, hoàn cọc và đăng ký tạm trú.</li><li>Thời gian di chuyển thực tế đến nơi làm việc, trường học hoặc bệnh viện.</li></ul><p>Nếu muốn gần biển hơn, so sánh <a href="/vi/khuvuc/son-tra/">Sơn Trà</a> và <a href="/vi/khuvuc/ngu-hanh-son/">Ngũ Hành Sơn</a>.</p></div>',
+			),
+			'ko' => array(
+				'son-tra' => '<div class="hrd-location-hub__editorial"><h2>선짜에서 임대할 때 확인할 점</h2><p>선짜는 미케 해변, 한강과 다낭 동쪽 생활권을 원하는 임차인에게 잘 맞습니다. 해변 인근 아파트와 주거 골목의 소음, 주차, 통근 시간은 크게 다를 수 있으므로 정확한 주소를 확인하세요.</p><h2>아파트, 주택, 빌라 중 무엇이 맞을까요?</h2><p>아파트는 가구와 관리가 편해 1인, 커플, 원격 근무자에게 실용적입니다. 주택은 가족에게 더 많은 방과 수납을 제공합니다. 빌라는 정원이나 수영장이 있지만 관리비와 청소, 유지보수 조건을 함께 확인해야 합니다.</p><h2>계약 전 체크리스트</h2><ul><li>정확한 호수, 층, 가구, 주차와 입주일을 확인하세요.</li><li>전기, 수도, 인터넷, 관리비, 청소비와 보증금을 서면으로 받으세요.</li><li>소음, 공사, 배수와 골목 진입을 평소 이동 시간에 점검하세요.</li><li>수리 책임, 해지 통지와 임시거주 등록 조건을 확인하세요.</li></ul></div>',
+				'ngu-hanh-son' => '<div class="hrd-location-hub__editorial"><h2>응우한선은 어떤 임차인에게 맞나요?</h2><p>응우한선은 미안과 안트엉부터 남부 주거·리조트 지역까지 넓습니다. 지도상의 거리보다 직장, 학교, 해변과 마켓까지 실제 이동 시간과 주차를 비교하는 것이 중요합니다.</p><h2>장기 임대용 주택 선택</h2><p>아파트는 가구와 관리가 간편하고, 주택은 가족과 재택근무에 필요한 분리된 공간을 제공합니다. 빌라와 리조트형 주택은 공간과 공용시설이 좋지만 관리·청소·교통 비용이 추가될 수 있습니다.</p><h2>계약 전에 물어볼 질문</h2><ul><li>관리비, 인터넷, 청소, 주차가 월세에 포함되나요?</li><li>에어컨, 가전, 누수와 수리는 누가 담당하나요?</li><li>계약서와 보증금 반환 조건, 임시거주 등록이 명확한가요?</li></ul></div>',
+				'hai-chau' => '<div class="hrd-location-hub__editorial"><h2>하이쩌우 임대의 핵심은 도심 접근성입니다</h2><p>하이쩌우는 사무실, 학교, 병원, 시장과 한강에 가까운 도심 생활을 원하는 사람에게 적합합니다. 강변 타워와 상업 거리, 주거 골목은 소음과 주차 조건이 다르므로 현장을 확인하세요.</p><h2>아파트와 주택 비교</h2><p>아파트는 엘리베이터와 관리 서비스를 이용하기 쉽고, 주택은 더 많은 방과 수납, 사생활을 제공합니다. 주택을 볼 때는 골목 진입, 배수, 보안과 수리 책임을 함께 점검하세요.</p><h2>보증금 전에 확인할 항목</h2><ul><li>전기·수도·인터넷·관리비·주차비와 청소비.</li><li>가구, 가전, 인수 상태와 수리 담당자.</li><li>소음, 공사, 배수, 수압과 통근 경로.</li><li>계약 기간, 통지 기간, 보증금 반환과 임시거주 등록.</li></ul></div>',
+			),
+			'ja' => array(
+				'son-tra' => <<<'HTML'
+<div class="hrd-location-hub__editorial">
+<h2>ソンチャで暮らす：立地によって変わること</h2>
+<p>ソンチャはダナンの東側に位置するため、住まい選びは単にアパートメントか一戸建てかを決めるだけではありません。ビーチへの近さ、市内へのアクセス、日常生活に使えるスペースのどれをどの程度重視するかを考えることが大切です。ミーケービーチ近くの住まいなら、朝の散歩やビーチで過ごす時間を楽しみやすくなります。一方、内陸側の物件では、より広い空間、駐車のしやすさ、異なる騒音環境を得られる場合があります。</p>
+<p>上記の物件情報を使って間取りや設備を比較し、候補を絞り込む前に、必ず実際の通りを確認してください。同じ「ソンチャ」と紹介されている物件でも、道路の状況、建物、駐車方法、ビーチまでの距離によって、住み心地は大きく異なります。</p>
+<h2>まず確認すべき月額予算は？</h2>
+<p>最初の目安として、現在公開されている希望賃料を見ると、ソンチャではコンドミニアムが<strong>月1,460万ドン前後</strong>、一戸建てが<strong>月2,090万ドン前後</strong>です。ただし、これは契約済み賃料ではなく、あくまで参考となる希望価格です。家具付きかどうか、海の眺望、建物のサービス、寝室数、契約期間によって、金額は大きく変わります。</p>
+<p>6〜12か月の契約では、家賃以外に電気、水道、インターネット、駐車場、管理費、清掃費、保証金も見込んでください。2つの住まいを比較する前に、毎月かかる総費用を必ず書面で確認しましょう。</p>
+<h2>ソンチャのどのエリアを比較すべきですか？</h2>
+<h3>ビーチ沿いの通りと市街地の東端</h3>
+<p>ミーケービーチや、海岸沿いに集まるレストラン、カフェ、各種サービスへのアクセスを重視するなら、ビーチ沿いの通りから探し始めるのがおすすめです。このエリアでは、特にカップル、一人暮らしの方、庭付きの広さよりも建物内の設備を重視する方にとって、アパートメントが効率的な選択肢になります。ただし、交通量、建設工事、短期滞在者の多さは、通りや区画ごとに異なります。</p>
+<h3>地元の住宅街</h3>
+<p>海岸沿いの交通量が多い道路から離れると、プライバシー、収納、駐車のしやすさを重視しやすくなります。家族で暮らす方、ペットを飼っている方、仕事用と生活用のスペースを分けたい方には、一戸建てが適している場合があります。住所の地区名だけで判断せず、路地の幅、車の切り返しスペース、雨後の排水、日常の買い物や用事で使うルートを実際に確認してください。</p>
+<h2>ソンチャではアパートメント、一戸建て、ヴィラのどれを選ぶべきですか？</h2>
+<p>エレベーター、通勤・通学のしやすさ、管理の手間の少なさを最優先するなら、アパートメントを選びましょう。複数の寝室、専用玄関、十分な収納、柔軟に使える生活空間が必要なら、一戸建てが適しています。ヴィラは、庭、テラス、プールに価値を感じるかどうかで判断が変わります。魅力的な設備である一方、メンテナンスに関する確認事項が増え、利便性の高い通りから離れた場所になる可能性もあります。</p>
+<p>比較しやすくするために、内見したすべての物件で同じ項目を記録してください。使用可能床面積、寝室数、バスルーム数、家具、駐車場、管理費、光熱費、インターネット、ペット規定、メンテナンスの責任範囲、最短入居可能日などを確認しましょう。</p>
+<h2>ソンチャでの内見時に確認すべきこと</h2>
+<ul><li>普段移動する時間帯に、物件の入口までの最後の200〜300mを歩く、または車で通る。</li><li>掲載賃料とは別に毎月かかる費用と、賃料に含まれるサービスを確認する。</li><li>ドアと窓を閉めた状態で、窓の向き、換気、水圧、携帯電話の電波、騒音を確認する。</li><li>駐車場、出入り可能な時間、来客規則、ペット、修理、引き渡し時の備品リストを確認する。</li><li>保証金を支払う前に、一時滞在登録をどのように行うのか、オーナーまたは管理会社に確認する。</li></ul>
+<h2>ソンチャの長期賃貸の相場はいくらですか？</h2>
+<p>公開されている物件情報は希望賃料を示すものであり、実際に契約された賃料ではありません。家具付きアパートメント、サービスアパートメント、一戸建て、ヴィラは、寝室数、床面積、契約期間、含まれるサービスごとに分けて比較してください。</p>
+<table><thead><tr><th>区分</th><th>比較前に確認すること</th></tr></thead><tbody><tr><td>ワンルーム / 1ベッドルーム</td><td>一般住宅かサービスアパートメントか、光熱費、清掃、駐車場。</td></tr><tr><td>2ベッドルーム</td><td>実際に独立した2つ目の寝室があるか、床面積、バスルーム数、管理費。</td></tr><tr><td>3ベッドルーム以上</td><td>一戸建てかアパートメントか、収納、エレベーター、キッチン、メンテナンス。</td></tr><tr><td>一戸建て / ヴィラ</td><td>路地へのアクセス、専用駐車場、プール・庭の維持費、修理費。</td></tr></tbody></table>
+<h2>ソンチャと周辺エリアの比較</h2>
+<table><thead><tr><th>エリア</th><th>適している方</th><th>考慮すべき点</th></tr></thead><tbody><tr><td>ソンチャ</td><td>ダナン東部のビーチや川沿いを中心に生活したい方。</td><td>橋周辺の渋滞、建設工事のばらつき、駐車、排水。</td></tr><tr><td>グーハインソン</td><td>南側のビーチ沿いやリゾートエリアへのアクセスを重視する方。</td><td>ソンチャ北部や市内中心部のオフィスまでの移動が長くなる場合がある。</td></tr><tr><td>ハイチャウ</td><td>中心部のオフィスや市街地での用事を重視する方。</td><td>ビーチへの直接アクセスが少なく、駐車環境も異なる。</td></tr></tbody></table>
+<h2>ダナンの賃貸物件を引き続き比較する</h2>
+<p>ソンチャが希望するバランスに合わない場合は、ビーチ沿いや南側の住宅エリアを探せる<a href="/ja/location/ngu-hanh-son/">グーハインソンの賃貸物件</a>をご覧ください。市内中心部へのアクセスを優先するなら、<a href="/ja/location/hai-chau/">ハイチャウの賃貸物件</a>も候補になります。物件タイプを絞り込む前に、まずはより広い<a href="/ja/apartments/">ダナンのアパートメントガイド</a>を確認し、希望するエリアと住まいのタイプを整理しましょう。</p>
+</div>
+HTML,
+				'ngu-hanh-son' => '<div class="hrd-location-hub__editorial"><h2>グーハインソンはどんな方に向いていますか？</h2><p>グーハインソンは、ミーアンやアン トゥオンから南部の住宅・リゾートエリアまで広がります。地図上の距離だけでなく、職場、学校、ビーチ、買い物への実際の移動時間と駐車条件を比較してください。</p><h2>長期賃貸の物件タイプを選ぶ</h2><p>アパートは家具と管理の手間を抑えやすく、一戸建ては家族や在宅勤務に必要な空間を確保できます。ヴィラやリゾート型住宅では、管理費、清掃、共用施設、交通費も含めて比較しましょう。</p><h2>契約前に確認する質問</h2><ul><li>管理費、インターネット、清掃、駐車場は家賃に含まれますか？</li><li>エアコン、家電、水漏れなどの修理は誰が担当しますか？</li><li>保証金返金条件と居住登録は契約書に明記されていますか？</li></ul></div>',
+				'hai-chau' => '<div class="hrd-location-hub__editorial"><h2>ハイチャウ賃貸は中心部へのアクセスが重要</h2><p>ハイチャウは、オフィス、学校、病院、市場、ハン川に近い都市生活を求める方に向いています。川沿いのタワー、商業通り、住宅街では騒音と駐車条件が異なるため、現地確認が欠かせません。</p><h2>アパートと一戸建てを比較する</h2><p>アパートはエレベーターや管理サービスを利用しやすく、一戸建ては部屋数、収納、プライバシーを確保できます。一戸建てでは路地へのアクセス、排水、防犯、修理責任も確認してください。</p><h2>保証金を払う前の確認事項</h2><ul><li>光熱費、インターネット、管理費、駐車場、清掃費。</li><li>家具、家電、引き渡し状態、修理担当。</li><li>騒音、工事、排水、水圧、通勤ルート。</li><li>契約期間、解約予告、保証金返金、居住登録。</li></ul></div>',
+			),
+			'ru' => array(
+				'son-tra' => '<div class="hrd-location-hub__editorial"><h2>Что проверить при аренде в Сон Тра</h2><p>Сон Тра подходит тем, кому важны пляж Микхе, река Хан и восточная часть Дананга. Даже внутри одного района квартиры у моря и дома на жилых улицах заметно различаются по шуму, парковке и времени в пути.</p><h2>Квартира, дом или вилла?</h2><p>Квартира удобна для одного человека, пары или удалённой работы благодаря мебели и простому обслуживанию. Дом даёт семье больше комнат и места для хранения. Вилла предлагает сад или бассейн, но требует уточнить уборку, обслуживание и дополнительные платежи.</p><h2>Проверка перед внесением депозита</h2><ul><li>Уточните конкретный объект, этаж, мебель, парковку и дату въезда.</li><li>Запросите письменно расходы на электричество, воду, интернет, управление и уборку.</li><li>Проверьте шум, стройки, дренаж и подъезд в обычное время поездок.</li><li>Закрепите ответственность за ремонт, срок уведомления и регистрацию проживания.</li></ul></div>',
+				'ngu-hanh-son' => '<div class="hrd-location-hub__editorial"><h2>Кому подходит Нгу Хань Сон?</h2><p>Нгу Хань Сон включает Миан, Антхыонг, жилые кварталы и курортную зону южнее. Сравнивайте не только расстояние на карте, но и реальное время до работы, школы, пляжа и магазинов, а также условия парковки.</p><h2>Выбор жилья для долгосрочной аренды</h2><p>Квартира упрощает переезд и обслуживание. Дом даёт семье или работающим из дома отдельные комнаты. Виллы и курортные резиденции предлагают больше пространства и удобств, но могут требовать оплаты управления, уборки и транспорта.</p><h2>Вопросы до подписания договора</h2><ul><li>Включены ли управление, интернет, уборка и парковка?</li><li>Кто отвечает за кондиционеры, технику, протечки и ремонт?</li><li>Указаны ли возврат депозита и регистрация проживания в договоре?</li></ul></div>',
+				'hai-chau' => '<div class="hrd-location-hub__editorial"><h2>Главное преимущество аренды в Хай Чау — доступ к центру</h2><p>Хай Чау подходит тем, кому важно жить рядом с офисами, школами, больницами, рынками и рекой Хан. Башни у реки, торговые улицы и жилые переулки отличаются по шуму и парковке, поэтому объект стоит проверить лично.</p><h2>Квартира или отдельный дом?</h2><p>Квартира удобна лифтом и управлением здания. Дом даёт больше комнат, хранения и приватности, но требует проверки подъезда, дренажа, безопасности и ответственности за ремонт.</p><h2>Что проверить перед депозитом</h2><ul><li>Коммунальные услуги, интернет, управление, парковка и уборка.</li><li>Мебель, техника, состояние передачи и ремонт.</li><li>Шум, стройки, дренаж, давление воды и маршрут до работы.</li><li>Срок договора, уведомление, возврат депозита и регистрация.</li></ul></div>',
+			),
+			'zh' => array(
+				'son-tra' => '<div class="hrd-location-hub__editorial"><h2>住在山茶区，真正影响租房体验的是什么？</h2><p>山茶区位于岘港东侧。选择房源时，重点不只是公寓还是独立住宅，而是您更看重海滩距离、市中心通勤，还是日常居住空间。靠近美溪海滩的房源方便晨间散步和海边生活；稍微远离热门沿海街道，则可能获得更安静的环境、更宽敞的空间或更方便的停车条件。</p><p>浏览房源时，可以先比较户型、面积和设施，但最终一定要确认具体街道。同样标注为“山茶区”的两套房，可能因为道路宽度、建筑管理、停车方式、周边施工和离海距离而呈现完全不同的居住体验。</p><h2>筛选山茶区房源时，预算应该怎么看？</h2><p>公开挂牌信息可作为初步参考：山茶区公寓的挂牌租金约为每月 <strong>1,460 万越南盾</strong>，独立住宅约为每月 <strong>2,090 万越南盾</strong>。这些数字不是保证价格，也不代表整个区域的平均水平。家具配置、海景、楼龄、卧室数量、物业服务和租期都会影响最终报价。</p><p>如果计划租住六至十二个月，除了月租，还应将电费、水费、网络、停车费、物业管理费、清洁费和押金纳入预算。比较房源前，最好要求房东或经纪人书面列出每月固定费用和可能产生的额外费用。</p><h2>山茶区哪些位置值得重点比较？</h2><h3>美溪海滩周边与沿海街区</h3><p>如果您重视步行到海滩、咖啡馆、餐厅和日常服务，沿海街区通常是首选。这里的公寓适合单身人士、情侣和希望使用电梯、安保或公共设施的租客。需要注意的是，不同街区的车流、短租活动和施工噪音可能差别很大。</p><h3>本地住宅街与较安静的区域</h3><p>离开繁忙的沿海主路后，居住环境往往更安静，也可能拥有更好的储物和停车条件。独立住宅更适合家庭、养宠人士，或需要把工作区与生活区分开的租客。看房时应检查巷道宽度、车辆转弯空间、雨后排水和日常采购路线。</p><h2>山茶区公寓、独立住宅和别墅怎么选？</h2><p>如果您更看重电梯、物业管理、通勤便利和较少的维护工作，公寓通常更合适。需要多个卧室、独立入口、储物空间或灵活家庭布局时，可以优先比较独立住宅。别墅可能提供花园、露台或泳池，但这些设施也意味着更多清洁、维护和费用问题。</p><p>每次看房都建议记录同一组信息：实际使用面积、卧室和卫生间数量、家具、电器、停车、物业费、水电网络、宠物规定、维修责任以及最早入住日期。这样才能真正比较不同房源的总成本和居住价值。</p><h2>山茶区看房时应该检查什么？</h2><ul><li>步行或驾车检查入口前最后 200–300 米，包括平时上下班时段的路线。</li><li>确认广告租金之外还有哪些固定费用，以及哪些服务已经包含。</li><li>检查窗户朝向、通风、水压、手机信号，以及关闭门窗后的实际噪音。</li><li>确认停车、出入时间、访客规定、宠物、维修流程和书面交接清单。</li><li>支付押金前，确认房东或物业如何办理外国人临时居住登记。</li></ul><h2>继续比较岘港其他租房区域</h2><p>如果山茶区不完全符合需求，可以查看<a href="/zh/location/ngu-hanh-son/">五行山区出租房源</a>，比较美安、安上和南部沿海生活；如果工作、学校和城市服务更集中在市中心，则可查看<a href="/zh/location/hai-chau/">海洲区出租房源</a>。还可以浏览<a href="/zh/apartments/">岘港公寓出租</a>，先确定适合自己的房屋类型。</p></div>',
+				'ngu-hanh-son' => '<div class="hrd-location-hub__editorial"><h2>五行山区适合哪些租客？</h2><p>五行山区从美安、安上延伸到南部住宅和度假区域。不要只比较地图距离，还要检查到工作地点、学校、海滩和市场的实际时间以及停车条件。</p><h2>长期租房类型怎么选？</h2><p>公寓家具齐全、维护简单；独立住宅适合需要多个房间的家庭或远程工作者；别墅和度假住宅空间更大，但可能产生管理、清洁、公共设施和交通费用。</p><h2>签合同前要问的问题</h2><ul><li>管理费、网络、清洁和停车是否包含在租金内？</li><li>空调、电器、漏水和维修由谁负责？</li><li>押金退还和居住登记是否写入合同？</li></ul></div>',
+				'hai-chau' => '<div class="hrd-location-hub__editorial"><h2>海洲区租房的重点是市中心通勤</h2><p>海洲区适合需要靠近办公室、学校、医院、市场和汉江的人。江景公寓、商业街和住宅巷道在噪音与停车方面不同，建议在常用出行时间实地检查。</p><h2>公寓还是独立住宅？</h2><p>公寓通常有电梯和物业管理，独立住宅提供更多房间、储物和隐私。看住宅时还要检查巷道入口、排水、安全和维修责任。</p><h2>支付押金前确认</h2><ul><li>水电、网络、管理、停车和清洁费用。</li><li>家具、电器、交接状态和维修负责人。</li><li>噪音、施工、排水、水压和通勤路线。</li><li>合同期限、提前通知、押金退还和居住登记。</li></ul></div>',
+			),
+		);
+		return isset( $localized[ $language ][ $district ] ) ? wp_kses_post( $localized[ $language ][ $district ] ) : '';
 	}
 
 	$content = array(
@@ -470,8 +523,8 @@ function hrd_location_hub_copy( $key, $language = '', $district = '' ) {
 			'nav_label' => 'Browse property types', 'section_label' => '%s for rent in Son Tra',
 			'sort_label' => 'Sort properties', 'sort_default' => 'Default order', 'sort_price_asc' => 'Price low to high',
 			'sort_price_desc' => 'Price high to low', 'sort_date_asc' => 'Date old to new', 'sort_date_desc' => 'Date new to old', 'sort_apply' => 'Apply sort',
-			'meta_title' => 'Property for Rent in Son Tra, Da Nang | House Rental Danang',
-			'meta_desc' => 'Browse apartments, houses and villas for rent in Son Tra, Da Nang, with current property details and local rental support.',
+			'meta_title' => 'Son Tra Rentals | Apartments, Houses & Villas',
+			'meta_desc' => 'Want to live near My Khe Beach and the Han River? Compare Son Tra apartments, houses and villas, then ask our local team to confirm current options.',
 		),
 		'vi' => array(
 			'page_title' => 'Bất động sản cho thuê tại Sơn Trà, Đà Nẵng',
@@ -516,6 +569,8 @@ function hrd_location_hub_copy( $key, $language = '', $district = '' ) {
 			'intro_lead_title' => 'ソンチャ区で賃貸物件をお探しですか？',
 			'intro_lead' => 'ミーケービーチ、ハン川、地元の市場、ダナン中心部に近いアパート、一戸建て、ヴィラを比較できます。各物件で間取り、広さ、設備、賃料の目安を確認してください。空室状況は変わるため、内見前に現地チームへご確認ください。',
 			'intro_types_title' => 'ソンチャ区で適した物件タイプを選ぶ',
+			'intro_fit_title' => 'ソンチャはどんな人に向いていますか？',
+			'intro_fit' => 'ソンチャはダナン東部に位置し、ミーケービーチ、ハン川沿い、シーフード店が集まる通り、日常生活に必要なサービスへ短時間でアクセスしたい方に適しています。ビーチへのアクセスと管理のしやすさを重視するなら、アパートメントから探し始めるのが効率的です。一戸建てやヴィラなら、より広いスペースとプライバシーを確保できます。内見の前に、交通量、駐車場、建設工事による騒音、普段の市内への移動ルートも比較しておきましょう。',
 			'intro_types' => 'アパートは利便性と管理のしやすさを重視する方に向いています。一戸建てはプライバシーと生活空間を確保しやすく、ヴィラは広い間取り、庭、プールを希望する場合に適しています。下のセクションで同じ地区内の物件タイプを比較できます。',
 			'intro_details_title' => '契約前に確認すること',
 			'intro_details' => '月額賃料、保証金、契約期間、光熱費、家具、ペット、メンテナンス、入居日を確認してください。予算、希望エリア、寝室数をお知らせいただければ、最新の候補を確認します。',
@@ -527,7 +582,7 @@ function hrd_location_hub_copy( $key, $language = '', $district = '' ) {
 			'sort_label' => '物件の並び順', 'sort_default' => '標準順', 'sort_price_asc' => '価格の安い順',
 			'sort_price_desc' => '価格の高い順', 'sort_date_asc' => '古い順', 'sort_date_desc' => '新しい順', 'sort_apply' => '適用',
 			'meta_title' => 'ダナン・ソンチャ区の賃貸物件 | House Rental Danang',
-			'meta_desc' => 'ダナンのソンチャ区で借りられるアパート、一戸建て、ヴィラを最新情報と現地サポートとともにご覧ください。',
+			'meta_desc' => 'ダナンのソンチャ区で賃貸物件をお探しですか？ミーケービーチ、ハン川、地元市場、中心部に近いアパート、一戸建て、ヴィラを比較できます。間取り、広さ、設備、賃料、駐車場、光熱費、契約条件を確認し、現地チームに最新の空室と内見を相談できます。',
 		),
 		'ru' => array(
 			'page_title' => 'Недвижимость в аренду в Сон Тра, Дананг',
@@ -552,6 +607,8 @@ function hrd_location_hub_copy( $key, $language = '', $district = '' ) {
 			'intro_lead_title' => '正在寻找山茶郡出租房产？',
 			'intro_lead' => '比较靠近美溪海滩、韩江、当地市场和岘港市中心的公寓、独栋住宅和别墅。房源信息可帮助您了解格局、面积、设施和租金范围。空置情况可能变化，看房前请向本地团队确认。',
 			'intro_types_title' => '选择适合您的山茶郡房产类型',
+			'intro_fit_title' => '山茶区适合哪些长期租客？',
+			'intro_fit' => '山茶区适合希望兼顾美溪海滩、汉江和岘港市区通勤的租客。公寓通常维护简单，适合单身人士、情侣和远程工作者；独立住宅与别墅则更适合需要多个卧室、私人入口、储物或户外空间的家庭。看房前应重点比较交通、停车、周边施工、街道噪音以及每天实际使用的通勤路线。',
 			'intro_types' => '公寓适合重视便利和简单维护的租客。独栋住宅提供更多隐私和日常生活空间。别墅适合需要更大格局、花园或泳池的人士。您可以在下方栏目中比较同一区域内的不同房产类型。',
 			'intro_details_title' => '租房前需要确认什么？',
 			'intro_details' => '请确认月租、押金、合同期限、水电、家具、宠物、维修责任和入住日期。告诉我们您的预算、理想区域和卧室数量，我们会协助核实现有选择。',
@@ -1026,3 +1083,90 @@ function hrd_location_hub_rank_math_description( $description ) {
 	return $hub ? hrd_location_hub_copy( 'meta_desc', '', $hub['key'] ) : $description;
 }
 add_filter( 'rank_math/frontend/description', 'hrd_location_hub_rank_math_description', 40 );
+/** Preserve safe formatting before WordPress stores taxonomy descriptions. */
+function hrd_taxonomy_description_allowed_html( $tags, $context ) {
+	if ( 'pre_term_description' !== $context ) {
+		return $tags;
+	}
+
+	$tags['h2'] = array();
+	$tags['h3'] = array();
+	$tags['div'] = array( 'class' => true, 'id' => true );
+	$tags['table'] = array( 'class' => true );
+	$tags['thead'] = array();
+	$tags['tbody'] = array();
+	$tags['tr'] = array();
+	$tags['th'] = array( 'scope' => true, 'colspan' => true, 'rowspan' => true );
+	$tags['td'] = array( 'colspan' => true, 'rowspan' => true );
+
+	return $tags;
+}
+add_filter( 'wp_kses_allowed_html', 'hrd_taxonomy_description_allowed_html', 10, 2 );
+
+function hrd_register_taxonomy_description_hooks_for( $taxonomy ) {
+	$taxonomy_object = get_taxonomy( $taxonomy );
+	if ( ! $taxonomy_object || ! $taxonomy_object->show_ui ) {
+		return;
+	}
+
+	static $registered = array();
+	if ( isset( $registered[ $taxonomy ] ) ) {
+		return;
+	}
+	$registered[ $taxonomy ] = true;
+
+	add_action( "{$taxonomy}_add_form_fields", 'hrd_taxonomy_description_editor' );
+	add_action( "{$taxonomy}_edit_form_fields", 'hrd_taxonomy_description_editor' );
+}
+function hrd_register_taxonomy_description_hooks() {
+	foreach ( get_taxonomies( array( 'show_ui' => true ), 'names' ) as $taxonomy ) {
+		hrd_register_taxonomy_description_hooks_for( $taxonomy );
+	}
+}
+add_action( 'init', 'hrd_register_taxonomy_description_hooks', 20 );
+add_action( 'registered_taxonomy', 'hrd_register_taxonomy_description_hooks_for', 20 );
+
+/** Add a Visual/Text editor for taxonomy descriptions. */
+function hrd_taxonomy_description_editor( $term = null ) {
+	$is_edit = $term instanceof WP_Term;
+	$value   = $is_edit ? html_entity_decode( (string) $term->description, ENT_QUOTES, get_bloginfo( 'charset' ) ?: 'UTF-8' ) : '';
+
+	if ( $is_edit ) {
+		echo '<tr class="form-field hrd-taxonomy-editor-row"><th scope="row"><label for="hrd-taxonomy-description">' . esc_html__( 'Description', RH_TEXT_DOMAIN ) . '</label></th><td>';
+	} else {
+		echo '<div class="form-field hrd-taxonomy-editor-row"><label for="hrd-taxonomy-description">' . esc_html__( 'Description', RH_TEXT_DOMAIN ) . '</label>';
+	}
+
+	wp_editor(
+		$value,
+		'hrd-taxonomy-description',
+		array(
+			'textarea_name' => 'description',
+			'media_buttons' => false,
+			'quicktags'     => true,
+			'tinymce'       => array(
+				'wpautop'          => true,
+				'forced_root_block' => 'p',
+			),
+			'teeny'         => false,
+		)
+	);
+
+	echo '<p class="description">' . esc_html__( 'Use the Visual tab for formatted headings, links, lists and tables. The Text tab accepts HTML.', RH_TEXT_DOMAIN ) . '</p>';
+	echo $is_edit ? '</td></tr>' : '</div>';
+}
+function hrd_taxonomy_description_editor_admin_styles( $hook_suffix ) {
+	if ( ! in_array( $hook_suffix, array( 'edit-tags.php', 'term.php' ), true ) ) {
+		return;
+	}
+
+	$screen = get_current_screen();
+	if ( ! $screen || ! taxonomy_exists( $screen->taxonomy ) ) {
+		return;
+	}
+
+	wp_add_inline_style( 'dashicons', '.term-description-wrap{display:none!important}.hrd-taxonomy-editor-row .wp-editor-wrap{max-width:900px}.hrd-taxonomy-editor-row .description{margin-top:8px}' );
+	// Remove the core textarea so only the Visual/Text editor submits description.
+	wp_add_inline_script( 'jquery', 'jQuery(function($){$(\'.term-description-wrap\').remove();});' );
+}
+add_action( 'admin_enqueue_scripts', 'hrd_taxonomy_description_editor_admin_styles' );

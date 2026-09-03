@@ -81,21 +81,42 @@ if ( ! function_exists( 'inspiry_enqueue_child_styles' ) ) {
 			return;
 		}
 
-		wp_enqueue_style(
-			'hrd-be-vietnam-pro',
-			'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap',
-			array(),
-			null
-		);
+		$hrd_is_vietnamese = function_exists( 'pll_current_language' )
+			? 'vi' === pll_current_language()
+			: 0 === strpos( (string) get_locale(), 'vi_' );
+		if ( $hrd_is_vietnamese ) {
+			wp_enqueue_style(
+				'hrd-be-vietnam-pro',
+				'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap',
+				array(),
+				null
+			);
+		}
 		$hrd_css_path = get_stylesheet_directory() . '/css/main.css';
 		wp_enqueue_style(
 			'hrd-child',
 			get_stylesheet_directory_uri() . '/css/main.css',
-			array( 'hrd-be-vietnam-pro' ),
+			$hrd_is_vietnamese ? array( 'hrd-be-vietnam-pro' ) : array(),
 			(string) filemtime( $hrd_css_path )
 		);
 		wp_add_inline_style(
 			'hrd-child',
+			'.home .rh_mod_sfoi_wrapper .SFOI__title{color:#fff!important;text-shadow:0 1px 3px rgba(0,0,0,.35)!important}' .
+			'.hrd-long-guide__content{color:#536264;font-family:var(--hrd-font-ui);font-size:14.5px;line-height:2}' .
+			'.hrd-long-guide__content p,.hrd-long-guide__content li{font:inherit}' .
+			'.hrd-long-guide__content h2{margin:0 0 20px;color:#183036;font:600 36px/1.5 var(--hrd-font-ui);letter-spacing:-.025em}' .
+			'.hrd-long-guide__content h3{margin:0 0 20px;color:#183036;font:600 18px/1.5 var(--hrd-font-ui)}' .
+			'.hrd-long-guide__content table{font:inherit}' .
+			'.tax-property-city .hrd-location-hub__intro .hrd-long-guide__content p,.tax-property-city .hrd-location-hub__intro .hrd-long-guide__content li{font:inherit}' .
+			'.tax-property-city .hrd-location-hub__intro .hrd-long-guide__content h2{font-size:36px;line-height:1.5}' .
+			'.tax-property-city .hrd-location-hub__intro .hrd-long-guide__content h3{font-size:18px;line-height:1.5}' .
+			'.tax-property-city .hrd-location-hub__intro{max-width:1170px}' .
+			'.tax-property-city .hrd-location-hub__intro > p,.tax-property-city .hrd-location-hub__intro > ul,.tax-property-city .hrd-location-hub__intro > ol{max-width:none}' .
+			'@media(max-width:767px){.hrd-long-guide__content h2{font-size:30px;line-height:1.35}.hrd-long-guide__content h3{font-size:18px}}' .
+			'.home .rh_latest-properties--second .rh_section__properties{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start}' .
+			'.home .rh_latest-properties--second .rh_prop_card--listing{width:33.3333%}' .
+			'@media(max-width:1023px){.home .rh_latest-properties--second .rh_prop_card--listing{width:50%}}' .
+			'@media(max-width:767px){.home .rh_latest-properties--second .rh_prop_card--listing{width:100%}}' .
 			'.rh_prop_card .rh_prop_card__details .hrd-card-meta__area .hrd-card-meta__value{gap:5px;min-width:0}' .
 			'.rh_prop_card .rh_prop_card__details .hrd-card-meta__area .figure{font-size:17px!important}' .
 			'.rh_prop_card .rh_prop_card__details .hrd-card-meta__area .label{font-size:11px!important;letter-spacing:-.01em}' .
@@ -139,13 +160,28 @@ function hrd_wrap_long_listing_guide( $content ) {
 
 	$guide_id = 'hrd-listing-guide-content-' . absint( get_queried_object_id() );
 
-	return '<div class="hrd-long-guide"><div id="' . esc_attr( $guide_id ) . '" class="hrd-long-guide__content">' . $content . '</div><button class="hrd-long-guide__toggle" type="button" aria-expanded="false" aria-controls="' . esc_attr( $guide_id ) . '"><span class="hrd-long-guide__button"><span class="hrd-long-guide__closed">Show more</span><span class="hrd-long-guide__open">Show less</span><span class="hrd-long-guide__chevron" aria-hidden="true"></span></span></button></div>';
+	return hrd_render_long_guide( $content, $guide_id );
 }
 add_filter( 'the_content', 'hrd_wrap_long_listing_guide', 99 );
 
+function hrd_render_long_guide( $content, $guide_id ) {
+	return '<div class="hrd-long-guide"><div id="' . esc_attr( $guide_id ) . '" class="hrd-long-guide__content">' . $content . '</div><button class="hrd-long-guide__toggle" type="button" aria-expanded="false" aria-controls="' . esc_attr( $guide_id ) . '"><span class="hrd-long-guide__button"><span class="hrd-long-guide__closed">Show more</span><span class="hrd-long-guide__open">Show less</span><span class="hrd-long-guide__chevron" aria-hidden="true"></span></span></button></div>';
+}
+
+/** Keep district editorial guides compact while preserving their HTML. */
+function hrd_wrap_location_long_guide( $content ) {
+	if ( false !== strpos( $content, 'hrd-long-guide' ) || '' === trim( wp_strip_all_tags( $content ) ) ) {
+		return $content;
+	}
+
+	$guide_id = 'hrd-location-guide-content-' . absint( get_queried_object_id() );
+
+	return hrd_render_long_guide( $content, $guide_id );
+}
+
 /** Add the matching live-site toggle behavior without another asset request. */
 function hrd_output_listing_collapsible_script() {
-	if ( ! hrd_is_long_listing_guide_page() ) {
+	if ( ! hrd_is_long_listing_guide_page() && ! hrd_is_location_hub() ) {
 		return;
 	}
 	?>
@@ -185,6 +221,17 @@ function hrd_preload_homepage_hero() {
 	);
 }
 add_action( 'wp_head', 'hrd_preload_homepage_hero', 1 );
+
+/** Start the hero request from the response headers, before buffered HTML arrives. */
+function hrd_send_homepage_hero_preload_header() {
+	if ( ! is_front_page() || headers_sent() ) {
+		return;
+	}
+
+	$hero_url = content_url( '/uploads/2020/11/House-For-Rent-in-Da-Nang-1_6228dcde9c2575cf745522fb5abd323a-1.jpg' );
+	header( 'Link: <' . esc_url_raw( $hero_url ) . '>; rel=preload; as=image; fetchpriority=high', false );
+}
+add_action( 'send_headers', 'hrd_send_homepage_hero_preload_header' );
 
 /** Warm the only third-party connection needed for above-the-fold typography. */
 function hrd_add_font_resource_hints( $urls, $relation_type ) {

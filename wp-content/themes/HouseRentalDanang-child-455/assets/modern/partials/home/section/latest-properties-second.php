@@ -33,7 +33,7 @@ $card_variant = get_option( 'inspiry_property_card_variation', '1' );
 				$view_more_url = $view_more_url ? $view_more_url : home_url( '/apartments/' );
 				if ( $view_more_url ) :
 					?>
-					<a class="rh_btn rh_btn_sfoi rh_btn__prop_search" href="<?php echo esc_url( $view_more_url ); ?>"><?php esc_html_e( 'View more', RH_TEXT_DOMAIN ); ?></a>
+					<a class="rh_btn rh_btn_sfoi rh_btn__prop_search" href="<?php echo esc_url( $view_more_url ); ?>"><?php esc_html_e( 'View all apartments', RH_TEXT_DOMAIN ); ?></a>
 				<?php endif; ?>
 			</div>
 		</div>

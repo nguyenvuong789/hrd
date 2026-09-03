@@ -413,6 +413,292 @@ function hrd_add_property_schema( $data, $jsonld ) {
 }
 add_filter( 'rank_math/json_ld', 'hrd_add_property_schema', 25, 2 );
 
+/** Keep the public business identity consistent across templates and locales. */
+function hrd_public_nap_content( $content ) {
+	if ( is_admin() || ! is_string( $content ) ) {
+		return $content;
+	}
+
+	$content = str_replace( 'Ngu Hanh Son, Da Nang 550000, Vietnam', '201 Chương D., Ngũ Hành Sơn, Đà Nẵng 550000', $content );
+	$content = str_replace( '201 Chuong Duong, Da Nang, Vietnam', '201 Chương D., Ngũ Hành Sơn, Đà Nẵng 550000', $content );
+	$content = preg_replace( '/<a[^>]+href=["\']tel:0936023079["\'][^>]*>.*?<\/a>/is', '', $content );
+	return str_replace( '0936023079', '', $content );
+}
+add_filter( 'the_content', 'hrd_public_nap_content', 90 );
+add_filter( 'widget_text', 'hrd_public_nap_content', 90 );
+add_filter( 'widget_custom_html_content', 'hrd_public_nap_content', 90 );
+
+/** Catch theme/option output that bypasses content and widget filters. */
+function hrd_sanitize_public_nap_output( $html ) {
+	$html = str_replace( 'Ngu Hanh Son, Da Nang 550000, Vietnam', '201 Chương D., Ngũ Hành Sơn, Đà Nẵng 550000', $html );
+	$html = str_replace( '201 Chuong Duong, Da Nang, Vietnam', '201 Chương D., Ngũ Hành Sơn, Đà Nẵng 550000', $html );
+	$html = preg_replace( '/<p([^>]*class=["\'][^"\']*content[^"\']*["\'][^>]*)>201 Chương D\., Ngũ Hành Sơn, Đà Nẵng 550000<\/p>/u', '<p$1>201 Chương D., Ngũ Hành Sơn, Đà Nẵng 550000</p><p class="hrd-business-hours">24/7</p>', $html );
+	$html = preg_replace( '/<a[^>]+href=["\']tel:0936023079["\'][^>]*>.*?<\/a>/is', '', $html );
+	$html = str_replace( '0936023079', '', $html );
+
+	$path = wp_parse_url( home_url( wp_unslash( $_SERVER['REQUEST_URI'] ?? '/' ) ), PHP_URL_PATH );
+	$path = trailingslashit( '/' . ltrim( (string) strtok( $path, '?' ), '/' ) );
+	$meta = array(
+		'/' => array( 'Long-Term Rentals in Da Nang | Local Help', 'Find a long-term rental in Da Nang with local help. Compare houses, apartments and villas by area, then confirm availability and terms before viewing.' ),
+		'/apartments/' => array( 'Apartments for Rent in Da Nang | Areas & Prices', 'Compare apartment rents in Da Nang by area and bedroom count. See what to check on utilities, deposits and contracts before you book a viewing.' ),
+		'/properties-search/' => array( 'Da Nang Rental Properties | Search Houses & Apartments', 'Find houses, apartments and villas for rent in Da Nang. Filter by area, property type and budget, then ask our local team to confirm availability.' ),
+		'/houses/hai-chau/' => array( 'Houses for Rent in Hai Chau, Da Nang', 'Find houses for rent in Hai Chau, Da Nang, near the Han River, schools and city services. Compare current homes and request local viewing help.' ),
+		'/apartments/an-thuong/' => array( 'Apartments for Rent in An Thuong, Da Nang', 'Explore apartments for rent in An Thuong, Da Nang, near My Khe Beach, cafes and daily services. Compare current options with local rental help.' ),
+		'/apartment-buildings/the-filmore/' => array( 'The Filmore Apartments for Rent in Da Nang', 'See apartments for rent at The Filmore Da Nang, with building details, available layouts and local help confirming current rent and viewing times.' ),
+		'/apartment-buildings/the-monarchy/' => array( 'The Monarchy Apartments for Rent in Da Nang', 'Explore The Monarchy apartments for rent in Da Nang. Compare layouts, building amenities and current availability with local rental support.' ),
+		'/faqs/' => array( 'Da Nang Rental FAQs | Deposits, Contracts & Fees', 'Get clear answers about renting in Da Nang: deposits, contracts, documents, fees, maintenance and the steps to arrange a viewing.' ),
+		'/our-agents/' => array( 'Our Da Nang Rental Agents | Local Help', 'Meet the local House Rental Danang team. Tell us your area, budget and move-in date, and get practical help finding a suitable home.' ),
+		'/location/son-tra/' => array( 'Son Tra Rentals | Apartments, Houses & Villas', 'Want to live near My Khe Beach and the Han River? Compare Son Tra apartments, houses and villas, then ask our local team to confirm current options.' ),
+		'/location/ngu-hanh-son/' => array( 'Ngu Hanh Son Rentals | Apartments, Houses & Villas', 'Looking near My An, An Thuong or the southern beaches? Compare Ngu Hanh Son apartments, houses and villas, then confirm current options before viewing.' ),
+		'/location/hai-chau/' => array( 'Hai Chau Rentals | Apartments, Houses & Villas', 'Need a central Da Nang home near offices, schools and the Han River? Compare Hai Chau apartments, houses and villas and request local viewing help.' ),
+	);
+	// Keep priority landing-page metadata localized for every published language.
+	$localized_meta = array(
+		'vi' => array(
+			'/' => array( 'Thuê nhà dài hạn tại Đà Nẵng | Hỗ trợ địa phương', 'Tìm nhà thuê dài hạn tại Đà Nẵng cùng hỗ trợ địa phương. So sánh nhà, căn hộ và biệt thự theo khu vực rồi xác nhận lịch xem.' ),
+			'/apartments/' => array( 'Căn hộ cho thuê tại Đà Nẵng | Khu vực & Giá', 'So sánh căn hộ cho thuê tại Đà Nẵng theo khu vực và số phòng ngủ. Xem lưu ý về tiện ích, tiền cọc, hợp đồng trước khi đặt lịch xem.' ),
+			'/properties-search/' => array( 'Tìm nhà cho thuê tại Đà Nẵng | Nhà & Căn hộ', 'Tìm nhà, căn hộ và biệt thự cho thuê tại Đà Nẵng theo khu vực, loại hình và ngân sách, rồi nhờ đội ngũ địa phương xác nhận.' ),
+			'/faqs/' => array( 'FAQ thuê nhà Đà Nẵng | Cọc, Hợp đồng & Phí', 'Giải đáp về thuê nhà tại Đà Nẵng: tiền cọc, hợp đồng, giấy tờ, phí, bảo trì và cách đặt lịch xem nhà.' ),
+			'/our-agents/' => array( 'Đội ngũ môi giới cho thuê Đà Nẵng | Hỗ trợ địa phương', 'Gặp đội ngũ House Rental Danang. Cho biết khu vực, ngân sách và ngày chuyển vào để được hỗ trợ tìm nhà phù hợp.' ),
+			'/location/son-tra/' => array( 'Thuê nhà Sơn Trà | Căn hộ, Nhà & Biệt thự', 'Muốn sống gần biển Mỹ Khê và sông Hàn? So sánh căn hộ, nhà và biệt thự cho thuê tại Sơn Trà, rồi xác nhận lựa chọn hiện có.' ),
+			'/location/ngu-hanh-son/' => array( 'Thuê nhà Ngũ Hành Sơn | Căn hộ, Nhà & Biệt thự', 'Tìm nhà gần Mỹ An, An Thượng hoặc các bãi biển phía Nam. So sánh căn hộ, nhà và biệt thự Ngũ Hành Sơn trước khi xem.' ),
+			'/location/hai-chau/' => array( 'Thuê nhà Hải Châu | Căn hộ, Nhà & Biệt thự', 'Cần nhà ở trung tâm Đà Nẵng gần văn phòng, trường học và sông Hàn? So sánh căn hộ, nhà, biệt thự Hải Châu và nhờ hỗ trợ xem nhà.' ),
+		),
+		'ko' => array(
+			'/' => array( '다낭 장기 임대 | 현지 렌탈 도움', '다낭에서 장기 임대 주택을 찾아보세요. 지역별 주택, 아파트, 빌라를 비교하고 현지 팀과 방문 가능 여부를 확인하세요.' ),
+			'/apartments/' => array( '다낭 아파트 임대 | 지역 및 가격 비교', '지역과 침실 수별로 다낭 아파트 임대료를 비교하세요. 관리비, 보증금, 계약을 확인한 뒤 방문을 예약할 수 있습니다.' ),
+			'/properties-search/' => array( '다낭 임대 매물 검색 | 주택 및 아파트', '지역, 유형, 예산으로 다낭의 주택·아파트·빌라 임대 매물을 찾고 현지 팀에 현재 가능 여부를 문의하세요.' ),
+			'/faqs/' => array( '다낭 임대 FAQ | 보증금, 계약 및 비용', '다낭 임대에 필요한 보증금, 계약, 서류, 비용, 관리 및 방문 예약 방법을 쉽게 확인하세요.' ),
+			'/our-agents/' => array( '다낭 임대 에이전트 | 현지 지원', 'House Rental Danang 현지 팀을 만나보세요. 원하는 지역, 예산과 입주일을 알려주시면 맞는 집을 찾도록 도와드립니다.' ),
+			'/location/son-tra/' => array( '다낭 선짜 임대 | 아파트, 주택 및 빌라', '미케 해변과 한강 근처에서 살고 싶다면 선짜의 아파트, 주택, 빌라를 비교하고 현재 매물을 문의하세요.' ),
+			'/location/ngu-hanh-son/' => array( '다낭 응우한선 임대 | 아파트, 주택 및 빌라', '미안, 안트엉 또는 남부 해변 인근의 응우한선 아파트, 주택, 빌라를 비교하고 방문 전 현재 가능 여부를 확인하세요.' ),
+			'/location/hai-chau/' => array( '다낭 하이쩌우 임대 | 아파트, 주택 및 빌라', '사무실, 학교와 한강 가까운 중심지를 찾으시나요? 하이쩌우 임대 주택을 비교하고 현지 방문 도움을 요청하세요.' ),
+		),
+		'ja' => array(
+			'/' => array( 'ダナン長期賃貸 | 現地サポート', 'ダナンで長期賃貸の家を探せます。エリア別に一戸建て、アパート、ヴィラを比較し、内見可能か現地チームに確認できます。' ),
+			'/apartments/' => array( 'ダナンのアパート賃貸 | エリアと家賃', 'エリアと寝室数でダナンのアパート賃貸を比較。光熱費、保証金、契約の確認ポイントを見て内見を予約できます。' ),
+			'/properties-search/' => array( 'ダナン賃貸物件検索 | 住宅・アパート', 'エリア、物件タイプ、予算からダナンの住宅・アパート・ヴィラを検索し、現地チームに空室を確認できます。' ),
+			'/faqs/' => array( 'ダナン賃貸 FAQ | 保証金・契約・費用', 'ダナンで借りる際の保証金、契約、書類、費用、修理、内見予約についてよくある質問に回答します。' ),
+			'/our-agents/' => array( 'ダナン賃貸エージェント | 現地サポート', 'House Rental Danangの現地チームをご紹介。希望エリア、予算、入居日を伝えて最適な住まい探しを相談できます。' ),
+			'/location/son-tra/' => array( 'ダナン・ソンチャ賃貸 | アパート・住宅・ヴィラ', 'ダナンのソンチャ区で賃貸物件をお探しですか？ミーケービーチ、ハン川、地元市場、中心部に近いアパート、一戸建て、ヴィラを比較できます。間取り、広さ、設備、賃料、駐車場、光熱費、契約条件を確認し、現地チームに最新の空室と内見を相談できます。' ),
+			'/location/ngu-hanh-son/' => array( 'ダナン・グーハインソン賃貸 | 住宅・アパート', 'ミーアン、アン トゥオン、南部ビーチ周辺の賃貸物件を比較し、内見前に現在の空室を確認できます。' ),
+			'/location/hai-chau/' => array( 'ダナン・ハイチャウ賃貸 | アパート・住宅・ヴィラ', 'オフィス、学校、ハン川に近い中心部の住まいを探せます。ハイチャウの賃貸物件を比較し、現地内見を依頼できます。' ),
+		),
+		'ru' => array(
+			'/' => array( 'Долгосрочная аренда в Дананге | Помощь местной команды', 'Найдите жильё для долгосрочной аренды в Дананге. Сравните дома, квартиры и виллы по районам и уточните варианты у местной команды.' ),
+			'/apartments/' => array( 'Квартиры в аренду в Дананге | Районы и цены', 'Сравните аренду квартир в Дананге по району и числу спален. Проверьте коммунальные услуги, депозит и договор до просмотра.' ),
+			'/properties-search/' => array( 'Поиск аренды в Дананге | Дома и квартиры', 'Ищите дома, квартиры и виллы в аренду в Дананге по району, типу и бюджету, затем уточните актуальность у местной команды.' ),
+			'/faqs/' => array( 'FAQ об аренде в Дананге | Депозит, договор и расходы', 'Ответы о депозите, договоре, документах, расходах, обслуживании и записи на просмотр жилья в Дананге.' ),
+			'/our-agents/' => array( 'Агенты по аренде в Дананге | Местная помощь', 'Познакомьтесь с командой House Rental Danang. Назовите район, бюджет и дату переезда, чтобы получить помощь в поиске жилья.' ),
+			'/location/son-tra/' => array( 'Аренда в Сон Тра | Квартиры, дома и виллы', 'Хотите жить рядом с пляжем Микхе и рекой Хан? Сравните аренду в Сон Тра и уточните актуальные варианты у местной команды.' ),
+			'/location/ngu-hanh-son/' => array( 'Аренда в Нгу Хань Сон | Квартиры, дома и виллы', 'Ищете жильё возле Миан, Антхыонг или южных пляжей? Сравните варианты Нгу Хань Сон и проверьте доступность до просмотра.' ),
+			'/location/hai-chau/' => array( 'Аренда в Хай Чау | Квартиры, дома и виллы', 'Нужно жильё в центре Дананга рядом с офисами, школами и рекой Хан? Сравните варианты Хай Чау и запросите местный просмотр.' ),
+		),
+		'zh' => array(
+			'/' => array( '岘港长期租房 | 本地租房支持', '在岘港寻找长期出租房屋。按区域比较住宅、公寓和别墅，并向本地团队确认当前房源和看房安排。' ),
+			'/apartments/' => array( '岘港公寓出租 | 区域与价格比较', '按区域和卧室数量比较岘港公寓租金，了解水电、押金和合同要点后预约看房。' ),
+			'/properties-search/' => array( '岘港出租房源搜索 | 房屋与公寓', '按区域、房型和预算搜索岘港的房屋、公寓和别墅出租信息，并向本地团队确认房源。' ),
+			'/faqs/' => array( '岘港租房常见问题 | 押金、合同与费用', '了解在岘港租房的押金、合同、文件、费用、维护和预约看房流程。' ),
+			'/our-agents/' => array( '岘港租房经纪团队 | 本地支持', '认识House Rental Danang本地团队。告诉我们区域、预算和入住日期，获取合适房源帮助。' ),
+			'/location/son-tra/' => array( '岘港山茶租房 | 公寓、住宅与别墅', '想住在美溪海滩和汉江附近？比较山茶区公寓、住宅和别墅出租，并确认当前房源。' ),
+			'/location/ngu-hanh-son/' => array( '岘港五行山租房 | 公寓、住宅与别墅', '寻找美安、安上或南部海滩附近的房源？比较五行山出租住宅，并在看房前确认最新选择。' ),
+			'/location/hai-chau/' => array( '岘港海洲租房 | 公寓、住宅与别墅', '需要靠近办公室、学校和汉江的市中心住房？比较海洲区出租房源并预约本地看房帮助。' ),
+		),
+	);
+	foreach ( $localized_meta as $locale => $pages ) {
+		foreach ( $pages as $page_path => $page_meta ) {
+			$meta[ '/' . $locale . ( '/' === $page_path ? '/' : $page_path ) ] = $page_meta;
+		}
+	}
+	$localized_aliases = array(
+		'/vi/can-ho-cho-thue/' => '/vi/apartments/',
+		'/vi/tim-kiem-bat-dong-san/' => '/vi/properties-search/',
+		'/ko/rental-apartments/' => '/ko/apartments/',
+		'/ko/maemul-kensaku/' => '/ko/properties-search/',
+		'/ja/bukken-kensaku/' => '/ja/properties-search/',
+		'/ru/poisk-nedvizhimosti/' => '/ru/properties-search/',
+		'/zh/fangyuan-sousuo/' => '/zh/properties-search/',
+		'/vi/khuvuc/son-tra/' => '/vi/location/son-tra/',
+		'/vi/khuvuc/ngu-hanh-son/' => '/vi/location/ngu-hanh-son/',
+		'/vi/khuvuc/hai-chau/' => '/vi/location/hai-chau/',
+	);
+	foreach ( $localized_aliases as $alias => $source ) {
+		if ( isset( $meta[ $source ] ) ) {
+			$meta[ $alias ] = $meta[ $source ];
+		}
+	}
+	if ( isset( $meta[ $path ] ) ) {
+		$title = esc_html( $meta[ $path ][0] );
+		$desc  = esc_attr( $meta[ $path ][1] );
+		$html  = preg_replace( '/<title[^>]*>.*?<\/title>/is', '<title>' . $title . '</title>', $html, 1 );
+		$html  = preg_replace( '/<meta[^>]+name=["\']description["\'][^>]*>/i', '<meta name="description" content="' . $desc . '">', $html, 1 );
+		$html  = preg_replace( '/<meta[^>]+property=["\']og:title["\'][^>]*>/i', '<meta property="og:title" content="' . $title . '">', $html, 1 );
+		$html  = preg_replace( '/<meta[^>]+property=["\']og:description["\'][^>]*>/i', '<meta property="og:description" content="' . $desc . '">', $html, 1 );
+		$html  = preg_replace( '/<meta[^>]+name=["\']twitter:title["\'][^>]*>/i', '<meta name="twitter:title" content="' . $title . '">', $html, 1 );
+		$html  = preg_replace( '/<meta[^>]+name=["\']twitter:description["\'][^>]*>/i', '<meta name="twitter:description" content="' . $desc . '">', $html, 1 );
+		if ( false === stripos( $html, 'name="description"' ) ) {
+			$html = preg_replace( '/<\/head>/i', '<meta name="description" content="' . $desc . '">' . "\n</head>", $html, 1 );
+		}
+	}
+
+	return $html;
+}
+function hrd_start_public_nap_buffer() {
+	if ( ! is_admin() && ! wp_doing_ajax() ) {
+		ob_start( 'hrd_sanitize_public_nap_output' );
+	}
+}
+add_action( 'template_redirect', 'hrd_start_public_nap_buffer', 0 );
+
+/** Add the local rental agency entity to Rank Math's existing JSON-LD graph. */
+function hrd_add_agency_schema( $data, $jsonld ) {
+	if ( is_admin() || ! is_array( $data ) ) {
+		return $data;
+	}
+
+	$data['HRDAgency'] = array(
+		'@type'       => array( 'RealEstateAgent', 'LocalBusiness' ),
+		'@id'         => trailingslashit( home_url( '/' ) ) . '#real-estate-agent',
+		'name'        => 'House Rental Danang Agency',
+		'url'         => home_url( '/' ),
+		'description' => 'Local rental agency helping residents and international renters find houses, apartments and villas in Da Nang.',
+		'email'       => 'hello@houserentaldanang.com',
+		'openingHours' => 'Mo-Su 00:00-23:59',
+		'openingHoursSpecification' => array(
+			'@type'     => 'OpeningHoursSpecification',
+			'dayOfWeek' => array( 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ),
+			'opens'     => '00:00',
+			'closes'    => '23:59',
+		),
+		'address'     => array(
+			'@type'           => 'PostalAddress',
+			'streetAddress'   => '201 Chương D.',
+			'addressLocality' => 'Ngũ Hành Sơn, Đà Nẵng',
+			'postalCode'      => '550000',
+			'addressCountry'  => 'VN',
+		),
+		'contactPoint' => array(
+			'@type'             => 'ContactPoint',
+			'contactType'       => 'customer service',
+			'email'             => 'hello@houserentaldanang.com',
+			'availableLanguage' => array( 'English', 'Vietnamese', 'Korean', 'Japanese', 'Russian', 'Chinese' ),
+		),
+		'areaServed'  => array( 'Da Nang', 'Son Tra', 'Ngu Hanh Son', 'Hai Chau' ),
+		'image'       => home_url( '/wp-content/uploads/2021/01/House-Rental-Danang-Agencys-Logo.png' ),
+		'sameAs'      => array(
+			'https://www.facebook.com/HouseRentalDanang',
+			'https://www.instagram.com/houserentaldanang/',
+			'https://www.youtube.com/channel/UC-kzb0io6ZScjGTuE96Dw_Q',
+		),
+	);
+
+	return $data;
+}
+add_filter( 'rank_math/json_ld', 'hrd_add_agency_schema', 27, 2 );
+
+/** Fallback entity output for installations where Rank Math drops custom graph keys. */
+function hrd_print_agency_schema_fallback() {
+	if ( is_admin() || is_feed() ) {
+		return;
+	}
+
+	$schema = array(
+		'@context'    => 'https://schema.org',
+		'@type'      => array( 'RealEstateAgent', 'LocalBusiness' ),
+		'@id'        => trailingslashit( home_url( '/' ) ) . '#real-estate-agent',
+		'name'       => 'House Rental Danang Agency',
+		'url'        => home_url( '/' ),
+		'email'      => 'hello@houserentaldanang.com',
+		'description' => 'Local rental agency helping residents and international renters find houses, apartments and villas in Da Nang.',
+		'address'    => array(
+			'@type'           => 'PostalAddress',
+			'streetAddress'   => '201 Chương D.',
+			'addressLocality' => 'Ngũ Hành Sơn, Đà Nẵng',
+			'postalCode'      => '550000',
+			'addressCountry'  => 'VN',
+		),
+		'openingHours' => 'Mo-Su 00:00-23:59',
+		'areaServed'   => array( 'Da Nang', 'Son Tra', 'Ngu Hanh Son', 'Hai Chau' ),
+		'sameAs'       => array(
+			'https://www.facebook.com/HouseRentalDanang',
+			'https://www.instagram.com/houserentaldanang/',
+			'https://www.youtube.com/channel/UC-kzb0io6ZScjGTuE96Dw_Q',
+		),
+	);
+
+	echo '<script type="application/ld+json">' . wp_json_encode( $schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
+}
+add_action( 'wp_head', 'hrd_print_agency_schema_fallback', 7 );
+
+/** Complete the social cards not emitted by the active SEO configuration. */
+function hrd_add_social_meta_tags() {
+	if ( is_admin() || is_feed() ) {
+		return;
+	}
+
+	$url         = function_exists( 'rank_math_get_permalink' ) ? rank_math_get_permalink() : get_permalink();
+	$url         = $url ?: home_url( wp_unslash( $_SERVER['REQUEST_URI'] ?? '/' ) );
+	$title       = wp_get_document_title();
+	$description = function_exists( 'rank_math_get_description' ) ? rank_math_get_description() : '';
+	$description = $description ?: 'Browse houses, apartments and villas for rent in Da Nang. Contact our local team to confirm current availability and rental details.';
+	$image       = home_url( '/wp-content/uploads/2021/01/House-Rental-Danang-Agencys-Logo.png' );
+
+	echo '<meta property="og:type" content="website">' . "\n";
+	echo '<meta property="og:site_name" content="House Rental Danang Agency">' . "\n";
+	echo '<meta property="og:url" content="' . esc_url( $url ) . '">' . "\n";
+	echo '<meta property="og:image:alt" content="House Rental Danang Agency">' . "\n";
+	echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+	echo '<meta name="twitter:title" content="' . esc_attr( $title ) . '">' . "\n";
+	echo '<meta name="twitter:description" content="' . esc_attr( wp_strip_all_tags( $description ) ) . '">' . "\n";
+	echo '<meta name="twitter:image" content="' . esc_url( $image ) . '">' . "\n";
+}
+add_action( 'wp_head', 'hrd_add_social_meta_tags', 8 );
+
+/** Fill missing dimensions and useful alt text on attachment images to reduce CLS. */
+function hrd_image_accessibility_attributes( $attr, $attachment ) {
+	if ( ! $attachment instanceof WP_Post ) {
+		return $attr;
+	}
+
+	$meta = wp_get_attachment_metadata( $attachment->ID );
+	if ( empty( $attr['width'] ) && ! empty( $meta['width'] ) ) {
+		$attr['width'] = (int) $meta['width'];
+	}
+	if ( empty( $attr['height'] ) && ! empty( $meta['height'] ) ) {
+		$attr['height'] = (int) $meta['height'];
+	}
+	if ( empty( $attr['alt'] ) ) {
+		$attr['alt'] = get_the_title( $attachment->ID ) ?: 'Da Nang rental property';
+	}
+
+	$classes = isset( $attr['class'] ) ? (string) $attr['class'] : '';
+	if ( false !== strpos( $classes, 'attachment-modern-property-child-slider' ) && ! empty( $attr['src'] ) ) {
+		$upload_dir = wp_get_upload_dir();
+		$base_url   = trailingslashit( $upload_dir['baseurl'] );
+		$base_dir   = trailingslashit( $upload_dir['basedir'] );
+		$relative   = 0 === strpos( $attr['src'], $base_url ) ? substr( $attr['src'], strlen( $base_url ) ) : '';
+
+		if ( $relative && ! preg_match( '/-\d+x\d+(\.[a-z0-9]+)$/i', $relative ) ) {
+			$small_relative = preg_replace( '/(\.[a-z0-9]+)$/i', '-488x326$1', $relative );
+			$large_relative = preg_replace( '/(\.[a-z0-9]+)$/i', '-1240x720$1', $relative );
+			$srcset         = array();
+
+			if ( $small_relative && file_exists( $base_dir . $small_relative ) ) {
+				$srcset[] = $base_url . $small_relative . ' 488w';
+			}
+			if ( $large_relative && file_exists( $base_dir . $large_relative ) ) {
+				$srcset[] = $base_url . $large_relative . ' 1240w';
+			}
+			if ( $srcset ) {
+				$attr['srcset'] = implode( ', ', $srcset );
+				$attr['sizes']  = '(max-width: 680px) 100vw, 680px';
+			}
+		}
+	}
+	return $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'hrd_image_accessibility_attributes', 10, 2 );
+
 /**
  * Demote the first content H1 on four audited posts whose template already
  * provides the page H1. Empty image-only headings become neutral containers.
@@ -615,6 +901,48 @@ function hrd_filter_missing_meta_descriptions( $description ) {
 }
 add_filter( 'rank_math/frontend/description', 'hrd_filter_missing_meta_descriptions', 20 );
 
+/** CTR-focused title and description overrides for priority landing pages. */
+function hrd_ctr_meta_overrides( $value ) {
+	if ( is_admin() ) {
+		return $value;
+	}
+
+	$path = wp_parse_url( home_url( wp_unslash( $_SERVER['REQUEST_URI'] ?? '/' ) ), PHP_URL_PATH );
+	$path = trailingslashit( '/' . ltrim( (string) strtok( $path, '?' ), '/' ) );
+	$descriptions = array(
+		'/apartments/' => 'Compare apartment rents in Da Nang by area and bedroom count. See what to check on utilities, deposits and contracts before you book a viewing.',
+		'/properties-search/' => 'Find houses, apartments and villas for rent in Da Nang. Filter by area, property type and budget, then ask our local team to confirm availability.',
+		'/houses/hai-chau/' => 'Find houses for rent in Hai Chau, Da Nang, near the Han River, schools and city services. Compare current homes and request local viewing help.',
+		'/apartments/an-thuong/' => 'Explore apartments for rent in An Thuong, Da Nang, near My Khe Beach, cafes and daily services. Compare current options with local rental help.',
+		'/apartment-buildings/the-filmore/' => 'See apartments for rent at The Filmore Da Nang, with building details, available layouts and local help confirming current rent and viewing times.',
+		'/apartment-buildings/the-monarchy/' => 'Explore The Monarchy apartments for rent in Da Nang. Compare layouts, building amenities and current availability with local rental support.',
+		'/faqs/' => 'Get clear answers about renting in Da Nang: deposits, contracts, documents, fees, maintenance and the steps to arrange a viewing.',
+		'/our-agents/' => 'Meet the local House Rental Danang team. Tell us your area, budget and move-in date, and get practical help finding a suitable home.',
+		'/testimonials/' => 'Read real tenant stories about searching, viewing and renting homes in Da Nang, plus what to expect when working with our local team.',
+	);
+	$titles = array(
+		'/apartments/' => 'Apartments for Rent in Da Nang | Areas & Prices',
+		'/properties-search/' => 'Da Nang Rental Properties | Search Houses & Apartments',
+		'/houses/hai-chau/' => 'Houses for Rent in Hai Chau, Da Nang',
+		'/apartments/an-thuong/' => 'Apartments for Rent in An Thuong, Da Nang',
+		'/apartment-buildings/the-filmore/' => 'The Filmore Apartments for Rent in Da Nang',
+		'/apartment-buildings/the-monarchy/' => 'The Monarchy Apartments for Rent in Da Nang',
+		'/faqs/' => 'Da Nang Rental FAQs | Deposits, Contracts & Fees',
+		'/our-agents/' => 'Our Da Nang Rental Agents | Local Help',
+	);
+
+	$hook = current_filter();
+	if ( 'rank_math/frontend/title' === $hook && isset( $titles[ $path ] ) ) {
+		return $titles[ $path ];
+	}
+	if ( 'rank_math/frontend/description' === $hook && isset( $descriptions[ $path ] ) ) {
+		return $descriptions[ $path ];
+	}
+	return $value;
+}
+add_filter( 'rank_math/frontend/title', 'hrd_ctr_meta_overrides', 45 );
+add_filter( 'rank_math/frontend/description', 'hrd_ctr_meta_overrides', 45 );
+
 function hrd_allow_admin_svg_uploads( $mimes ) {
 	if ( current_user_can( 'administrator' ) ) {
 		$mimes['svg']  = 'image/svg+xml';
@@ -654,9 +982,6 @@ function hrd_disable_unused_image_sizes( $sizes ) {
 		'1536x1536',
 		'2048x2048',
 		'post-thumbnail',
-		'modern-property-child-slider',
-		'property-detail-video-image',
-		'agent-image',
 		'partners-logo',
 	);
 

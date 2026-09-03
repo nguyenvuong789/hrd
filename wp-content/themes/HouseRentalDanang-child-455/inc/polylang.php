@@ -331,8 +331,8 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_home_partners_sub_title'     => 'Local Partners',
 			'inspiry_home_partners_title'         => 'Useful services for renters',
 			'inspiry_home_partners_desc'          => 'A selection of local partners offering services that may be useful for everyday life in Da Nang. Please confirm current availability and terms directly with each provider.',
-			'inspiry_home_cta_contact_title'      => 'Tell us what you are looking for',
-			'inspiry_home_cta_contact_desc'       => 'Share your preferred area, monthly budget, move-in date, lease length and must-haves. We will use these details to narrow the search and confirm which options are currently available.',
+				'inspiry_home_cta_contact_title'      => 'Tell us your requirements',
+				'inspiry_home_cta_contact_desc'       => 'No exact matches? Send us your area, budget and move-in date.',
 			'inspiry_cta_contact_btn_one_title'   => 'Send requirements',
 			'inspiry_cta_contact_btn_two_title'   => 'Browse listings',
 			'inspiry_home_properties_title_2'      => 'Explore Apartments for Rent in Da Nang',
@@ -356,8 +356,8 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_home_partners_sub_title'     => 'Đối tác địa phương',
 			'inspiry_home_partners_desc'          => 'Một số đối tác địa phương cung cấp các dịch vụ có thể hữu ích trong cuộc sống hằng ngày tại Đà Nẵng. Vui lòng xác nhận tình trạng dịch vụ và điều khoản trực tiếp với từng đơn vị.',
 			'inspiry_home_partners_title'         => 'Dịch vụ hữu ích cho người thuê',
-			'inspiry_home_cta_contact_title'      => 'Cho chúng tôi biết bạn đang tìm gì',
-			'inspiry_home_cta_contact_desc'       => 'Gửi khu vực mong muốn, ngân sách hằng tháng, ngày chuyển vào, thời hạn thuê và các yêu cầu quan trọng. Chúng tôi sẽ dùng những thông tin này để thu hẹp lựa chọn và xác nhận những căn hiện còn trống.',
+				'inspiry_home_cta_contact_title'      => 'Cho chúng tôi biết nhu cầu của bạn',
+				'inspiry_home_cta_contact_desc'       => 'Chưa tìm thấy căn phù hợp? Gửi khu vực, ngân sách và ngày chuyển vào cho chúng tôi.',
 			'inspiry_cta_contact_btn_one_title'   => 'Gửi nhu cầu',
 			'inspiry_cta_contact_btn_two_title'   => 'Xem tin đang có',
 			'inspiry_home_news_sub_title'         => 'Sống như người địa phương',
@@ -379,8 +379,8 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_home_partners_desc'          => '다낭 생활에 빠르게 적응할 수 있도록 돕는 신뢰할 수 있는 현지 네트워크입니다.',
 			'inspiry_home_partners_sub_title'    => '현지 파트너',
 			'inspiry_home_partners_title'         => '저희가 신뢰하는 파트너',
-			'inspiry_home_cta_contact_title'      => '원하는 집의 조건을 알려주세요',
-			'inspiry_home_cta_contact_desc'       => '희망 지역, 예산, 입주일과 필수 조건을 보내주세요. 선택지를 좁히고 현재 정보를 확인해 드립니다.',
+				'inspiry_home_cta_contact_title'      => '원하는 집의 조건을 알려주세요',
+				'inspiry_home_cta_contact_desc'       => '딱 맞는 매물을 찾지 못하셨나요? 지역, 예산과 입주일을 보내주세요.',
 			'inspiry_cta_contact_btn_one_title'   => '요청 보내기',
 			'inspiry_cta_contact_btn_two_title'   => '매물 보기',
 			'inspiry_home_news_sub_title'         => '현지인처럼 즐기기',
@@ -397,8 +397,8 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_home_partners_sub_title' => 'ローカルネットワーク',
 			'inspiry_home_partners_title' => '信頼できるパートナーとサービス',
 			'inspiry_home_partners_desc' => 'ダナンでの暮らしに役立つ、信頼できる現地のサービスと事業者をご紹介します。利用条件と営業状況は各事業者へご確認ください。',
-			'inspiry_home_cta_contact_title' => 'ご希望をお聞かせください',
-			'inspiry_home_cta_contact_desc' => '希望エリア、予算、入居日、必須条件をお知らせください。選択肢を絞り、最新情報を確認します。',
+				'inspiry_home_cta_contact_title' => 'ご希望をお聞かせください',
+				'inspiry_home_cta_contact_desc' => 'ぴったりの物件が見つかりませんか？希望エリア、予算、入居日をお知らせください。',
 			'inspiry_cta_contact_btn_one_title' => '簡単フォーム',
 			'inspiry_cta_contact_btn_two_title' => '物件を見る',
 			'inspiry_home_properties_title_2' => 'ダナンの賃貸アパートを探す',
@@ -417,8 +417,8 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_home_partners_sub_title' => 'Местная сеть',
 			'inspiry_home_partners_title' => 'Проверенные партнёры и услуги',
 			'inspiry_home_partners_desc' => 'Полезные местные сервисы и компании, которым мы доверяем. Уточняйте актуальные условия и доступность напрямую у каждого поставщика.',
-			'inspiry_home_cta_contact_title' => 'Расскажите, что вы ищете',
-			'inspiry_home_cta_contact_desc' => 'Укажите район, бюджет, дату заезда и важные требования. Мы сузим выбор и проверим актуальные детали.',
+				'inspiry_home_cta_contact_title' => 'Расскажите о своих требованиях',
+				'inspiry_home_cta_contact_desc' => 'Не нашли точный вариант? Отправьте район, бюджет и дату заезда.',
 			'inspiry_cta_contact_btn_one_title' => 'Быстрая форма',
 			'inspiry_cta_contact_btn_two_title' => 'Смотреть объекты',
 			'inspiry_home_properties_title_2' => 'Квартиры в аренду в Дананге',
@@ -437,8 +437,8 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 			'inspiry_home_partners_sub_title' => '本地网络',
 			'inspiry_home_partners_title' => '我们信任的商家与服务',
 			'inspiry_home_partners_desc' => '为新来者适应岘港生活提供帮助的可靠本地网络。服务时间和条款请直接向各商家确认。',
-			'inspiry_home_cta_contact_title' => '告诉我们您的需求',
-			'inspiry_home_cta_contact_desc' => '告诉我们偏好的区域、预算、入住日期和必要条件。我们会帮您缩小选择范围并确认最新信息。',
+				'inspiry_home_cta_contact_title' => '告诉我们您的租房需求',
+				'inspiry_home_cta_contact_desc' => '没有找到完全合适的房源？请发送您的区域、预算和入住日期。',
 			'inspiry_cta_contact_btn_one_title' => '快速表单',
 			'inspiry_cta_contact_btn_two_title' => '浏览房源',
 			'inspiry_home_properties_title_2' => '探索岘港出租公寓',
@@ -457,11 +457,17 @@ function hrd_translate_home_section_metadata( $value, $object_id, $meta_key, $si
 add_filter( 'get_post_metadata', 'hrd_translate_home_section_metadata', 20, 4 );
 
 function hrd_translate_home_view_more( $translation, $text, $domain ) {
-	if ( is_admin() || 'View more' !== $text ) {
-		return $translation;
-	}
-	$labels = array( 'vi' => 'Xem thêm', 'ko' => '더 보기', 'ja' => 'もっと見る', 'ru' => 'Смотреть ещё', 'zh' => '查看更多' );
-	$language = hrd_get_current_language();
-	return $labels[ $language ] ?? $translation;
+		if ( is_admin() || ! in_array( $text, array( 'View all houses', 'View all apartments' ), true ) ) {
+			return $translation;
+		}
+		$labels = array(
+			'vi' => array( 'View all houses' => 'Xem tất cả nhà', 'View all apartments' => 'Xem tất cả căn hộ' ),
+			'ko' => array( 'View all houses' => '모든 주택 보기', 'View all apartments' => '모든 아파트 보기' ),
+			'ja' => array( 'View all houses' => 'すべての一戸建てを見る', 'View all apartments' => 'すべてのアパートを見る' ),
+			'ru' => array( 'View all houses' => 'Все дома', 'View all apartments' => 'Все квартиры' ),
+			'zh' => array( 'View all houses' => '查看所有房屋', 'View all apartments' => '查看所有公寓' ),
+		);
+		$language = hrd_get_current_language();
+		return $labels[ $language ][ $text ] ?? $translation;
 }
 add_filter( 'gettext', 'hrd_translate_home_view_more', 25, 3 );

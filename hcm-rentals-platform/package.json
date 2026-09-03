@@ -1,0 +1,28 @@
+{
+  "name": "hcm-owner-rentals",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "check": "tsc --noEmit",
+    "deploy": "npm run build && wrangler deploy",
+    "db:local": "wrangler d1 migrations apply hcm-owner-rentals --local",
+    "seed:export": "node scripts/export-legacy-seed.mjs",
+    "seed:local": "node scripts/import-seed.mjs --local",
+    "r2:legacy": "node scripts/upload-legacy-images.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest",
+    "wrangler": "latest"
+  }
+}

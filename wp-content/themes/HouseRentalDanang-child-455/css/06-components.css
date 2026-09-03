@@ -468,7 +468,37 @@
 		margin-bottom: 24px;
 	}
 }
-/* Location archive typography: readable measure, fluid hierarchy, one brand family. */
+/* Shared editorial typography keeps listing and location guides consistent. */
+.hrd-long-guide__content {
+	color: #536264;
+	font-family: var(--hrd-font-ui);
+	font-size: 14.5px;
+	line-height: 2;
+}
+
+.hrd-long-guide__content p,
+.hrd-long-guide__content li {
+	font: inherit;
+}
+
+.hrd-long-guide__content h2 {
+	margin: 0 0 20px;
+	color: #183036;
+	font: 600 36px/1.5 var(--hrd-font-ui);
+	letter-spacing: -0.025em;
+}
+
+.hrd-long-guide__content h3 {
+	margin: 0 0 20px;
+	color: #183036;
+	font: 600 18px/1.5 var(--hrd-font-ui);
+}
+
+.hrd-long-guide__content table {
+	font: inherit;
+}
+
+/* Location archive typography: use the same family as the shared guide. */
 .tax-property-city .hrd-location-hub,
 .tax-property-city .hrd-location-hub button,
 .tax-property-city .hrd-location-hub input,
@@ -488,29 +518,30 @@
 
 .tax-property-city .hrd-location-hub__intro {
 	width: 100%;
-	max-width: 811px;
+	max-width: 1170px;
 	margin-right: auto;
 	margin-left: auto;
 	font-size: clamp(16px, 15px + 0.25vw, 17px);
 	line-height: 1.72;
 }
 
-.tax-property-city .hrd-location-hub__intro p,
-.tax-property-city .hrd-location-hub__intro li {
+.tax-property-city .hrd-location-hub__intro > p,
+.tax-property-city .hrd-location-hub__intro > ul > li,
+.tax-property-city .hrd-location-hub__intro > ol > li {
 	font-size: clamp(16px, 0.98rem + 0.15vw, 17px);
 	line-height: 1.7;
 }
 
-.tax-property-city .hrd-location-hub__intro p {
+.tax-property-city .hrd-location-hub__intro > p {
 	max-width: 68ch;
 }
 
-.tax-property-city .hrd-location-hub__intro ul,
-.tax-property-city .hrd-location-hub__intro ol {
+.tax-property-city .hrd-location-hub__intro > ul,
+.tax-property-city .hrd-location-hub__intro > ol {
 	max-width: 72ch;
 }
 
-.tax-property-city .hrd-location-hub__intro h2,
+.tax-property-city .hrd-location-hub__intro > h2,
 .tax-property-city .hrd-location-hub__section-head > h2 {
 	font-size: clamp(27px, 2.5vw, 35px);
 	line-height: 1.18;
@@ -518,7 +549,18 @@
 	text-wrap: balance;
 }
 
-.tax-property-city .hrd-location-hub__intro h3 {
+@media (max-width: 767px) {
+	.hrd-long-guide__content h2 {
+		font-size: 30px;
+		line-height: 1.35;
+	}
+
+	.hrd-long-guide__content h3 {
+		font-size: 18px;
+	}
+}
+
+.tax-property-city .hrd-location-hub__intro > h3 {
 	font-size: clamp(20px, 1.7vw, 24px);
 	line-height: 1.25;
 	letter-spacing: -0.015em;
@@ -598,20 +640,28 @@
 }
 
 @media (max-width: 767px) {
-	.tax-property-city .hrd-location-hub__intro p,
-	.tax-property-city .hrd-location-hub__intro li {
+	.tax-property-city .hrd-location-hub__intro > p,
+	.tax-property-city .hrd-location-hub__intro > ul > li,
+	.tax-property-city .hrd-location-hub__intro > ol > li {
 		font-size: 17px;
 		line-height: 1.65;
 	}
 
-	.tax-property-city .hrd-location-hub__intro p,
-	.tax-property-city .hrd-location-hub__intro ul,
- 	.tax-property-city .hrd-location-hub__intro ol {
+	.tax-property-city .hrd-location-hub__intro > p,
+	.tax-property-city .hrd-location-hub__intro > ul,
+	.tax-property-city .hrd-location-hub__intro > ol {
 		max-width: 100%;
 	}
 }
 
 /* Keep the second configurable homepage feed on the same native card grid. */
+.rh_latest-properties--second .rh_section__properties {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+}
+
 .rh_latest-properties--second .rh_prop_card--listing {
 	width: 33.3333%;
 }

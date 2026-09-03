@@ -1,6 +1,8 @@
 .DS_Store
 .playwright-cli/
 .seo-cache/
+__pycache__/
+*.py[cod]
 
 # Keep local and production secrets/configuration out of Git.
 wp-config.php
@@ -16,7 +18,32 @@ wp-content/updraft/
 error_log
 *.log
 
+# Generated WordPress translations are installed and updated by WordPress.
+/wp-content/languages/
+
+# Runtime audits and rendered reports do not belong in the theme source.
+/wp-content/themes/HouseRentalDanang-child-455/audit-output/
+/wp-content/themes/HouseRentalDanang-child-455/output/
+
+# Rental datasets contain contact details and mutable crawl state. The remote is public.
+/data/
+/output/
+
+# Generated HCM platform seeds contain listing contact details.
+/hcm-rentals-platform/legacy-seed.sql
+/hcm-rentals-platform/public/demo-images/
+/hcm-rentals-platform/public/demo-listings.json
+/hcm-rentals-platform/public/legacy-seed.json
+
+# Reproducible export; the Markdown source is versioned.
+/hrd-one-person-site-growth-plan.pdf
+
 # WordPress core and installed third-party packages stay managed by the host.
+/index.php
+/license.txt
+/readme.html
+/wp-*.php
+/xmlrpc.php
 /wp-admin/
 /wp-includes/
 /wp-content/plugins/

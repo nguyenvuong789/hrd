@@ -195,6 +195,23 @@ function hrd_localize_navigation_url( $attributes, $menu_item, $args ) {
 }
 add_filter( 'nav_menu_link_attributes', 'hrd_localize_navigation_url', 20, 3 );
 
+/** Keep the primary Houses menu item on the canonical all-houses archive. */
+function hrd_force_houses_menu_url( $attributes, $menu_item, $args ) {
+	if ( ! hrd_is_navigation_menu( $args ) ) {
+		return $attributes;
+	}
+
+	$title = strtolower( trim( wp_strip_all_tags( (string) ( $menu_item->title ?? '' ) ) ) );
+	if ( in_array( $title, array( 'house', 'houses' ), true ) ) {
+		$attributes['href'] = 'https://houserentaldanang.com/houses/';
+	} elseif ( in_array( $title, array( 'apartment', 'apartments' ), true ) ) {
+		$attributes['href'] = 'https://houserentaldanang.com/apartments/';
+	}
+
+	return $attributes;
+}
+add_filter( 'nav_menu_link_attributes', 'hrd_force_houses_menu_url', 90, 3 );
+
 function hrd_shared_testimonials_shortcode() {
 	$content = get_post_field( 'post_content', 8745 );
 	if ( empty( $content ) ) {
@@ -218,7 +235,7 @@ function hrd_home_faq_markup() {
 		'en' => array(
 			'eyebrow' => 'Practical information for renters',
 			'title'   => 'Renting in Da Nang, at a glance',
-			'intro'   => 'Da Nang rentals range from compact studios and serviced apartments to family houses and private villas. The right choice depends on how close you want to be to the beach, central business areas, schools or quieter residential streets. Prices and availability move with the season, furnishing level, lease length and exact address, so online listings are a starting point rather than a promise of current stock. Most renters narrow the search by area and monthly budget first, then confirm utilities, parking, deposit terms, maintenance and temporary-residence requirements before viewing. Our local team can help compare options in Son Tra, Ngu Hanh Son, Hai Chau and nearby areas, then confirm the details directly with the listing contact.',
+			'intro'   => 'Compare studios, apartments, houses and villas by area and budget. Before viewing, confirm availability, utilities, parking, deposit terms and temporary-residence requirements with the listing contact.',
 			'questions' => array(
 				array( 'What types of homes can I rent in Da Nang?', 'You can rent furnished or unfurnished studios, residential and serviced apartments, townhouses, detached houses and private villas in Da Nang. Current listings show these property types across Son Tra, Ngu Hanh Son, Hai Chau and other urban areas. Availability varies by neighborhood, lease length, furnishings, pet policy and building rules, so confirm that the exact property is offered for long-term residential use.' ),
 				array( 'How much does it cost to rent a house or apartment?', 'There is no single average rent for Da Nang. As recent advertised examples, one-bedroom apartments in popular beach areas were commonly listed around VND 9-15 million per month and two-bedroom apartments around VND 12-20 million; house listings covered a much wider range. Prices depend on the exact area, size, furnishing, services and lease length. Confirm rent, deposit, utilities, parking and management fees before deciding.' ),
@@ -230,7 +247,7 @@ function hrd_home_faq_markup() {
 		'vi' => array(
 			'eyebrow' => 'Thông tin thực tế cho người thuê',
 			'title'   => 'Thuê nhà ở Đà Nẵng: những điều cần biết',
-			'intro'   => 'Thị trường Đà Nẵng có studio, căn hộ dịch vụ, căn hộ ở, nhà phố, nhà gia đình và biệt thự riêng. Lựa chọn phù hợp phụ thuộc vào việc bạn muốn gần biển, trung tâm, trường học hay khu dân cư yên tĩnh. Giá và tình trạng trống thay đổi theo mùa, nội thất, thời hạn thuê và địa chỉ cụ thể, vì vậy tin đăng chỉ nên được xem là điểm bắt đầu. Người thuê thường chọn khu vực và ngân sách trước, sau đó xác nhận điện nước, chỗ đậu xe, tiền cọc, bảo trì và thủ tục tạm trú trước khi xem nhà. Đội ngũ địa phương có thể giúp bạn so sánh Son Tra, Ngu Hanh Son, Hai Chau và các khu vực lân cận, rồi kiểm tra lại thông tin với bên đăng tin.',
+			'intro'   => 'So sánh studio, căn hộ, nhà và biệt thự theo khu vực và ngân sách. Trước khi xem, hãy xác nhận tình trạng trống, điện nước, chỗ đậu xe, tiền cọc và thủ tục tạm trú.',
 			'questions' => array(
 				array( 'Có thể thuê những loại nhà nào ở Đà Nẵng?', 'Bạn có thể thuê studio, căn hộ ở, căn hộ dịch vụ, nhà phố, nhà riêng và biệt thự có hoặc không có nội thất tại Đà Nẵng. Các tin đăng hiện tại cho thấy những loại hình này tại Son Tra, Ngu Hanh Son, Hai Chau và những khu đô thị khác. Tình trạng trống thay đổi theo khu vực, thời hạn thuê, nội thất, quy định vật nuôi và nội quy tòa nhà, vì vậy cần xác nhận căn cụ thể có cho thuê dài hạn hay không.' ),
 				array( 'Giá thuê nhà hoặc căn hộ ở Đà Nẵng khoảng bao nhiêu?', 'Đà Nẵng không có một mức giá thuê trung bình phù hợp cho mọi loại nhà. Theo các mức chào thuê gần đây, căn hộ một phòng ngủ tại những khu biển phổ biến thường khoảng 9-15 triệu đồng mỗi tháng và căn hai phòng ngủ khoảng 12-20 triệu đồng; giá nhà riêng có biên độ rộng hơn nhiều. Giá thực tế phụ thuộc địa chỉ, diện tích, nội thất, dịch vụ và thời hạn thuê. Hãy xác nhận tiền thuê, tiền cọc, điện nước, gửi xe và phí quản lý.' ),
@@ -241,7 +258,7 @@ function hrd_home_faq_markup() {
 		),
 		'ja' => array(
 			'eyebrow' => '入居者向けの実用情報', 'title' => 'ダナンの賃貸：基本情報',
-			'intro' => 'ダナンではスタジオ、サービスアパート、一戸建て、ヴィラなどを選べます。家賃と空室状況はエリア、家具、契約期間、住所で変わるため、内見前に条件を確認しましょう。',
+			'intro' => 'エリアと予算からスタジオ、アパート、住宅、ヴィラを比較できます。内見前に空室、光熱費、駐車場、保証金、滞在登録を確認してください。',
 			'questions' => array(
 				array( 'ダナンではどんな家を借りられますか？', 'スタジオ、住宅用・サービスアパート、一戸建て、タウンハウス、ヴィラなどがあります。長期居住、ペット、駐車場、建物規則を物件ごとに確認してください。' ),
 				array( '家賃はいくらですか？', '人気のビーチエリアでは1ベッドルームが月900万〜1,500万ドン、2ベッドルームが月1,200万〜2,000万ドンほどの掲載例があります。家賃、保証金、光熱費、駐車場、管理費を確認してください。' ),
@@ -252,7 +269,7 @@ function hrd_home_faq_markup() {
 		),
 		'ru' => array(
 			'eyebrow' => 'Практическая информация для арендаторов', 'title' => 'Аренда в Дананге: главное',
-			'intro' => 'В Дананге можно выбрать студию, сервисные апартаменты, дом или виллу. Цена и наличие зависят от района, мебели, срока аренды и точного адреса.',
+			'intro' => 'Сравнивайте студии, квартиры, дома и виллы по району и бюджету. Перед просмотром уточните наличие, коммунальные услуги, парковку, депозит и регистрацию проживания.',
 			'questions' => array(
 				array( 'Какое жильё можно снять в Дананге?', 'Доступны студии, жилые и сервисные квартиры, таунхаусы, отдельные дома и виллы. Уточняйте долгосрочную аренду, парковку и правила здания.' ),
 				array( 'Сколько стоит аренда?', 'В популярных районах у пляжа встречались объявления примерно от 9–15 млн донгов за однокомнатную квартиру и 12–20 млн за двухкомнатную. Уточняйте депозит, коммунальные услуги, парковку и сборы.' ),
@@ -263,7 +280,7 @@ function hrd_home_faq_markup() {
 		),
 		'zh' => array(
 			'eyebrow' => '租客实用信息', 'title' => '岘港租房：快速了解',
-			'intro' => '岘港的出租房源包括单间、公寓、住宅和别墅。价格与空置情况会受到区域、家具、租期和具体地址影响，因此看房前请确认完整条件。',
+			'intro' => '按区域和预算比较单间、公寓、住宅和别墅。看房前请确认空置、水电、停车、押金和临时居住登记。',
 			'questions' => array(
 				array( '在岘港可以租到哪些房子？', '常见选择包括单间、住宅公寓、服务式公寓、联排住宅、独立房屋和别墅。请确认长期居住、宠物、停车和楼宇规定。' ),
 				array( '租金大约是多少？', '热门海滩区域的一居室近期挂牌示例约为每月900万至1500万越南盾，两居室约为1200万至2000万越南盾。请确认租金、押金、水电、停车和管理费。' ),
@@ -274,7 +291,7 @@ function hrd_home_faq_markup() {
 		),
 		'ko' => array(
 			'eyebrow' => '임차인을 위한 실용 정보', 'title' => '다낭 임대 주택 한눈에 보기',
-			'intro' => '다낭에서는 스튜디오, 서비스 아파트, 주택과 빌라를 선택할 수 있습니다. 임대료와 공실은 지역, 가구, 계약 기간과 정확한 주소에 따라 달라집니다.',
+			'intro' => '지역과 예산에 따라 스튜디오, 아파트, 주택과 빌라를 비교하세요. 방문 전에 공실, 공과금, 주차, 보증금과 거주 등록을 확인하세요.',
 			'questions' => array(
 				array( '다낭에서는 어떤 집을 빌릴 수 있나요?', '스튜디오, 주거용·서비스 아파트, 타운하우스, 단독주택과 빌라가 있습니다. 장기 거주, 반려동물, 주차와 건물 규정을 확인하세요.' ),
 				array( '임대료는 얼마인가요?', '인기 해변 지역의 최근 예시로 원룸은 월 900만~1,500만 동, 투룸은 월 1,200만~2,000만 동 정도였습니다. 보증금과 공과금도 확인하세요.' ),

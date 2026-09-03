@@ -73,9 +73,13 @@ if ( inspiry_show_header_search_form() ) {
 			<?php
 			$term_description = $hub && $hub['term'] instanceof WP_Term ? $hub['term']->description : '';
 			if ( $term_description ) {
-				echo '<div class="hrd-location-hub__editorial">' . wp_kses_post( apply_filters( 'the_content', $term_description ) ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				// Taxonomy descriptions can contain escaped HTML after textarea saves.
+				$term_description = html_entity_decode( (string) $term_description, ENT_QUOTES, get_bloginfo( 'charset' ) ?: 'UTF-8' );
+				$editorial = '<div class="hrd-location-hub__editorial">' . wp_kses_post( apply_filters( 'the_content', $term_description ) ) . '</div>';
+				echo hrd_wrap_location_long_guide( $editorial ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			} else {
-				echo hrd_location_hub_long_content( $district, $language ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				// Use the English guide when a translated taxonomy description is missing.
+				echo hrd_wrap_location_long_guide( hrd_location_hub_long_content( $district, 'en' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 			?>
 		</div>

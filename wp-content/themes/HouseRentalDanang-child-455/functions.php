@@ -12,6 +12,7 @@ $hrd_modules = array(
     'assets.php',
     'adsense.php',
     'content.php',
+    'buildings.php',
     'navigation.php',
     'polylang.php',
     'homepage.php',

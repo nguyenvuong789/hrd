@@ -96,7 +96,7 @@ if ( 'true' === get_post_meta( get_the_ID(), 'theme_ajax_pagination_home', true 
 					$view_more_url = $view_more_url ? $view_more_url : home_url( '/houses/' );
 					if ( $view_more_url ) :
 						?>
-						<a class="rh_btn rh_btn_sfoi rh_btn__prop_search" href="<?php echo esc_url( $view_more_url ); ?>"><?php esc_html_e( 'View more', RH_TEXT_DOMAIN ); ?></a>
+						<a class="rh_btn rh_btn_sfoi rh_btn__prop_search" href="<?php echo esc_url( $view_more_url ); ?>"><?php esc_html_e( 'View all houses', RH_TEXT_DOMAIN ); ?></a>
 						<?php
 					endif;
 				}
